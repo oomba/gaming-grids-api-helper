@@ -221,6 +221,7 @@ namespace GamingGridsApiHelper
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "api"));
                 var dlls = GetApiDlls(dllDirectory, dllContains);
                 var apiInfoList = GetApiInfoList(dlls);
+                var apiCount = 0;
                 foreach (var apiInfo in apiInfoList)
                 {
                     var apiInfoGrouped = apiInfo.Apis.GroupBy(a => a.ControllerName)
@@ -229,7 +230,7 @@ namespace GamingGridsApiHelper
                             Key = g.Key,
                             Apis = g.Select(x => x).ToList()
                         });
-
+                    apiCount += apiInfo.Apis.Count();
                     foreach (var api in apiInfoGrouped)
                     {
                         var json = JsonConvert.SerializeObject(api.Apis, Formatting.Indented, new JsonSerializerSettings
@@ -237,13 +238,18 @@ namespace GamingGridsApiHelper
                             ContractResolver = new CamelCasePropertyNamesContractResolver(),
                             NullValueHandling = NullValueHandling.Ignore
                         });
-                        var path = Path.Combine(projectDirectory, "json", apiInfo.Name + "-" + api.Key + ".json");
+                        var path = Path.Combine(projectDirectory, "json", apiInfo.Name.ToUpper() + "-" + api.Key + ".json");
                         using (StreamWriter sw = File.CreateText(path))
                         {
                             sw.Write(json);
                         }
+                        Console.WriteLine(apiInfo.Name.Substring(0, 1).ToUpper() + apiInfo.Name.Substring(1) + "/" + api.Key.Substring(0, 1).ToUpper() + api.Key.Substring(1) + " API Methods: " + api.Apis.Count());
                     }
+                    Console.WriteLine(apiInfo.Name.Substring(0, 1).ToUpper() + apiInfo.Name.Substring(1) + " API Methods: " + apiInfo.Apis.Count());
+                    Console.WriteLine("-----------------------------------------");
                 }
+                Console.WriteLine("Total APIs: " + apiInfoList.Count());
+                Console.WriteLine("Total API Methods: " + apiCount);
                 try
                 {
                     var processStartInfo = new ProcessStartInfo
@@ -256,6 +262,8 @@ namespace GamingGridsApiHelper
                     var process = Process.Start(processStartInfo);
                     process.StandardInput.WriteLine("npm run start & exit");
                     process.WaitForExit();
+                    Console.WriteLine("Complete!");
+                    Console.ReadLine();
                 }
                 catch(Exception ex)
                 {

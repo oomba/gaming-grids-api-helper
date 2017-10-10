@@ -14,9 +14,7 @@ const buildApis = () => {
     files.forEach(file => {
         var fileData = fs.readFileSync(path.join(__dirname, basePath, file))
         var fileJson = JSON.parse(fileData)
-        console.log(file)
         var fileName = file.replace('.json', '').split('-').reduce((results, item, index) => {
-            console.log(item)
             results += index === 0 ? (item.slice(0, 1).toLowerCase() + item.slice(1)) : (item.slice(0, 1).toUpperCase() + item.slice(1))
             return results
         }, '')

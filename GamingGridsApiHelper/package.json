@@ -1,0 +1,12 @@
+{
+  "name": "gaming-grids-api-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "start": "node ./build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

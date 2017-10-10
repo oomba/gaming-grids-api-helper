@@ -217,6 +217,8 @@ namespace GamingGridsApiHelper
                 var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;                
                 Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
                 Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "api")), File.Delete);
+                Directory.CreateDirectory(Path.Combine(projectDirectory, "json"));
+                Directory.CreateDirectory(Path.Combine(projectDirectory, "api"));
                 var dlls = GetApiDlls(dllDirectory, dllContains);
                 var apiInfoList = GetApiInfoList(dlls);
                 foreach (var apiInfo in apiInfoList)

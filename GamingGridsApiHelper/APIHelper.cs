@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -40,9 +39,14 @@ namespace GamingGridsApiHelper
             {
                 complexNewParam.Type = type.ToString();
             }
-            else if(type.UnderlyingSystemType.Name == "HttpRequestMessage")
+            else if (type.UnderlyingSystemType.Name == "HttpRequestMessage")
             {
                 complexNewParam.Type = "String";
+            }
+            else if (type.UnderlyingSystemType.IsGenericType)
+            {
+                complexNewParam.IsList = true;
+                complexNewParam.Properties = GetParams(type, currentLevel, maxLevel);
             }
             else
             {
@@ -88,7 +92,7 @@ namespace GamingGridsApiHelper
                         {
                             name = apiInfo.Url.Length < 1 ? apiInfo.Url : String.Join("", apiInfo.Url.Replace("{", "By").Replace("}", "").Split('/').Select(x => x.Length < 1 ? x : x.Substring(0, 1).ToUpper() + x.Substring(1)));
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             System.Diagnostics.Debug.WriteLine(ex.ToString());
                         }
@@ -117,14 +121,14 @@ namespace GamingGridsApiHelper
                             System.Diagnostics.Debugger.Break();
                         }
                     }
-                    else if(attr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
+                    else if (attr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
                     {
                         apiInfo.Response = GetParams(((System.Web.Http.Description.ResponseTypeAttribute)attr).ResponseType);
                     }
                     else
                     {
                         // TODO
-                        System.Diagnostics.Debugger.Break();
+                        // System.Diagnostics.Debugger.Break();
                     }
                 }
                 foreach (var param in methodInfo.GetParameters())
@@ -168,6 +172,10 @@ namespace GamingGridsApiHelper
 
                 if (apiInfo.Response.Count == 0)
                 {
+                    if (methodInfo.ReturnType.UnderlyingSystemType.IsGenericType)
+                    {
+                        apiInfo.ResponseIsList = true;
+                    }
                     apiInfo.Response = GetParams(methodInfo.ReturnType);
                 }
             }
@@ -227,12 +235,12 @@ namespace GamingGridsApiHelper
         {
             if (Directory.Exists(dllDirectory))
             {
-                var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;         
-                if(Directory.Exists(Path.Combine(projectDirectory, "json")))
+                var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                if (Directory.Exists(Path.Combine(projectDirectory, "json")))
                 {
                     Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
                 }
-                if(Directory.Exists(Path.Combine(projectDirectory, "api")))                
+                if (Directory.Exists(Path.Combine(projectDirectory, "api")))
                 {
                     Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "api")), File.Delete);
                 }
@@ -284,7 +292,7 @@ namespace GamingGridsApiHelper
                     Console.WriteLine("Complete!");
                     Console.ReadLine();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine("Error: NodeJS required. " + ex.ToString());
                     Console.Read();

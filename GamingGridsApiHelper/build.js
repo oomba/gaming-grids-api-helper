@@ -1,6 +1,7 @@
-﻿var fs = require('fs')
-var path = require('path')
+﻿const beautify = require('js-beautify').js_beautify
+const fs = require('fs')
 const graphql = require('graphql')
+const path = require('path')
 
 const convertToGraphQLType = (type, name) => {
   let graphQLName = ''
@@ -48,8 +49,9 @@ const getPropertiesFromParam = obj => {
     : undefined
 }
 
-const getResponsePropertiesFromParam = (name, properties, inner) => {
+const getResponsePropertiesFromParam = (name, properties, isList, inner) => {
   const innerSchema =
+    (isList ? 'new graphql.GraphQLList(' : '') +
     'new graphql.GraphQLObjectType(' +
     JSON.stringify({
       name: "'" + name + 'Response' + "'",
@@ -60,13 +62,15 @@ const getResponsePropertiesFromParam = (name, properties, inner) => {
             ? getResponsePropertiesFromParam(
                 name + prop.name,
                 prop.properties,
+                prop.isList,
                 true
               )
             : undefined
         return propResults
       }, {})
     }) +
-    ')'
+    ')' +
+    (isList ? ')' : '')
   return inner ? { type: innerSchema } : innerSchema
 }
 
@@ -114,7 +118,12 @@ const buildApis = () => {
             }
           : undefined,
         response: api.response
-          ? getResponsePropertiesFromParam(api.name, api.response, false)
+          ? getResponsePropertiesFromParam(
+              api.name,
+              api.response,
+              api.responseIsList,
+              false
+            )
           : undefined,
         uriParam: api.uriParam
           ? {
@@ -133,6 +142,7 @@ const buildApis = () => {
       "const graphql = require('graphql')\n\nmodule.exports = " +
       JSON.stringify(obj, null, 2)
     fileContents = fileContents.replace(/"/g, '').replace(/\\/g, '')
+    fileContent = beautify(fileContents, { indent_size: 2 })
     const targetFileName = path.join(__dirname, 'api', fileName + '.js')
     fs.writeFileSync(targetFileName, fileContents, error => {
       if (error) console.log(error)

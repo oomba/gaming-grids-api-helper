@@ -21,8 +21,9 @@ namespace GamingGridsApiHelper
         public string Method { get; set; }
         public List<Param> UrlParams { get; set; }
         public Param Body { get; set; }
-        public Param UriParam { get; set; }       
+        public Param UriParam { get; set; }
         public List<Param> Response { get; set; }
+        public bool ResponseIsList { get; set; }
 
         public ApiInfo()
         {
@@ -42,6 +43,7 @@ namespace GamingGridsApiHelper
     {
         private string _type;
         public string Name { get; set; }
+        public bool IsList { get; set; }
         public string Type
         {
             get

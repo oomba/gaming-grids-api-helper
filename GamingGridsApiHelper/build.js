@@ -2,7 +2,7 @@
 var path = require('path')
 const graphql = require('graphql')
 
-const convertToGraphQLType = type => {
+const convertToGraphQLType = (type, name) => {
   let graphQLName = ''
   switch (type) {
     case 'Boolean':
@@ -14,14 +14,23 @@ const convertToGraphQLType = type => {
     case 'Double':
       graphQLName = 'graphql.GraphQLFloat'
       break
+    case 'Guid':
+      graphQLName = 'graphql.GraphQLString'
+      break
     case 'Number':
       graphQLName = 'graphql.GraphQLInt'
+      break
+    case 'Object':
+      graphQLName = 'graphql.GraphQLString'
+      break
+    case 'Single':
+      graphQLName = 'graphql.GraphQLFloat'
       break
     case 'String':
       graphQLName = 'graphql.GraphQLString'
       break
     default:
-      console.log('UKNOWN TYPE: ' + type)
+      console.log('UKNOWN TYPE: ' + type + ' - ' + name)
       graphQLName = type
       break
   }
@@ -31,8 +40,9 @@ const convertToGraphQLType = type => {
 const getPropertiesFromParam = obj => {
   return obj.properties
     ? obj.properties.reduce((props, prop) => {
-        props[prop.name] =
-          convertToGraphQLType(prop.type) || getPropertiesFromParam(prop)
+        props[prop.name] = prop.type
+          ? convertToGraphQLType(prop.type, prop.name)
+          : getPropertiesFromParam(prop)
         return props
       }, {})
     : undefined
@@ -44,21 +54,20 @@ const getResponsePropertiesFromParam = (name, properties, inner) => {
     JSON.stringify({
       name: "'" + name + 'Response' + "'",
       fields: properties.reduce((propResults, prop) => {
-        propResults[prop.name] =
-          prop.type !== undefined
-            ? { type: convertToGraphQLType(prop.type) }
-            : prop.properties
-              ? getResponsePropertiesFromParam(
-                  name + prop.name,
-                  prop.properties,
-                  true
-                )
-              : undefined
+        propResults[prop.name] = prop.type
+          ? { type: convertToGraphQLType(prop.type, prop.name) }
+          : prop.properties
+            ? getResponsePropertiesFromParam(
+                name + prop.name,
+                prop.properties,
+                true
+              )
+            : undefined
         return propResults
       }, {})
     }) +
     ')'
-  return inner ? ({ type: innerSchema }) : innerSchema
+  return inner ? { type: innerSchema } : innerSchema
 }
 
 const buildApis = () => {
@@ -85,9 +94,9 @@ const buildApis = () => {
         urlParams: api.urlParams
           ? api.urlParams.reduce((propResults, prop) => {
               propResults[prop.name] = {
-                type:
-                  convertToGraphQLType(prop.type) ||
-                  getPropertiesFromParam(prop)
+                type: prop.type
+                  ? convertToGraphQLType(prop.type, prop.name)
+                  : getPropertiesFromParam(prop)
               }
               return propResults
             }, {})
@@ -96,7 +105,9 @@ const buildApis = () => {
           ? {
               fields: api.body.properties.reduce((propResults, prop) => {
                 propResults[prop.name] = {
-                  type: convertToGraphQLType(prop.type)
+                  type: prop.type
+                    ? convertToGraphQLType(prop.type)
+                    : getPropertiesFromParam(prop)
                 }
                 return propResults
               }, {})

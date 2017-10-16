@@ -40,6 +40,10 @@ namespace GamingGridsApiHelper
             {
                 complexNewParam.Type = type.ToString();
             }
+            else if(type.UnderlyingSystemType.Name == "HttpRequestMessage")
+            {
+                complexNewParam.Type = "String";
+            }
             else
             {
                 complexNewParam.Properties = GetParams(type, currentLevel, maxLevel);
@@ -113,10 +117,14 @@ namespace GamingGridsApiHelper
                             System.Diagnostics.Debugger.Break();
                         }
                     }
+                    else if(attr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
+                    {
+                        apiInfo.Response = GetParams(((System.Web.Http.Description.ResponseTypeAttribute)attr).ResponseType);
+                    }
                     else
                     {
                         // TODO
-                        // System.Diagnostics.Debugger.Break();
+                        System.Diagnostics.Debugger.Break();
                     }
                 }
                 foreach (var param in methodInfo.GetParameters())
@@ -158,7 +166,10 @@ namespace GamingGridsApiHelper
                     }
                 }
 
-                apiInfo.Response = GetParams(methodInfo.ReturnType);
+                if (apiInfo.Response.Count == 0)
+                {
+                    apiInfo.Response = GetParams(methodInfo.ReturnType);
+                }
             }
             return apiInfo;
         }

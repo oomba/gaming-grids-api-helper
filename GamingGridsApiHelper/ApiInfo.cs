@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
 
 namespace GamingGridsApiHelper
 {
@@ -17,16 +18,15 @@ namespace GamingGridsApiHelper
         public string Name { get; set; }
         public string ControllerName { get; set; }
         public string Url { get; set; }
-        public HttpVerbs HttpVerbs { get; set; }
+        public string Method { get; set; }
         public List<Param> UrlParams { get; set; }
-        public Param BodyParam { get; set; }
+        public Param Body { get; set; }
         public Param UriParam { get; set; }       
-        public List<Param> ReturnParams { get; set; }
+        public List<Param> Response { get; set; }
 
         public ApiInfo()
         {
-            HttpVerbs = new HttpVerbs();
-            ReturnParams = new List<Param>();
+            Response = new List<Param>();
         }
     }
 

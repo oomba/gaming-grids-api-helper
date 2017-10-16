@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -93,19 +94,19 @@ namespace GamingGridsApiHelper
                     {
                         if (attr.GetType() == typeof(HttpGetAttribute))
                         {
-                            apiInfo.HttpVerbs.Get = true;
+                            apiInfo.Method = "GET";
                         }
                         else if (attr.GetType() == typeof(HttpPutAttribute))
                         {
-                            apiInfo.HttpVerbs.Put = true;
+                            apiInfo.Method = "PUT";
                         }
                         else if (attr.GetType() == typeof(HttpPostAttribute))
                         {
-                            apiInfo.HttpVerbs.Post = true;
+                            apiInfo.Method = "POST";
                         }
                         else if (attr.GetType() == typeof(HttpDeleteAttribute))
                         {
-                            apiInfo.HttpVerbs.Delete = true;
+                            apiInfo.Method = "DELETE";
                         }
                         else
                         {
@@ -135,7 +136,7 @@ namespace GamingGridsApiHelper
                         {
                             if (paramAttribute.GetType() == typeof(FromBodyAttribute))
                             {
-                                apiInfo.BodyParam = GetComplexNewParam(param.Name, param.ParameterType);
+                                apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
                             }
                             else if (paramAttribute.GetType() == typeof(FromUriAttribute))
                             {
@@ -157,7 +158,7 @@ namespace GamingGridsApiHelper
                     }
                 }
 
-                apiInfo.ReturnParams = GetParams(methodInfo.ReturnType);
+                apiInfo.Response = GetParams(methodInfo.ReturnType);
             }
             return apiInfo;
         }
@@ -186,9 +187,10 @@ namespace GamingGridsApiHelper
             var apiInfoBaseList = new List<ApiInfoBase>();
             for (var i = 0; i < dlls.Length; i++)
             {
+                var dllName = dlls[i].Split('\\').Last().Replace("GamingGrids.Api.", "").Replace(".v2.dll", "").Replace(".v1.dll", "");
                 var apiInfoBase = new ApiInfoBase()
                 {
-                    Name = dlls[i].Split('\\').Last().Replace("GamingGrids.Api.", "").Replace(".v2.dll", "").Replace(".v1.dll", "").ToLower()
+                    Name = dllName.Substring(0, 1).ToLower() + dllName.Substring(1)
                 };
                 var types = GetTypes(dlls[i]);
                 for (var x = 0; x < types.Count; x++)
@@ -214,9 +216,15 @@ namespace GamingGridsApiHelper
         {
             if (Directory.Exists(dllDirectory))
             {
-                var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;                
-                Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
-                Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "api")), File.Delete);
+                var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;         
+                if(Directory.Exists(Path.Combine(projectDirectory, "json")))
+                {
+                    Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
+                }
+                if(Directory.Exists(Path.Combine(projectDirectory, "api")))                
+                {
+                    Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "api")), File.Delete);
+                }
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "json"));
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "api"));
                 var dlls = GetApiDlls(dllDirectory, dllContains);
@@ -238,7 +246,7 @@ namespace GamingGridsApiHelper
                             ContractResolver = new CamelCasePropertyNamesContractResolver(),
                             NullValueHandling = NullValueHandling.Ignore
                         });
-                        var path = Path.Combine(projectDirectory, "json", apiInfo.Name.ToUpper() + "-" + api.Key + ".json");
+                        var path = Path.Combine(projectDirectory, "json", apiInfo.Name + "-" + api.Key + ".json");
                         using (StreamWriter sw = File.CreateText(path))
                         {
                             sw.Write(json);

@@ -17,17 +17,15 @@ namespace GamingGridsApiHelper
     {
         public string Name { get; set; }
         public string ControllerName { get; set; }
+        public string MethodName { get; set; }
         public string Url { get; set; }
         public string Method { get; set; }
-        public List<Param> UrlParams { get; set; }
+        public Param UrlParam { get; set; }
         public Param Body { get; set; }
         public Param UriParam { get; set; }
-        public List<Param> Response { get; set; }
-        public bool ResponseIsList { get; set; }
-
+        public Param Response { get; set; }
         public ApiInfo()
         {
-            Response = new List<Param>();
         }
     }
 

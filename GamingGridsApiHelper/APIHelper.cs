@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 
@@ -32,18 +33,27 @@ namespace GamingGridsApiHelper
             return routePrefix;
         }
 
-        public Param GetComplexNewParam(string name, Type type, int currentLevel = 0, int maxLevel = 5)
+        public Param GetComplexNewParam(string name, Type type, int currentLevel = 0, int maxLevel = 10)
         {
             var complexNewParam = new Param(name);
             if (type.IsPrimitive || type.Namespace == "System")
             {
                 complexNewParam.Type = type.ToString();
             }
+            // TODO
             else if (type.UnderlyingSystemType.Name == "HttpRequestMessage")
             {
                 complexNewParam.Type = "String";
             }
-            else if (type.UnderlyingSystemType.IsGenericType)
+            else if(type == typeof(System.Web.Http.IHttpActionResult))
+            {
+                complexNewParam.Type = "String";
+            }
+            else if(type == typeof(System.Net.HttpStatusCode))
+            {
+                complexNewParam.Type = "Number";
+            }
+            else if (type.UnderlyingSystemType.GetInterface("IEnumerable") != null)
             {
                 complexNewParam.IsList = true;
                 complexNewParam.Properties = GetParams(type, currentLevel, maxLevel);
@@ -55,7 +65,7 @@ namespace GamingGridsApiHelper
             return complexNewParam;
         }
 
-        public List<Param> GetParams(Type type, int currentLevel = 0, int maxLevel = 5)
+        public List<Param> GetParams(Type type, int currentLevel = 0, int maxLevel = 10)
         {
             List<Param> paramList = null;
             if (currentLevel < maxLevel)
@@ -70,65 +80,57 @@ namespace GamingGridsApiHelper
             return paramList;
         }
 
-        public ApiInfo GetApiInfo(string routePrefix, MethodInfo methodInfo)
+        public Tuple<ApiInfo, List<String>> GetApiInfo(string routePrefix, MethodInfo methodInfo)
         {
             ApiInfo apiInfo = null;
-            var attrs = methodInfo.GetCustomAttributes();
+            List<string> invalidPaths = new List<string>();
+            var attrs = methodInfo.GetCustomAttributes();            
             if (attrs.Count() != 0)
             {
-                var controllerName = methodInfo.DeclaringType.Name.Replace("Controller", "");
+                var controllerName = methodInfo.DeclaringType.Name.Replace("Controller", "");               
+
                 apiInfo = new ApiInfo()
                 {
-                    ControllerName = controllerName.Substring(0, 1).ToLower() + controllerName.Substring(1)
+                    ControllerName = controllerName.Substring(0, 1).ToLower() + controllerName.Substring(1),
+                    MethodName = methodInfo.Name
                 };
+
+                var routeAttr = attrs.Where(attr => attr.GetType() == typeof(RouteAttribute)).Single();
+                apiInfo.Url = (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api");
+                var name = apiInfo.Url.Length < 1 ? apiInfo.Url : String.Join("", apiInfo.Url.Replace("{", "By").Replace("}", "").Split('/').Select(x => x.Length < 1 ? x : x.Substring(0, 1).ToUpper() + x.Substring(1)));
+                apiInfo.Name = name.Substring(0, 1).ToLower() + name.Substring(1);
+
+
+                var regex = new Regex("{.*?}");
+                var urlParams = new List<string>();
+                var matches = regex.Matches(apiInfo.Url);
+                foreach(var match in matches)
+                {
+                    urlParams.Add(match.ToString().Replace("{", "").Replace("}", ""));
+                }
                 foreach (var attr in attrs)
                 {
                     if (attr.GetType() == typeof(RouteAttribute))
                     {
-                        apiInfo.Url = (routePrefix + "/" + ((RouteAttribute)attr).Template).Replace("API", "api");
-                        // var name = String.Join("", apiInfo.Url.Split('/')); // .Where(u => !u.Contains("{")));
-                        var name = "";
-                        try
-                        {
-                            name = apiInfo.Url.Length < 1 ? apiInfo.Url : String.Join("", apiInfo.Url.Replace("{", "By").Replace("}", "").Split('/').Select(x => x.Length < 1 ? x : x.Substring(0, 1).ToUpper() + x.Substring(1)));
-                        }
-                        catch (Exception ex)
-                        {
-                            System.Diagnostics.Debug.WriteLine(ex.ToString());
-                        }
-                        apiInfo.Name = name.Substring(0, 1).ToLower() + name.Substring(1);
+                       // Handled above
                     }
                     else if (attr.GetType().GetInterfaces().Contains(typeof(IActionHttpMethodProvider)))
                     {
-                        if (attr.GetType() == typeof(HttpGetAttribute))
-                        {
-                            apiInfo.Method = "GET";
-                        }
-                        else if (attr.GetType() == typeof(HttpPutAttribute))
-                        {
-                            apiInfo.Method = "PUT";
-                        }
-                        else if (attr.GetType() == typeof(HttpPostAttribute))
-                        {
-                            apiInfo.Method = "POST";
-                        }
-                        else if (attr.GetType() == typeof(HttpDeleteAttribute))
-                        {
-                            apiInfo.Method = "DELETE";
-                        }
-                        else
-                        {
-                            System.Diagnostics.Debugger.Break();
-                        }
+                        apiInfo.Method = attr.GetType().UnderlyingSystemType.Name.ToUpper().Replace("HTTP", "").Replace("ATTRIBUTE", "");
                     }
                     else if (attr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
                     {
-                        apiInfo.Response = GetParams(((System.Web.Http.Description.ResponseTypeAttribute)attr).ResponseType);
+                        apiInfo.Response = GetComplexNewParam("response", ((System.Web.Http.Description.ResponseTypeAttribute)attr).ResponseType);
+                    }
+                    else if (attr.GetType() == typeof(System.Runtime.CompilerServices.AsyncStateMachineAttribute) 
+                        || attr.GetType() == typeof(System.Diagnostics.DebuggerStepThroughAttribute) 
+                        || attr.GetType() == typeof(System.Web.Http.Description.ApiExplorerSettingsAttribute))
+                    {
+                        // We don't care about these types...
                     }
                     else
                     {
-                        // TODO
-                        // System.Diagnostics.Debugger.Break();
+                        throw new Exception("Method Attribute not accounted for");
                     }
                 }
                 foreach (var param in methodInfo.GetParameters())
@@ -136,17 +138,29 @@ namespace GamingGridsApiHelper
                     var paramAttributes = param.GetCustomAttributes();
                     if (paramAttributes.Count() == 0)
                     {
-                        if (apiInfo.UrlParams == null)
+                        // HACK: FromBody attribute is optional, so we have to use some ugly logic here
+                        // methodInfo.GetParameters().Count() == 1 && 
+                        if (apiInfo.Method == "POST" && !urlParams.Contains(param.Name)) //  !apiInfo.Url.Contains("{"))
                         {
-                            apiInfo.UrlParams = new List<Param>();
+                            apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
                         }
-                        apiInfo.UrlParams.Add(GetComplexNewParam(param.Name, param.ParameterType));
+                        else
+                        {
+                            if (apiInfo.UrlParam == null)
+                            {
+                                apiInfo.UrlParam = new Param("UrlParam")
+                                {
+                                    Properties = new List<Param>()
+                                };
+                            }
+                            apiInfo.UrlParam.Properties.Add(GetComplexNewParam(param.Name, param.ParameterType));
+                        }
                     }
                     else
                     {
                         foreach (var paramAttribute in paramAttributes)
                         {
-                            if (paramAttribute.GetType() == typeof(FromBodyAttribute))
+                            if (paramAttribute.GetType() == typeof(FromBodyAttribute) && apiInfo.Body == null)
                             {
                                 apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
                             }
@@ -154,42 +168,76 @@ namespace GamingGridsApiHelper
                             {
                                 apiInfo.UriParam = GetComplexNewParam(param.Name, param.ParameterType);
                             }
+                            else if(apiInfo.Method == "POST" && !urlParams.Contains(param.Name))
+                            {
+                                apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
+                            }
                             else if (paramAttribute.GetType().Name == "OptionalAttribute")
                             {
-                                if (apiInfo.UrlParams == null)
+                                if (apiInfo.UrlParam == null)
                                 {
-                                    apiInfo.UrlParams = new List<Param>();
+                                    apiInfo.UrlParam = new Param("UrlParam")
+                                    {
+                                        Properties = new List<Param>()
+                                    };
                                 }
-                                apiInfo.UrlParams.Add(GetComplexNewParam(param.Name, param.ParameterType));
+                                apiInfo.UrlParam.Properties.Add(GetComplexNewParam(param.Name, param.ParameterType));
                             }
                             else
                             {
-                                System.Diagnostics.Debugger.Break();
+                                throw new Exception("Parameter Attribute not accounted for");
                             }
                         }
                     }
                 }
 
-                if (apiInfo.Response.Count == 0)
+                if (apiInfo.Response == null)
                 {
-                    if (methodInfo.ReturnType.UnderlyingSystemType.IsGenericType)
+                    apiInfo.Response = GetComplexNewParam("response", methodInfo.ReturnType);
+                }
+
+                var paramCountMatches = true;
+                if(apiInfo.UrlParam != null)
+                {
+                    var urlParamProperties = apiInfo.UrlParam.Properties.Select(x => x.Name.ToLower()).ToList().OrderBy(x => x).ToList();
+                    var urlParamsSorted = urlParams.Select(x => x.ToLower()).OrderBy(x => x.ToLower()).ToList();
+
+                    if(!urlParamProperties.SequenceEqual(urlParamsSorted))
                     {
-                        apiInfo.ResponseIsList = true;
+
                     }
-                    apiInfo.Response = GetParams(methodInfo.ReturnType);
+
+                    if (apiInfo.UrlParam.Properties.Count != urlParams.Count())
+                    {
+                        paramCountMatches = false;
+                    }
+                }
+                else
+                {
+                    if(urlParams.Count() > 0)
+                    {
+                        paramCountMatches = false;
+                    }
+                }
+                if(!paramCountMatches)
+                {
+                    invalidPaths.Add(apiInfo.Name + "-" + apiInfo.ControllerName + " - " + apiInfo.Url);
                 }
             }
-            return apiInfo;
+            return new Tuple<ApiInfo, List<string>>(apiInfo, invalidPaths);
         }
 
-        public List<ApiInfo> GetApiInfoList(Type type)
+        public Tuple<List<ApiInfo>, List<string>> GetApiInfoList(Type type)
         {
             var apiInfoList = new List<ApiInfo>();
+            var errors = new List<string>();
             var methods = type.GetMethods().Where(m => m.DeclaringType.Name == type.Name);
             var routePrefix = GetRoutePrefix(type);
             foreach (var method in methods)
             {
-                var apiInfo = GetApiInfo(routePrefix, method);
+                var api = GetApiInfo(routePrefix, method);
+                var apiInfo = api.Item1;
+                errors.AddRange(api.Item2);
                 if (apiInfo != null)
                 {
                     if (apiInfo.Name != null)
@@ -198,12 +246,13 @@ namespace GamingGridsApiHelper
                     }
                 }
             }
-            return apiInfoList;
+            return new Tuple<List<ApiInfo>, List<string>>(apiInfoList, errors);
         }
 
         public List<ApiInfoBase> GetApiInfoList(string[] dlls)
         {
             var apiInfoBaseList = new List<ApiInfoBase>();
+            var errors = new List<string>();
             for (var i = 0; i < dlls.Length; i++)
             {
                 var dllName = dlls[i].Split('\\').Last().Replace("GamingGrids.Api.", "").Replace(".v2.dll", "").Replace(".v1.dll", "");
@@ -211,17 +260,27 @@ namespace GamingGridsApiHelper
                 {
                     Name = dllName.Substring(0, 1).ToLower() + dllName.Substring(1)
                 };
-                var types = GetTypes(dlls[i]);
+                // HACK: Filter out HelpController as it isn't Web API. Need a better way to handle this.
+                var types = GetTypes(dlls[i]).Where(type => type.Name != "HelpController").ToList();
                 for (var x = 0; x < types.Count; x++)
                 {
                     var list = GetApiInfoList(types[x]);
-                    apiInfoBase.Apis.AddRange(list);
+                    errors.AddRange(list.Item2);
+                    apiInfoBase.Apis.AddRange(list.Item1);
                 }
                 if (apiInfoBase.Apis.Count() != 0)
                 {
                     apiInfoBaseList.Add(apiInfoBase);
                 }
             }
+            Console.WriteLine("ERRORS");
+            Console.WriteLine("-----------------------------------------");
+            foreach (var error in errors)
+            {
+                
+                Console.WriteLine(error);
+            }
+            Console.WriteLine("-----------------------------------------");
             return apiInfoBaseList;
         }
 

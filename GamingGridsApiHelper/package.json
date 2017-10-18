@@ -4,14 +4,15 @@
   "description": "",
   "main": "build.js",
   "scripts": {
-    "start": "node ./build.js"
+    "start": "node ./build.js",
+    "copy": "node ./copy.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^4.0.2",
     "graphql": "^0.11.7",
-    "js-beautify": "^1.7.4",
-    "prettier": "^1.7.4"
+    "prettier-eslint": "^8.2.1"
   }
 }

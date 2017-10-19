@@ -16,13 +16,13 @@ namespace GamingGridsApiHelper
     public class ApiInfo
     {
         public string Name { get; set; }
+        public string FullName { get; set; }
         public string ControllerName { get; set; }
-        public string MethodName { get; set; }
         public string Url { get; set; }
-        public string Method { get; set; }
-        public Param UrlParam { get; set; }
+        public string HttpVerb { get; set; }
+        public List<Param> UrlParams { get; set; }
         public Param Body { get; set; }
-        public Param UriParam { get; set; }
+        public List<Param> UriParams { get; set; }
         public Param Response { get; set; }
         public ApiInfo()
         {
@@ -63,7 +63,7 @@ namespace GamingGridsApiHelper
         public List<Param> Properties { get; set; }
         public Param(string name, string type = null)
         {
-            Name = name.Substring(0, 1).ToLower() + name.Substring(1);
+            Name = name; // .Substring(0, 1).ToLower() + name.Substring(1);
             Type = type;
         }
     }

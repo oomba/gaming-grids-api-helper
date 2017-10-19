@@ -33,36 +33,62 @@ namespace GamingGridsApiHelper
             return routePrefix;
         }
 
-        public Param GetComplexNewParam(string name, Type type, int currentLevel = 0, int maxLevel = 10)
+        public Type GetListType(Type type)
         {
-            var complexNewParam = new Param(name);
+            Type listType = null;
+            if (type.FullName == "GamingGrids.Processing.Models.Brackets.BracketTeamModel[][]")
+            {
+
+            }
+            foreach (Type interfaceType in type.GetInterfaces())
+            {
+                if (interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition()
+                    == typeof(IList<>))
+                {
+                    listType = interfaceType.GetGenericArguments()[0];
+                    break;
+                }
+            }
+            if (listType == null)
+            {
+                listType = type;
+            }
+            return listType;
+        }
+
+        public Param GetComplexParam(string name, Type type, int currentLevel = 0, int maxLevel = 10)
+        {
+            var param = new Param(name);
             if (type.IsPrimitive || type.Namespace == "System")
             {
-                complexNewParam.Type = type.ToString();
+                param.Type = type.ToString();
             }
-            // TODO
-            else if (type.UnderlyingSystemType.Name == "HttpRequestMessage")
+            else if ((type.UnderlyingSystemType.Name == "HttpRequestMessage") || (type == typeof(System.Web.Http.IHttpActionResult)))
             {
-                complexNewParam.Type = "String";
+                param.Type = "String";
             }
-            else if(type == typeof(System.Web.Http.IHttpActionResult))
+            else if (type == typeof(System.Net.HttpStatusCode))
             {
-                complexNewParam.Type = "String";
-            }
-            else if(type == typeof(System.Net.HttpStatusCode))
-            {
-                complexNewParam.Type = "Number";
+                param.Type = "Number";
             }
             else if (type.UnderlyingSystemType.GetInterface("IEnumerable") != null)
             {
-                complexNewParam.IsList = true;
-                complexNewParam.Properties = GetParams(type, currentLevel, maxLevel);
+                param.IsList = true;
+                var listType = GetListType(type);
+                if (listType.IsPrimitive || listType.Namespace == "System")
+                {
+                    param.Type = listType.UnderlyingSystemType.ToString();
+                }
+                else
+                {
+                    param.Properties = GetParams(listType, currentLevel, maxLevel);
+                }
             }
             else
             {
-                complexNewParam.Properties = GetParams(type, currentLevel, maxLevel);
+                param.Properties = GetParams(type, currentLevel, maxLevel);
             }
-            return complexNewParam;
+            return param;
         }
 
         public List<Param> GetParams(Type type, int currentLevel = 0, int maxLevel = 10)
@@ -74,157 +100,152 @@ namespace GamingGridsApiHelper
                 paramList = new List<Param>();
                 foreach (var prop in type.GetProperties())
                 {
-                    paramList.Add(GetComplexNewParam(prop.Name, prop.PropertyType, currentLevel, maxLevel));
+                    paramList.Add(GetComplexParam(prop.Name, prop.PropertyType, currentLevel, maxLevel));
                 }
             }
             return paramList;
         }
 
-        public Tuple<ApiInfo, List<String>> GetApiInfo(string routePrefix, MethodInfo methodInfo)
+        public List<string> GetUrlParams(string url)
+        {
+            var regex = new Regex("{.*?}");
+            var urlParams = new List<string>();
+            var matches = regex.Matches(url);
+            foreach (var match in matches)
+            {
+                urlParams.Add(match.ToString().Replace("{", "").Replace("}", ""));
+            }
+            return urlParams;
+        }
+
+        public string GetName(string url)
+        {
+            var name = url.Length < 1 ? url : String.Join("", url.Replace("{", "By").Replace("}", "").Split('/').Select(x => x.Length < 1 ? x : x.Substring(0, 1).ToUpper() + x.Substring(1)));
+            return name; // .Substring(0, 1).ToLower() + name.Substring(1);
+        }
+
+        public List<Param> GetUriParams(List<Param> uriParams, ParameterInfo methodParameterInfo)
+        {
+            if (uriParams == null)
+            {
+                uriParams = new List<Param>();
+            }
+            uriParams.Add(GetComplexParam(methodParameterInfo.Name, methodParameterInfo.ParameterType));
+            return uriParams;
+        }
+
+        public Tuple<ApiInfo, List<String>> GetApiInfo(Type type, string routePrefix, MethodInfo methodInfo)
         {
             ApiInfo apiInfo = null;
-            List<string> invalidPaths = new List<string>();
-            var attrs = methodInfo.GetCustomAttributes();            
-            if (attrs.Count() != 0)
+
+            List<string> errors = new List<string>();
+            var methodAttributes = methodInfo.GetCustomAttributes().Where(attr =>
+                attr.GetType() != typeof(System.Runtime.CompilerServices.AsyncStateMachineAttribute)
+                && attr.GetType() != typeof(System.Diagnostics.DebuggerStepThroughAttribute)
+                && attr.GetType() != typeof(System.Web.Http.Description.ApiExplorerSettingsAttribute));
+            var controllerName = methodInfo.DeclaringType.Name.Replace("Controller", "");
+            var routeAttr = methodAttributes.Where(attr => attr.GetType() == typeof(RouteAttribute)).SingleOrDefault();
+            var url = (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api").TrimEnd('/');
+            var urlParams = GetUrlParams(url);
+            apiInfo = new ApiInfo()
             {
-                var controllerName = methodInfo.DeclaringType.Name.Replace("Controller", "");               
-
-                apiInfo = new ApiInfo()
+                Name = GetName(url),
+                FullName = type.UnderlyingSystemType.FullName + "." + methodInfo.Name,
+                ControllerName = controllerName,
+                Url = url
+            };
+            foreach (var methodAttr in methodAttributes.Where(attr => attr.GetType() != typeof(RouteAttribute)))
+            {
+                if (methodAttr.GetType().GetInterfaces().Contains(typeof(IActionHttpMethodProvider)))
                 {
-                    ControllerName = controllerName.Substring(0, 1).ToLower() + controllerName.Substring(1),
-                    MethodName = methodInfo.Name
-                };
-
-                var routeAttr = attrs.Where(attr => attr.GetType() == typeof(RouteAttribute)).Single();
-                apiInfo.Url = (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api");
-                var name = apiInfo.Url.Length < 1 ? apiInfo.Url : String.Join("", apiInfo.Url.Replace("{", "By").Replace("}", "").Split('/').Select(x => x.Length < 1 ? x : x.Substring(0, 1).ToUpper() + x.Substring(1)));
-                apiInfo.Name = name.Substring(0, 1).ToLower() + name.Substring(1);
-
-
-                var regex = new Regex("{.*?}");
-                var urlParams = new List<string>();
-                var matches = regex.Matches(apiInfo.Url);
-                foreach(var match in matches)
-                {
-                    urlParams.Add(match.ToString().Replace("{", "").Replace("}", ""));
+                    apiInfo.HttpVerb = methodAttr.GetType().UnderlyingSystemType.Name.ToUpper().Replace("HTTP", "").Replace("ATTRIBUTE", "");
                 }
-                foreach (var attr in attrs)
+                else if (methodAttr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
                 {
-                    if (attr.GetType() == typeof(RouteAttribute))
-                    {
-                       // Handled above
-                    }
-                    else if (attr.GetType().GetInterfaces().Contains(typeof(IActionHttpMethodProvider)))
-                    {
-                        apiInfo.Method = attr.GetType().UnderlyingSystemType.Name.ToUpper().Replace("HTTP", "").Replace("ATTRIBUTE", "");
-                    }
-                    else if (attr.GetType().UnderlyingSystemType == typeof(System.Web.Http.Description.ResponseTypeAttribute))
-                    {
-                        apiInfo.Response = GetComplexNewParam("response", ((System.Web.Http.Description.ResponseTypeAttribute)attr).ResponseType);
-                    }
-                    else if (attr.GetType() == typeof(System.Runtime.CompilerServices.AsyncStateMachineAttribute) 
-                        || attr.GetType() == typeof(System.Diagnostics.DebuggerStepThroughAttribute) 
-                        || attr.GetType() == typeof(System.Web.Http.Description.ApiExplorerSettingsAttribute))
-                    {
-                        // We don't care about these types...
-                    }
-                    else
-                    {
-                        throw new Exception("Method Attribute not accounted for");
-                    }
-                }
-                foreach (var param in methodInfo.GetParameters())
-                {
-                    var paramAttributes = param.GetCustomAttributes();
-                    if (paramAttributes.Count() == 0)
-                    {
-                        // HACK: FromBody attribute is optional, so we have to use some ugly logic here
-                        // methodInfo.GetParameters().Count() == 1 && 
-                        if (apiInfo.Method == "POST" && !urlParams.Contains(param.Name)) //  !apiInfo.Url.Contains("{"))
-                        {
-                            apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
-                        }
-                        else
-                        {
-                            if (apiInfo.UrlParam == null)
-                            {
-                                apiInfo.UrlParam = new Param("UrlParam")
-                                {
-                                    Properties = new List<Param>()
-                                };
-                            }
-                            apiInfo.UrlParam.Properties.Add(GetComplexNewParam(param.Name, param.ParameterType));
-                        }
-                    }
-                    else
-                    {
-                        foreach (var paramAttribute in paramAttributes)
-                        {
-                            if (paramAttribute.GetType() == typeof(FromBodyAttribute) && apiInfo.Body == null)
-                            {
-                                apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
-                            }
-                            else if (paramAttribute.GetType() == typeof(FromUriAttribute))
-                            {
-                                apiInfo.UriParam = GetComplexNewParam(param.Name, param.ParameterType);
-                            }
-                            else if(apiInfo.Method == "POST" && !urlParams.Contains(param.Name))
-                            {
-                                apiInfo.Body = GetComplexNewParam(param.Name, param.ParameterType);
-                            }
-                            else if (paramAttribute.GetType().Name == "OptionalAttribute")
-                            {
-                                if (apiInfo.UrlParam == null)
-                                {
-                                    apiInfo.UrlParam = new Param("UrlParam")
-                                    {
-                                        Properties = new List<Param>()
-                                    };
-                                }
-                                apiInfo.UrlParam.Properties.Add(GetComplexNewParam(param.Name, param.ParameterType));
-                            }
-                            else
-                            {
-                                throw new Exception("Parameter Attribute not accounted for");
-                            }
-                        }
-                    }
-                }
-
-                if (apiInfo.Response == null)
-                {
-                    apiInfo.Response = GetComplexNewParam("response", methodInfo.ReturnType);
-                }
-
-                var paramCountMatches = true;
-                if(apiInfo.UrlParam != null)
-                {
-                    var urlParamProperties = apiInfo.UrlParam.Properties.Select(x => x.Name.ToLower()).ToList().OrderBy(x => x).ToList();
-                    var urlParamsSorted = urlParams.Select(x => x.ToLower()).OrderBy(x => x.ToLower()).ToList();
-
-                    if(!urlParamProperties.SequenceEqual(urlParamsSorted))
-                    {
-
-                    }
-
-                    if (apiInfo.UrlParam.Properties.Count != urlParams.Count())
-                    {
-                        paramCountMatches = false;
-                    }
+                    apiInfo.Response = GetComplexParam("response", ((System.Web.Http.Description.ResponseTypeAttribute)methodAttr).ResponseType);
                 }
                 else
                 {
-                    if(urlParams.Count() > 0)
-                    {
-                        paramCountMatches = false;
-                    }
-                }
-                if(!paramCountMatches)
-                {
-                    invalidPaths.Add(apiInfo.Name + "-" + apiInfo.ControllerName + " - " + apiInfo.Url);
+                    throw new Exception("Method Attribute not accounted for");
                 }
             }
-            return new Tuple<ApiInfo, List<string>>(apiInfo, invalidPaths);
+            var methodParameters = methodInfo.GetParameters();
+            var bodyParamName = "";
+            for (var i = 0; i < methodParameters.Count(); i++)
+            {
+                var methodParam = methodParameters[i];
+                foreach (var paramAttribute in methodParam.GetCustomAttributes())
+                {
+                    if (paramAttribute.GetType() == typeof(FromBodyAttribute) && apiInfo.Body == null)
+                    {
+                        apiInfo.Body = GetComplexParam(methodParam.Name, methodParam.ParameterType);
+                        bodyParamName = methodParam.Name;
+                    }
+                    else if (paramAttribute.GetType() == typeof(FromUriAttribute))
+                    {
+                        apiInfo.UriParams = GetUriParams(apiInfo.UriParams, methodParam);
+                    }
+                }
+                // If all of this is the case, then it must be the body
+                if (apiInfo.Body == null
+                    && !urlParams.Select(x => x.ToLower()).Contains(methodParam.Name.ToLower())
+                    && (apiInfo.HttpVerb == "POST" || apiInfo.HttpVerb == "PUT")
+                    && methodParam.GetCustomAttributes().Where(param => param.GetType() == typeof(FromUriAttribute)).Count() == 0)
+                {
+                    bodyParamName = methodParam.Name;
+                    apiInfo.Body = GetComplexParam(methodParam.Name, methodParam.ParameterType);
+                }
+            }
+
+            foreach (var methodParam in methodParameters)
+            {
+                var bodyUriAttributes = methodParam.GetCustomAttributes().Where(paramAttribute => (paramAttribute.GetType() == typeof(FromBodyAttribute))
+                    || (paramAttribute.GetType() == typeof(FromUriAttribute)));
+                if (bodyUriAttributes.Count() == 0 && methodParam.Name != bodyParamName)
+                {
+                    if (urlParams.Select(x => x.ToLower()).Contains(methodParam.Name.ToLower()))
+                    {
+                        apiInfo.UrlParams = GetUriParams(apiInfo.UrlParams, methodParam);
+                    }
+                    else
+                    {
+                        apiInfo.UriParams = GetUriParams(apiInfo.UriParams, methodParam);
+                    }
+                }
+            }
+
+            if (((apiInfo.HttpVerb == "POST" || apiInfo.HttpVerb == "PUT") && apiInfo.Body == null) || ((apiInfo.HttpVerb != "POST" && apiInfo.HttpVerb != "PUT") && apiInfo.Body != null))
+            {
+                Console.WriteLine("WARNING: " + apiInfo.FullName + "(" + apiInfo.HttpVerb + ") - A POST should always have a body. A non-POST should never have a body.");
+            }
+
+            if (apiInfo.Response == null)
+            {
+                apiInfo.Response = GetComplexParam("response", methodInfo.ReturnType);
+            }
+
+            if (urlParams.Count() > 0)
+            {
+                // HACK: Checks for missing URL Params caused by being set at the base route. Adds them as strings.
+                if (apiInfo.UrlParams == null)
+                {
+                    errors.Add("ERROR: Missing URL Params - " + apiInfo.FullName);
+                    apiInfo.UrlParams = new List<Param>();
+                }
+                if (apiInfo.UrlParams.Count() != urlParams.Count())
+                {
+                    errors.Add("ERROR: Missing URL Params - " + apiInfo.FullName);
+                }
+                // HACK
+                foreach (var urlParam in urlParams)
+                {
+                    if (!apiInfo.UrlParams.Select(x => x.Name.ToLower()).Contains(urlParam.ToLower()))
+                    {
+                        apiInfo.UrlParams.Add(new Param(urlParam, "String"));
+                    }
+                }
+            }
+            return new Tuple<ApiInfo, List<string>>(apiInfo, errors);
         }
 
         public Tuple<List<ApiInfo>, List<string>> GetApiInfoList(Type type)
@@ -235,21 +256,28 @@ namespace GamingGridsApiHelper
             var routePrefix = GetRoutePrefix(type);
             foreach (var method in methods)
             {
-                var api = GetApiInfo(routePrefix, method);
-                var apiInfo = api.Item1;
-                errors.AddRange(api.Item2);
-                if (apiInfo != null)
+                if (method.ReturnType.UnderlyingSystemType.FullName != "System.Web.Mvc.ActionResult" && type.Name != "HelpController")
                 {
-                    if (apiInfo.Name != null)
+                    var api = GetApiInfo(type, routePrefix, method);
+                    var apiInfo = api.Item1;
+                    errors.AddRange(api.Item2);
+                    if (apiInfo != null)
                     {
-                        apiInfoList.Add(apiInfo);
+                        if (apiInfo.Name != null)
+                        {
+                            apiInfoList.Add(apiInfo);
+                        }
                     }
+                }
+                else
+                {
+                    errors.Add("WARNING: Skipping " + type.Name + "-" + method.Name);
                 }
             }
             return new Tuple<List<ApiInfo>, List<string>>(apiInfoList, errors);
         }
 
-        public List<ApiInfoBase> GetApiInfoList(string[] dlls)
+        public Tuple<List<ApiInfoBase>, List<string>> GetApiInfoList(string[] dlls)
         {
             var apiInfoBaseList = new List<ApiInfoBase>();
             var errors = new List<string>();
@@ -260,8 +288,7 @@ namespace GamingGridsApiHelper
                 {
                     Name = dllName.Substring(0, 1).ToLower() + dllName.Substring(1)
                 };
-                // HACK: Filter out HelpController as it isn't Web API. Need a better way to handle this.
-                var types = GetTypes(dlls[i]).Where(type => type.Name != "HelpController").ToList();
+                var types = GetTypes(dlls[i]);
                 for (var x = 0; x < types.Count; x++)
                 {
                     var list = GetApiInfoList(types[x]);
@@ -273,15 +300,7 @@ namespace GamingGridsApiHelper
                     apiInfoBaseList.Add(apiInfoBase);
                 }
             }
-            Console.WriteLine("ERRORS");
-            Console.WriteLine("-----------------------------------------");
-            foreach (var error in errors)
-            {
-                
-                Console.WriteLine(error);
-            }
-            Console.WriteLine("-----------------------------------------");
-            return apiInfoBaseList;
+            return new Tuple<List<ApiInfoBase>, List<string>>(apiInfoBaseList, errors);
         }
 
         public static string[] GetApiDlls(string dllDirectory, string dllContains)
@@ -306,7 +325,9 @@ namespace GamingGridsApiHelper
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "json"));
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "api"));
                 var dlls = GetApiDlls(dllDirectory, dllContains);
-                var apiInfoList = GetApiInfoList(dlls);
+                var apiInfoListInfo = GetApiInfoList(dlls);
+                var apiInfoList = apiInfoListInfo.Item1;
+                var errors = apiInfoListInfo.Item2;
                 var apiCount = 0;
                 foreach (var apiInfo in apiInfoList)
                 {
@@ -336,6 +357,18 @@ namespace GamingGridsApiHelper
                 }
                 Console.WriteLine("Total APIs: " + apiInfoList.Count());
                 Console.WriteLine("Total API Methods: " + apiCount);
+
+                if (errors.Count() > 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("ERRORS / WARNINGS");
+                    Console.WriteLine("-----------------------------------------");
+                    foreach (var error in errors.OrderBy(x => x))
+                    {
+                        Console.WriteLine(error);
+                    }
+                    Console.WriteLine("-----------------------------------------");
+                }
                 try
                 {
                     var processStartInfo = new ProcessStartInfo

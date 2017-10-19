@@ -314,16 +314,21 @@ namespace GamingGridsApiHelper
             if (Directory.Exists(dllDirectory))
             {
                 var projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                if (Directory.Exists(Path.Combine(projectDirectory, "json")))
-                {
-                    Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
-                }
                 if (Directory.Exists(Path.Combine(projectDirectory, "api")))
                 {
                     Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "api")), File.Delete);
                 }
+                if (Directory.Exists(Path.Combine(projectDirectory, "graphql")))
+                {
+                    Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "graphql")), File.Delete);
+                }
+                if (Directory.Exists(Path.Combine(projectDirectory, "json")))
+                {
+                    Array.ForEach(Directory.GetFiles(Path.Combine(projectDirectory, "json")), File.Delete);
+                }
                 Directory.CreateDirectory(Path.Combine(projectDirectory, "json"));
-                Directory.CreateDirectory(Path.Combine(projectDirectory, "api"));
+                Directory.CreateDirectory(Path.Combine(projectDirectory, "graphql"));
+                Directory.CreateDirectory(Path.Combine(projectDirectory, "json"));
                 var dlls = GetApiDlls(dllDirectory, dllContains);
                 var apiInfoListInfo = GetApiInfoList(dlls);
                 var apiInfoList = apiInfoListInfo.Item1;

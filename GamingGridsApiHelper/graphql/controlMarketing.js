@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.MarketingController.CreateBanner',
     method: 'POST',
-    url: '/api/Platform/Marketing/Banner',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Marketing/Banner',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -32,7 +33,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.MarketingController.DeleteBanner',
     method: 'DELETE',
-    url: '/api/Platform/Marketing/Banner/{bannerId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Marketing/Banner/{bannerId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

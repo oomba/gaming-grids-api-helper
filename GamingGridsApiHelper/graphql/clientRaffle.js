@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.GetMyPrizes',
     method: 'GET',
-    url: '/api/Raffle/my/prizes',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/my/prizes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientRaffleApiRaffleMyPrizesResponse',
@@ -112,7 +112,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.GetTodaysTicketReceived',
     method: 'GET',
-    url: '/api/Raffle/ticket/daily/received',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/ticket/daily/received',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientRaffleApiRaffleTicketDailyReceivedResponse',
@@ -127,7 +128,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.GetTodaysTicket',
     method: 'POST',
-    url: '/api/Raffle/ticket/daily',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/ticket/daily',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientRaffleApiRaffleTicketDailyResponse',
@@ -141,7 +142,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.GetWinnerList',
     method: 'GET',
-    url: '/api/Raffle/winners',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/winners',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientRaffleApiRaffleWinnersResponse',
@@ -248,7 +249,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.ClaimPrize',
     method: 'POST',
-    url: '/api/Raffle/winner/{winnerId}/claimed',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/winner/{winnerId}/claimed',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -271,7 +273,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.RaffleController.GetCurrentRafflePrize',
     method: 'GET',
-    url: '/api/Raffle/prize',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Raffle/prize',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientRaffleApiRafflePrizeResponse',

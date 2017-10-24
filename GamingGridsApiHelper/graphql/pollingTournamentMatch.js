@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentMatchController.Profile',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -1156,7 +1157,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentMatchController.MessageList',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Messaging',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Messaging',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

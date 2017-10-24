@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.NotificationController.UpdateStatus',
     method: 'PUT',
-    url: '/api/Notifications/{notificationId}/Status',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Notifications/{notificationId}/Status',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

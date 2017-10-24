@@ -4,7 +4,7 @@ module.exports = {
   ApiCacheBuildAll: {
     fullName: 'GamingGrids.Api.Control.v2.Controllers.CacheController.BuildAll',
     method: 'GET',
-    url: '/api/Cache/Build/All',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Cache/Build/All',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlCacheApiCacheBuildAllResponse',

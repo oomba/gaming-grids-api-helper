@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateGame',
     method: 'POST',
-    url: '/api/Game',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -142,7 +142,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateGame',
     method: 'PUT',
-    url: '/api/Game/{gameShortCode}',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -188,7 +188,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteGame',
     method: 'DELETE',
-    url: '/api/Game/{gameShortCode}',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -211,7 +211,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateGamePlatformFranchiseTitleState',
     method: 'PUT',
-    url: '/api/Game/{gameShortCode}/platform/{platformCode}/Status',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}/Status',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -248,7 +249,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateModeHearthstoneDeck',
     method: 'POST',
-    url: '/api/Game/mode/{gameTitleModeId}/HearthstoneDeck',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/HearthstoneDeck',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -284,7 +286,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteHearthstoneDeck',
     method: 'DELETE',
-    url: '/api/Game/mode/{gameTitleModeId}/HearthstoneDeck/{deckId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/HearthstoneDeck/{deckId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -312,7 +315,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateModeMap',
     method: 'POST',
-    url: '/api/Game/mode/{gameTitleModeId}/Map',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/Map',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -346,7 +350,8 @@ module.exports = {
   ApiGameModeBygameTitleModeIdMapBymapId: {
     fullName: 'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteMap',
     method: 'DELETE',
-    url: '/api/Game/mode/{gameTitleModeId}/Map/{mapId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/Map/{mapId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -372,7 +377,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.PostCreate',
     method: 'POST',
-    url: '/api/Game/{gameShortCode}/Rules',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Rules',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -408,7 +414,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateRule',
     method: 'PUT',
-    url: '/api/Game/{gameShortCode}/Rules/{ruleId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Rules/{ruleId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -447,7 +454,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteRule',
     method: 'DELETE',
-    url: '/api/Game/{gameShortCode}/Rules/{ruleId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Rules/{ruleId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -473,7 +481,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreatePlatform',
     method: 'POST',
-    url: '/api/Game/Platform',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Platform',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -501,7 +509,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdatePlatform',
     method: 'PUT',
-    url: '/api/Game/platform/{platformCode}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/platform/{platformCode}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -556,7 +565,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeletePlatform',
     method: 'DELETE',
-    url: '/api/Game/Platform/{platformCode}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Platform/{platformCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -579,7 +589,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateFranchise',
     method: 'POST',
-    url: '/api/Game/Franchise',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Franchise',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -608,7 +618,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateFranchise',
     method: 'PUT',
-    url: '/api/Game/Franchise/{franchiseId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Franchise/{franchiseId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -684,7 +695,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteFranchise',
     method: 'DELETE',
-    url: '/api/Game/Franchise/{franchiseId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Franchise/{franchiseId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -707,7 +719,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateTeamSide',
     method: 'POST',
-    url: '/api/Game/{gameShortCode}/Side',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Side',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -739,7 +752,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateTeamSide',
     method: 'PUT',
-    url: '/api/Game/Side/{teamSideId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Side/{teamSideId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -781,7 +795,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteTeamSide',
     method: 'DELETE',
-    url: '/api/Game/Side/{teamSideId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Side/{teamSideId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -804,7 +819,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateDeveloper',
     method: 'POST',
-    url: '/api/Game/Developer',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Developer',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -831,7 +846,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateDeveloper',
     method: 'PUT',
-    url: '/api/Game/Developer/{developerId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Developer/{developerId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -876,7 +892,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteDeveloper',
     method: 'DELETE',
-    url: '/api/Game/Developer/{developerId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Developer/{developerId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -899,7 +916,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreateMode',
     method: 'POST',
-    url: '/api/Game/{gameShortCode}/Mode',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Mode',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -931,7 +949,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdateMode',
     method: 'PUT',
-    url: '/api/Game/Mode/{gameTitleModeId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Mode/{gameTitleModeId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -973,7 +992,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.DeleteMode',
     method: 'DELETE',
-    url: '/api/Game/Mode/{gameTitleModeId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/Mode/{gameTitleModeId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -996,7 +1016,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.CreatePlatformTitle',
     method: 'POST',
-    url: '/api/Game/{gameShortCode}/platform/{platformCode}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1039,7 +1060,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.GameController.UpdatePlatformTitle',
     method: 'PUT',
-    url: '/api/Game/{gameShortCode}/platform/{platformCode}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1263,7 +1285,8 @@ module.exports = {
   ApiGameBygameShortCodePlatformByplatformCodeMetrics: {
     fullName: 'GamingGrids.Api.Control.v2.Controllers.GameController.Snapshots',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}/Platform/{platformCode}/Metrics',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Platform/{platformCode}/Metrics',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.PlatformController.MaintenanceStatus',
     method: 'GET',
-    url: '/api/Platform/Maintenance/Status',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Platform/Maintenance/Status',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

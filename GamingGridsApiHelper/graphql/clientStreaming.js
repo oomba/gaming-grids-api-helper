@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.StreamingController.AddServiceForPlayer',
     method: 'POST',
-    url: '/api/Streaming/Video/Player',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Streaming/Video/Player',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -31,7 +31,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.StreamingController.RemoveServiceFromPlayer',
     method: 'DELETE',
-    url: '/api/Streaming/Video/Player',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Streaming/Video/Player',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -57,7 +57,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.StreamingController.AddServiceToTeam',
     method: 'POST',
-    url: '/api/Streaming/Video/Team/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Streaming/Video/Team/{entityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -91,7 +92,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.StreamingController.RemoveServiceFromTeam',
     method: 'DELETE',
-    url: '/api/Streaming/Video/Team/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Streaming/Video/Team/{entityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

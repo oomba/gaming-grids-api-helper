@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.SearchGames',
     method: 'GET',
-    url: '/api/Game/title/Search',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/title/Search',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -374,7 +374,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.AllProfiles',
     method: 'GET',
-    url: '/api/Game',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientGameApiGameResponse',
@@ -524,7 +524,7 @@ module.exports = {
   ApiGameBygameShortCode: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.GameController.Profile',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -689,7 +689,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.PlatformGameProfile',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}/Platform/{platformCode}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/Platform/{platformCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -898,7 +899,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetFranchises',
     method: 'GET',
-    url: '/api/Game/Franchises',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Franchises',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientGameApiGameFranchisesResponse',
@@ -954,7 +955,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetFranchise',
     method: 'GET',
-    url: '/api/Game/Franchise/{franchiseId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Franchise/{franchiseId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1017,7 +1019,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetPlatforms',
     method: 'GET',
-    url: '/api/Game/Platforms',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Platforms',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientGameApiGamePlatformsResponse',
@@ -1054,7 +1056,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetPlatforms',
     method: 'GET',
-    url: '/api/Game/Platform/{platformCode}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Platform/{platformCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1098,7 +1101,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.SearchGames',
     method: 'GET',
-    url: '/api/Game/Search',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Search',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientGameApiGameSearchResponse',
@@ -1293,7 +1296,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.SearchGames',
     method: 'GET',
-    url: '/api/Game/Search/{platformCode}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Search/{platformCode}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1502,7 +1506,7 @@ module.exports = {
       'GamingGrids.Api.Client.v2.Controllers.GameController.AssociateToPlayer',
     method: 'POST',
     url:
-      '/api/Game/{gameShortCode}/platform/{platformCode}/Player/{entityName}',
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}/Player/{entityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1548,7 +1552,7 @@ module.exports = {
       'GamingGrids.Api.Client.v2.Controllers.GameController.DisassociateFromPlayer',
     method: 'DELETE',
     url:
-      '/api/Game/{gameShortCode}/platform/{platformCode}/Player/{entityName}',
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}/Player/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1577,7 +1581,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.AssociateToTeam',
     method: 'POST',
-    url: '/api/Game/{gameShortCode}/platform/{platformCode}/Team/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}/Team/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1606,7 +1611,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.DisassociateFromTeam',
     method: 'DELETE',
-    url: '/api/Game/{gameShortCode}/platform/{platformCode}/Team/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/platform/{platformCode}/Team/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1635,7 +1641,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleMaps',
     method: 'GET',
-    url: '/api/Game/mode/{gameTitleModeId}/maps',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/maps',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1673,7 +1680,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleModeHearthstoneDecks',
     method: 'GET',
-    url: '/api/Game/mode/{gameTitleModeId}/HearthstoneDecks',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/mode/{gameTitleModeId}/HearthstoneDecks',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1721,7 +1729,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleRules',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}/rules',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/rules',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1760,7 +1769,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleModes',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}/modes',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/modes',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1796,7 +1806,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleMode',
     method: 'GET',
-    url: '/api/Game/modes/{gameTitleModeId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/modes/{gameTitleModeId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1830,7 +1841,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GameTitleRule',
     method: 'GET',
-    url: '/api/Game/{gameShortCode}/rules/{ruleId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/{gameShortCode}/rules/{ruleId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1871,7 +1883,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetDevelopers',
     method: 'GET',
-    url: '/api/Game/Developers',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Developers',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientGameApiGameDevelopersResponse',
@@ -1898,7 +1910,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.GameController.GetDeveloper',
     method: 'GET',
-    url: '/api/Game/Developer/{developerId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Game/Developer/{developerId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

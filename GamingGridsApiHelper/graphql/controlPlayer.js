@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlayerController.UpdatePlayerProfile',
     method: 'PUT',
-    url: '/api/Player/{entityName}/profile',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Player/{entityName}/profile',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -78,7 +79,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlayerController.CanPlayerCreateTournaments',
     method: 'GET',
-    url: '/api/Player/{entityName}/Tournament/Allowed',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Player/{entityName}/Tournament/Allowed',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -102,7 +104,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlayerController.AdminChangePlayerPassword',
     method: 'PUT',
-    url: '/api/Player/{entityName}/ChangePassword',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Player/{entityName}/ChangePassword',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -133,7 +136,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlayerController.AddSteamIdToPlayer',
     method: 'PUT',
-    url: '/api/Player/{entityName}/Steam',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Player/{entityName}/Steam',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -167,7 +171,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlayerController.AddTournamentPolicyToPlayer',
     method: 'PUT',
-    url: '/api/Player/{entityName}/TournamentPolicy',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Player/{entityName}/TournamentPolicy',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

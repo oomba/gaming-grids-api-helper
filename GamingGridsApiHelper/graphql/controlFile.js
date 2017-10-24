@@ -4,7 +4,7 @@ module.exports = {
   ApiFileUpload: {
     fullName: 'GamingGrids.Api.Control.v2.Controllers.FileController.Upload',
     method: 'POST',
-    url: '/api/File/Upload',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/File/Upload',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlFileApiFileUploadResponse',

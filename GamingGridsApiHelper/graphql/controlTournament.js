@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.CreateTournament',
     method: 'POST',
-    url: '/api/Tournament',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -277,7 +277,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateTournament',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -559,7 +560,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.MoveQualiferToPlayoff',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/Qualifier/Playoff',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Qualifier/Playoff',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -584,7 +586,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.RescoreQualifierParticipant',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Qualifier/{entityName}/Rescore',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Qualifier/{entityName}/Rescore',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -625,7 +628,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateParticipantCheckin',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Participant/{entityName}/Checkin',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Participant/{entityName}/Checkin',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -662,7 +666,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdatePredefinedStreamedMatches',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Stream/Predefined',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Stream/Predefined',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -702,7 +707,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.PromoteEntityOnStandbyList',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/StandBy/Promote',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/StandBy/Promote',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -739,7 +745,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.SendTournamentGroupSummaryEmails',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/send/summary/emails',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/send/summary/emails',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -764,7 +771,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateParticipantQualifier',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Participant/{entityName}/Qualifier',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Participant/{entityName}/Qualifier',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -804,7 +812,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateParticipantQualifierList',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Participant/Qualifiers',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Participant/Qualifiers',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -842,7 +851,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DeleteTournament',
     method: 'DELETE',
-    url: '/api/Tournament/{tournamentId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -865,7 +875,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateIsPublished',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Publish',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Publish',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -897,7 +908,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.CreateTournamentAdministrator',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/Administrator',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Administrator',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -930,7 +942,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DeleteTournamentAdministrator',
     method: 'DELETE',
-    url: '/api/Tournament/{tournamentId}/Administrator/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Administrator/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -958,7 +971,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DelayTenMinutes',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Schedule/Delay/{minutes}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Schedule/Delay/{minutes}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -986,7 +1000,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.CreateAnnouncement',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/Announcement',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Announcement',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1019,7 +1034,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.RecordGroupTournamentScore',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/participant/{entityid}/score/{score}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/participant/{entityid}/score/{score}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1049,7 +1065,7 @@ module.exports = {
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DeleteGroupTournamentScore',
     method: 'DELETE',
     url:
-      '/api/Tournament/{tournamentId}/participant/{entityid}/score/{scoreId}',
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/participant/{entityid}/score/{scoreId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1078,7 +1094,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.GetGroupParticipantStatus',
     method: 'GET',
-    url: '/api/Tournament/{tournamentId}/Participant/Status',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Participant/Status',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -1161,7 +1178,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DeleteAnnouncement',
     method: 'DELETE',
-    url: '/api/Tournament/{tournamentId}/Announcement/{announcementId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Announcement/{announcementId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1189,7 +1207,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.BracketSeedingInformation',
     method: 'GET',
-    url: '/api/Tournament/{tournamentId}/Bracket/Seeding',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Bracket/Seeding',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1224,7 +1243,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.GetChallengeStatistics',
     method: 'GET',
-    url: '/api/Tournament/challenge/statistics',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/challenge/statistics',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlTournamentApiTournamentChallengeStatisticsResponse',
@@ -1254,7 +1274,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateBracketSeeding',
     method: 'PUT',
-    url: '/api/Tournament/{tournamentId}/Bracket/Seeding',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Bracket/Seeding',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1288,7 +1309,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.PostGoLive',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/Status/Live',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Status/Live',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1312,7 +1334,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.AutoFillMatchPlayers',
     method: 'POST',
-    url: '/api/Tournament/{tournamentId}/Matches/AutoFill',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Matches/AutoFill',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1337,7 +1360,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.Leave',
     method: 'DELETE',
-    url: '/api/Tournament/{tournamentId}/Participant/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/{tournamentId}/Participant/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1365,7 +1389,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.CreateTrophyGroup',
     method: 'POST',
-    url: '/api/Tournament/TrophyGroup',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/TrophyGroup',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1393,7 +1418,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.UpdateTrophyGroup',
     method: 'PUT',
-    url: '/api/Tournament/TrophyGroup/{trophyGroupId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/TrophyGroup/{trophyGroupId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -1431,7 +1457,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentController.DeleteTrophyGroup',
     method: 'DELETE',
-    url: '/api/Tournament/TrophyGroup/{trophyGroupId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/TrophyGroup/{trophyGroupId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

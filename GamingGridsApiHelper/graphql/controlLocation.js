@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LocationController.CreateLocation',
     method: 'POST',
-    url: '/api/Location',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Location',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -98,7 +98,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LocationController.UpdateLocation',
     method: 'PUT',
-    url: '/api/Location/{locationId}',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Location/{locationId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -201,7 +201,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LocationController.DeleteLocation',
     method: 'POST',
-    url: '/api/Location/{locationId}',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Location/{locationId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

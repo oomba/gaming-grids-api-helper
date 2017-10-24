@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.NotificationsController.List',
     method: 'GET',
-    url: '/api/Notifications',
+    url: 'http://t2w.polling.v2.dev6.gaminggrids.com/api/Notifications',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

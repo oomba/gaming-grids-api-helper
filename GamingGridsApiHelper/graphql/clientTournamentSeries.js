@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TournamentSeriesController.GetSeriesList',
     method: 'GET',
-    url: '/api/Tournament/Series',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Tournament/Series',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientTournamentSeriesApiTournamentSeriesResponse',
@@ -255,7 +255,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TournamentSeriesController.GetTournamentSeries',
     method: 'GET',
-    url: '/api/Tournament/Series/{seriesId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Tournament/Series/{seriesId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

@@ -1,7 +1,9 @@
 const fs = require('fs-extra')
+const path = require('path')
 
-let source = 'C:\\projects\\GamingGridsApiHelper\\GamingGridsApiHelper\\graphql'
-let destination = 'C:\\projects\\gaming-grids-graphql\\src\\types'
+let projectsPath = path.join(__dirname, '../../')
+let source = path.join(__dirname, 'graphql')
+let destination = path.join(projectsPath, 'gaming-grids-graphql', 'src', 'types')
 
 fs.copy(source, destination, function (err) {
     if (err){
@@ -11,8 +13,8 @@ fs.copy(source, destination, function (err) {
     console.log('Copy completed!')
 })
 
-source = 'C:\\projects\\GamingGridsApiHelper\\GamingGridsApiHelper\\api'
-destination = 'C:\\projects\\gaming-grids-spa\\src\\api'
+source = path.join(__dirname, 'api')
+destination = path.join(projectsPath, 'gaming-grids-spa', 'src', 'api')
 
 fs.copy(source, destination, function (err) {
     if (err){

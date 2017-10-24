@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.GetTransactionProvider',
     method: 'GET',
-    url: '/api/Wallet/Transaction/Providers',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/Transaction/Providers',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientWalletApiWalletTransactionProvidersResponse',
@@ -64,7 +65,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.GetTransactionSkrillBegin',
     method: 'POST',
-    url: '/api/Wallet/Transaction/skrill/begin',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/Transaction/skrill/begin',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -92,7 +94,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.PaypalStatus',
     method: 'POST',
-    url: '/api/Wallet/paypal/payment',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/paypal/payment',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -127,7 +129,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.GetTransactionEaclBegin',
     method: 'POST',
-    url: '/api/Wallet/transaction/ekashu/hashcode',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/transaction/ekashu/hashcode',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -156,7 +159,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.GetTransactionEaclBegin',
     method: 'POST',
-    url: '/api/Wallet/Transaction/eacl/begin',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/Transaction/eacl/begin',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -187,7 +191,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.HonorGiftCertificate',
     method: 'POST',
-    url: '/api/Wallet/transaction/eacl/giftcertificate/{code}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/transaction/eacl/giftcertificate/{code}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -211,7 +216,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.GetTransactionList',
     method: 'GET',
-    url: '/api/Wallet/Transactions',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/Transactions',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -280,7 +285,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.WalletController.WithdrawMoney',
     method: 'POST',
-    url: '/api/Wallet/Withdraw',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Wallet/Withdraw',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

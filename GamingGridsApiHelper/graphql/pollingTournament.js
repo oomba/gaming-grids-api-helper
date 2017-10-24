@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentController.GetIsBracketUpdated',
     method: 'GET',
-    url: '/api/Tournament/{TournamentId}/Bracket/Updated',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/{TournamentId}/Bracket/Updated',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -40,7 +41,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentController.GetBrackets',
     method: 'GET',
-    url: '/api/Tournament/{TournamentId}/Bracket',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/{TournamentId}/Bracket',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -76,13 +78,13 @@ module.exports = {
                     name:
                       'pollingTournamentApiTournamentByTournamentIdBracketResponseteamsResponse',
                     fields: {
-                      Length: { type: graphql.GraphQLFloat },
                       LongLength: { type: graphql.GraphQLFloat },
-                      Rank: { type: graphql.GraphQLFloat },
-                      SyncRoot: { type: graphql.GraphQLString },
-                      IsReadOnly: { type: graphql.GraphQLBoolean },
                       IsFixedSize: { type: graphql.GraphQLBoolean },
-                      IsSynchronized: { type: graphql.GraphQLBoolean }
+                      IsReadOnly: { type: graphql.GraphQLBoolean },
+                      IsSynchronized: { type: graphql.GraphQLBoolean },
+                      SyncRoot: { type: graphql.GraphQLString },
+                      Length: { type: graphql.GraphQLFloat },
+                      Rank: { type: graphql.GraphQLFloat }
                     }
                   })
                 )
@@ -100,7 +102,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentController.GetLeagueMatchOpponent',
     method: 'GET',
-    url: '/api/Tournament/{TournamentId}/League/Play/{participantId}',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/{TournamentId}/League/Play/{participantId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -144,7 +147,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentController.UnresolvedAssistanceList',
     method: 'GET',
-    url: '/api/Tournament/{TournamentId}/Assistance/Unresolved',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/{TournamentId}/Assistance/Unresolved',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -187,7 +191,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TournamentController.Profile',
     method: 'GET',
-    url: '/api/Tournament/{TournamentId}',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Tournament/{TournamentId}',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

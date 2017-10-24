@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.ChallengeController.GetIsCancelled',
     method: 'GET',
-    url: '/api/Challenge/cancelled/{id}',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Challenge/cancelled/{id}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -29,7 +30,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.ChallengeController.GetMyNextOffer',
     method: 'GET',
-    url: '/api/Challenge/My/Offer',
+    url: 'http://t2w.polling.v2.dev6.gaminggrids.com/api/Challenge/My/Offer',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingChallengeApiChallengeMyOfferResponse',
@@ -71,7 +72,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.ChallengeController.GetMyNextAcceptedOffer',
     method: 'GET',
-    url: '/api/Challenge/My/Offer/Accepted',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Challenge/My/Offer/Accepted',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingChallengeApiChallengeMyOfferAcceptedResponse',

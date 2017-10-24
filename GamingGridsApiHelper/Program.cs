@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace GamingGridsApiHelper
 {
@@ -12,9 +13,9 @@ namespace GamingGridsApiHelper
             //Application.Run(new Form1());
             try
             {
-                var dllLocation = @"C:\Projects\Tournament Platform - Server";
+                var dllLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "Tournament Platform - Server");
                 var filter = "GamingGrids.Api.";
-                new APIHelper(dllLocation, filter);
+                var apiHelper = new APIHelper(dllLocation, filter);
             }
             catch(Exception ex)
             {

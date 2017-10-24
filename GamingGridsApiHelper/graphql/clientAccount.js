@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AccountController.EmailValidation',
     method: 'POST',
-    url: '/api/Account/Email',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Account/Email',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -35,7 +35,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AccountController.EmailRegister',
     method: 'POST',
-    url: '/api/Account/Email/Register/{token}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Account/Email/Register/{token}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -112,7 +113,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AccountController.EmailConfirmation',
     method: 'GET',
-    url: '/api/Account/Email/Confirmation/{token}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Account/Email/Confirmation/{token}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -158,7 +160,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AccountController.AccountConfirmation',
     method: 'POST',
-    url: '/api/Account/Confirmation/{token}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Account/Confirmation/{token}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -189,7 +192,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AccountController.CreateUser',
     method: 'POST',
-    url: '/api/Account',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Account',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

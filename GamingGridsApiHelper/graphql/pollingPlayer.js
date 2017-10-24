@@ -4,7 +4,7 @@ module.exports = {
   ApiPlayerMuut: {
     fullName: 'GamingGrids.Api.Polling.v2.Controllers.PlayerController.Muut',
     method: 'GET',
-    url: '/api/Player/Muut',
+    url: 'http://t2w.polling.v2.dev6.gaminggrids.com/api/Player/Muut',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMuutResponse',
@@ -27,7 +27,8 @@ module.exports = {
   ApiPlayerMyPermissionsAdmin: {
     fullName: 'GamingGrids.Api.Polling.v2.Controllers.PlayerController.IsAdmin',
     method: 'GET',
-    url: '/api/Player/My/Permissions/Admin',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Player/My/Permissions/Admin',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMyPermissionsAdminResponse',
@@ -42,7 +43,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.PlayerController.LastMatchId',
     method: 'GET',
-    url: '/api/Player/My/Tournaments/Match/LastId',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Player/My/Tournaments/Match/LastId',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMyTournamentsMatchLastIdResponse',
@@ -57,7 +59,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.PlayerController.MyActiveMatch',
     method: 'GET',
-    url: '/api/Player/My/Tournaments/Match/Active',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Player/My/Tournaments/Match/Active',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMyTournamentsMatchActiveResponse',
@@ -89,7 +92,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.PlayerController.MyTournamentNeedsCheckin',
     method: 'GET',
-    url: '/api/Player/My/Tournaments/checkin/needed',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Player/My/Tournaments/checkin/needed',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMyTournamentsCheckinNeededResponse',

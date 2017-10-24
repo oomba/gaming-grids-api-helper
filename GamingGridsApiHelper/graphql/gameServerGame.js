@@ -6,7 +6,7 @@ module.exports = {
       'GamingGrids.Api.GameServer.v1.Controllers.GameController.UpdateNickname',
     method: 'POST',
     url:
-      '/api/Game/{GameShortCode}/Platform/{PlatformShortCode}/Player/{playerIdentifier}/UpdateNickname',
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Game/{GameShortCode}/Platform/{PlatformShortCode}/Player/{playerIdentifier}/UpdateNickname',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -45,7 +45,7 @@ module.exports = {
       'GamingGrids.Api.GameServer.v1.Controllers.GameController.ConfirmPlayer',
     method: 'POST',
     url:
-      '/api/Game/{GameShortCode}/Platform/{PlatformShortCode}/Player/ConfirmPlayer',
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Game/{GameShortCode}/Platform/{PlatformShortCode}/Player/ConfirmPlayer',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

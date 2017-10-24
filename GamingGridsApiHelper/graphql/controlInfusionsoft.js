@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.InfusionsoftController.GetAuthorizationCode',
     method: 'GET',
-    url: '/api/Infusionsoft/authorize',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Infusionsoft/authorize',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

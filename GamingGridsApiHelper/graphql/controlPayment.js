@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PaymentController.SkrillStatus',
     method: 'POST',
-    url: '/api/Payment/Skrill/Status',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Payment/Skrill/Status',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -36,7 +36,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PaymentController.EaclStatus',
     method: 'POST',
-    url: '/api/Payment/eacl/Success',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Payment/eacl/Success',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

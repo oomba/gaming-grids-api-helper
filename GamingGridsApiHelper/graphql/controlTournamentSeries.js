@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentSeriesController.CreateSeries',
     method: 'POST',
-    url: '/api/Tournament/Series',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/Series',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -36,7 +36,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentSeriesController.UpdateSeries',
     method: 'PUT',
-    url: '/api/Tournament/Series/{seriesId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/Series/{seriesId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -75,7 +76,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.TournamentSeriesController.UpdateSeriesState',
     method: 'PUT',
-    url: '/api/Tournament/Series/{seriesId}/state/{stateId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Tournament/Series/{seriesId}/state/{stateId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

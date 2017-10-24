@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.PlatformController.EndpointConfiguration',
     method: 'GET',
-    url: '/api/Platform/EndpointConfiguration',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Platform/EndpointConfiguration',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'gameServerPlatformApiPlatformEndpointConfigurationResponse',

@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.LocationController.GetLocation',
     method: 'GET',
-    url: '/api/Location/{locationId}',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Location/{locationId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -88,7 +88,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.LocationController.GetLocationsBySearch',
     method: 'GET',
-    url: '/api/Location/Search',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Location/Search',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -187,7 +187,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.LocationController.GetLocationsByRegion',
     method: 'GET',
-    url: '/api/Location/byRegion',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Location/byRegion',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientLocationApiLocationByRegionResponse',

@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.UpdateMaintenanceMode',
     method: 'PUT',
-    url: '/api/Platform/Maintenance',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Maintenance',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -31,7 +31,8 @@ module.exports = {
   ApiPlatformAdministrator: {
     fullName: 'GamingGrids.Api.Control.v2.Controllers.PlatformController.List',
     method: 'GET',
-    url: '/api/Platform/Administrator',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Administrator',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlPlatformApiPlatformAdministratorResponse',
@@ -73,7 +74,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.CreateAdministrator',
     method: 'POST',
-    url: '/api/Platform/Administrator',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Administrator',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -100,7 +102,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.DeleteAdministrator',
     method: 'DELETE',
-    url: '/api/Platform/Administrator/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Administrator/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -124,7 +127,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.Snapshots',
     method: 'GET',
-    url: '/api/Platform/Metrics',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Metrics',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -193,7 +196,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.GetConfiguration',
     method: 'GET',
-    url: '/api/Platform/Configuration',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Configuration',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlPlatformApiPlatformConfigurationResponse',
@@ -241,7 +245,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.GetConfigRaffleAvailable',
     method: 'GET',
-    url: '/api/Platform/Configuration/RaffleAvailable',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Configuration/RaffleAvailable',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlPlatformApiPlatformConfigurationRaffleAvailableResponse',
@@ -256,7 +261,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.SaveConfiguration',
     method: 'PUT',
-    url: '/api/Platform/Configuration',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Configuration',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -305,7 +311,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.GetFeatureTournamentPolicyList',
     method: 'GET',
-    url: '/api/Platform/Feature/Tournament/PolicyList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Feature/Tournament/PolicyList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlPlatformApiPlatformFeatureTournamentPolicyListResponse',
@@ -364,7 +371,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.UpdateFeatureTournamentPolicy',
     method: 'PUT',
-    url: '/api/Platform/Feature/Tournament/PolicyList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Feature/Tournament/PolicyList',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -423,7 +431,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.GetFeatureTournamentPolicyAssignedList',
     method: 'GET',
-    url: '/api/Platform/Feature/Tournament/Policy/{policyId}/AssignedList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Feature/Tournament/Policy/{policyId}/AssignedList',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -473,7 +482,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PlatformController.GetLogging',
     method: 'GET',
-    url: '/api/Platform/Logging',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Platform/Logging',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

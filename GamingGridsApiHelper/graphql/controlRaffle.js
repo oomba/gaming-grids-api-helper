@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.ProcessTodayRaffle',
     method: 'GET',
-    url: '/api/Raffle/process',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/process',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlRaffleApiRaffleProcessResponse',
@@ -19,7 +19,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.GetWinnerList',
     method: 'GET',
-    url: '/api/Raffle/winners',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/winners',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlRaffleApiRaffleWinnersResponse',
@@ -126,7 +126,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.GetRafflePrizes',
     method: 'GET',
-    url: '/api/Raffle/prizes',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/prizes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlRaffleApiRafflePrizesResponse',
@@ -164,7 +164,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.AwardRafflePrize',
     method: 'POST',
-    url: '/api/Raffle/winner/{winnerId}/awarded',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/winner/{winnerId}/awarded',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -187,7 +188,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.CreateRafflePrize',
     method: 'POST',
-    url: '/api/Raffle/prize',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/prize',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -217,7 +218,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.RaffleController.DeleteRafflePrize',
     method: 'DELETE',
-    url: '/api/Raffle/prize/{prizeId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Raffle/prize/{prizeId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

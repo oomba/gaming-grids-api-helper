@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetPlayerRealBalance',
     method: 'GET',
-    url: '/api/Wallet/Balance/Real/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Balance/Real/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -29,7 +30,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetPlayerVirtualBalance',
     method: 'GET',
-    url: '/api/Wallet/Balance/virtual/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Balance/virtual/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -53,7 +55,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.CreateTransaction',
     method: 'POST',
-    url: '/api/Wallet/Transaction/{entityName}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Transaction/{entityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -92,7 +95,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.DeleteTransaction',
     method: 'DELETE',
-    url: '/api/Wallet/Transaction/{transId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Transaction/{transId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -116,7 +120,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetTransactionList',
     method: 'GET',
-    url: '/api/Wallet/Transactions',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Transactions',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -185,7 +189,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetTransactionDetailReporting',
     method: 'GET',
-    url: '/api/Wallet/Transactions/reporting/details',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Transactions/reporting/details',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -243,7 +248,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetTransactionFeesReporting',
     method: 'GET',
-    url: '/api/Wallet/Transactions/reporting/fees',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/Transactions/reporting/fees',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -292,7 +298,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetTransactionTypeList',
     method: 'GET',
-    url: '/api/Wallet/TransactionTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlWalletApiWalletTransactionTypesResponse',
@@ -319,7 +326,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.CreateTransactionType',
     method: 'POST',
-    url: '/api/Wallet/TransactionType',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionType',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -356,7 +364,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.DeleteTransactionType',
     method: 'DELETE',
-    url: '/api/Wallet/TransactionType/{typeId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionType/{typeId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -379,7 +388,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.GetTransactionProviderList',
     method: 'GET',
-    url: '/api/Wallet/TransactionProviders',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionProviders',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlWalletApiWalletTransactionProvidersResponse',
@@ -418,7 +428,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.CreateTransactionProvider',
     method: 'POST',
-    url: '/api/Wallet/TransactionProvider',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionProvider',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -473,7 +484,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.WalletController.DeleteTransactionProvider',
     method: 'DELETE',
-    url: '/api/Wallet/TransactionProvider/{providerId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Wallet/TransactionProvider/{providerId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

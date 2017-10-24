@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.WalletController.GetPlayerRealBalance',
     method: 'GET',
-    url: '/api/Wallet/Balance/Real',
+    url: 'http://t2w.polling.v2.dev6.gaminggrids.com/api/Wallet/Balance/Real',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingWalletApiWalletBalanceRealResponse',
@@ -20,7 +20,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.WalletController.GetPlayerVirtualBalance',
     method: 'GET',
-    url: '/api/Wallet/Balance/virtual',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Wallet/Balance/virtual',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingWalletApiWalletBalanceVirtualResponse',

@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.SupportController.ContactSupport',
     method: 'POST',
-    url: '/api/Support/Contact',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Support/Contact',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -33,7 +33,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.SupportController.SendFeedback',
     method: 'undefined',
-    url: '/api/Support/Player/Feedback/Report',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Support/Player/Feedback/Report',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(

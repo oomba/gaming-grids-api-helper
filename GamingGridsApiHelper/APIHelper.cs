@@ -145,11 +145,12 @@ namespace GamingGridsApiHelper
                 && attr.GetType() != typeof(System.Web.Http.Description.ApiExplorerSettingsAttribute));
             var controllerName = methodInfo.DeclaringType.Name.Replace("Controller", "");
             var routeAttr = methodAttributes.Where(attr => attr.GetType() == typeof(RouteAttribute)).SingleOrDefault();
-            var url = (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api").TrimEnd('/');
+            var url = "http://t2w." + type.Assembly.GetName().Name.Replace("GamingGrids.Api.", "").ToLower() + ".dev6.gaminggrids.com/" + (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api").TrimEnd('/');
+            var shortUrl = (routePrefix + "/" + ((RouteAttribute)routeAttr).Template).Replace("API", "api").TrimEnd('/');
             var urlParams = GetUrlParams(url);
             apiInfo = new ApiInfo()
             {
-                Name = GetName(url),
+                Name = GetName(shortUrl),
                 FullName = type.UnderlyingSystemType.FullName + "." + methodInfo.Name,
                 ControllerName = controllerName,
                 Url = url
@@ -283,7 +284,13 @@ namespace GamingGridsApiHelper
             var errors = new List<string>();
             for (var i = 0; i < dlls.Length; i++)
             {
-                var dllName = dlls[i].Split('\\').Last().Replace("GamingGrids.Api.", "").Replace(".v2.dll", "").Replace(".v1.dll", "");
+                var dllName = "";
+                var delimiter = '\\';
+                if(dlls[i].Contains("/"))
+                {
+                    delimiter = '/';
+                }
+                dllName = dlls[i].Split(delimiter).Last().Replace("GamingGrids.Api.", "").Replace(".v2.dll", "").Replace(".v1.dll", "");
                 var apiInfoBase = new ApiInfoBase()
                 {
                     Name = dllName.Substring(0, 1).ToLower() + dllName.Substring(1)
@@ -306,7 +313,8 @@ namespace GamingGridsApiHelper
         public static string[] GetApiDlls(string dllDirectory, string dllContains)
         {
             var dlls = Directory.GetFiles(dllDirectory, "*.dll", SearchOption.AllDirectories);
-            return dlls.Where(dll => dll.Contains("bin") && Path.GetFileName(dll).Contains(dllContains)).ToArray();
+            dlls = dlls.Where(dll => dll.Contains("bin") && Path.GetFileName(dll).Contains(dllContains)).ToArray();
+            return dlls;
         }
 
         public APIHelper(string dllDirectory, string dllContains)
@@ -376,18 +384,18 @@ namespace GamingGridsApiHelper
                 }
                 try
                 {
-                    var processStartInfo = new ProcessStartInfo
-                    {
-                        FileName = "cmd",
-                        RedirectStandardInput = true,
-                        WorkingDirectory = projectDirectory,
-                        UseShellExecute = false
-                    };
-                    var process = Process.Start(processStartInfo);
-                    process.StandardInput.WriteLine("npm run start & exit");
-                    process.WaitForExit();
-                    Console.WriteLine("Complete!");
-                    Console.ReadLine();
+                    //var processStartInfo = new ProcessStartInfo
+                    //{
+                    //    FileName = "cmd",
+                    //    RedirectStandardInput = true,
+                    //    WorkingDirectory = projectDirectory,
+                    //    UseShellExecute = false
+                    //};
+                    //var process = Process.Start(processStartInfo);
+                    //process.StandardInput.WriteLine("npm run start & exit");
+                    //process.WaitForExit();
+                    //Console.WriteLine("Complete!");
+                    //Console.ReadLine();
                 }
                 catch (Exception ex)
                 {

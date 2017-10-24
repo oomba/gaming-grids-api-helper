@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GetRosterRoles',
     method: 'GET',
-    url: '/api/Lookups/RosterRoles',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/RosterRoles',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsRosterRolesResponse',
@@ -30,7 +30,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GetSiteCurrency',
     method: 'GET',
-    url: '/api/Lookups/SiteCurrency',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/SiteCurrency',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsSiteCurrencyResponse',
@@ -45,7 +45,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GetDefaultXperiencePoints',
     method: 'GET',
-    url: '/api/Lookups/DefaultXperiencePoints',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/DefaultXperiencePoints',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsDefaultXperiencePointsResponse',
@@ -72,7 +73,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GetXperiencePoints',
     method: 'GET',
-    url: '/api/Lookups/XperiencePoints',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/XperiencePoints',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsXperiencePointsResponse',
@@ -87,7 +89,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GetLolValidationPrefix',
     method: 'GET',
-    url: '/api/Lookups/LolValidationPrefix',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/LolValidationPrefix',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsLolValidationPrefixResponse',
@@ -102,7 +105,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.RegistrationRegionRestrictionTypeList',
     method: 'GET',
-    url: '/api/Lookups/RegistrationRegionRestrictionTypeList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/RegistrationRegionRestrictionTypeList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name:
@@ -129,7 +133,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.RegistrationCountryRestrictionTypeList',
     method: 'GET',
-    url: '/api/Lookups/RegistrationCountryRestrictionTypeList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/RegistrationCountryRestrictionTypeList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name:
@@ -156,7 +161,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.FileStorageTypeList',
     method: 'GET',
-    url: '/api/Lookups/FileStorageTypeList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/FileStorageTypeList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsFileStorageTypeListResponse',
@@ -182,7 +188,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.EmailSubjectist',
     method: 'GET',
-    url: '/api/Lookups/EmailSubjectList',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/EmailSubjectList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsEmailSubjectListResponse',
@@ -207,7 +214,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.CountryList',
     method: 'GET',
-    url: '/api/Lookups/CountryList',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/CountryList',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsCountryListResponse',
@@ -239,7 +246,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.StateList',
     method: 'GET',
-    url: '/api/Lookups/StateList/{countryId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/StateList/{countryId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -277,7 +285,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.QualifierTieBreakerTypes',
     method: 'GET',
-    url: '/api/Lookups/QualifierTieBreakerTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/QualifierTieBreakerTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsQualifierTieBreakerTypesResponse',
@@ -306,7 +315,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.TournamentPrizeFundingTypes',
     method: 'GET',
-    url: '/api/Lookups/TournamentPrizeFundingTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/TournamentPrizeFundingTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsTournamentPrizeFundingTypesResponse',
@@ -332,7 +342,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.TournamentSeedingTypes',
     method: 'GET',
-    url: '/api/Lookups/TournamentSeedingTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/TournamentSeedingTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsTournamentSeedingTypesResponse',
@@ -358,7 +369,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.TournamentPairingTypes',
     method: 'GET',
-    url: '/api/Lookups/TournamentPairingTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/TournamentPairingTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsTournamentPairingTypesResponse',
@@ -384,7 +396,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.StreamingServices',
     method: 'GET',
-    url: '/api/Lookups/StreamingServices',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/StreamingServices',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsStreamingServicesResponse',
@@ -410,7 +423,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.TournamentTypes',
     method: 'GET',
-    url: '/api/Lookups/TournamentTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/TournamentTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsTournamentTypesResponse',
@@ -435,7 +449,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GamingServerRegions',
     method: 'GET',
-    url: '/api/Lookups/GamingServerRegions',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/GamingServerRegions',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsGamingServerRegionsResponse',
@@ -461,7 +476,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.LookupsController.GameTitleValidationMethodTypes',
     method: 'GET',
-    url: '/api/Lookups/gameValidationTypes',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/Lookups/gameValidationTypes',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'controlLookupsApiLookupsGameValidationTypesResponse',

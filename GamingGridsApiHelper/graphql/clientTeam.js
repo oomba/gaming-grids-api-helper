@@ -4,7 +4,7 @@ module.exports = {
   ApiTeamByentityName: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.TeamController.Profile',
     method: 'GET',
-    url: '/api/Team/{entityName}',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3079,7 +3079,7 @@ module.exports = {
   ApiTeam: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.TeamController.CreateTeam',
     method: 'POST',
-    url: '/api/Team',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Team',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -3107,7 +3107,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.DisbandTeam',
     method: 'DELETE',
-    url: '/api/Team/{entityName}',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3130,7 +3130,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.RequestJoinTeam',
     method: 'POST',
-    url: '/api/Team/{teamEntityName}/Roster/requested',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster/requested',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3152,7 +3153,8 @@ module.exports = {
   ApiTeamByteamEntityNameRoster: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.TeamController.JoinTeam',
     method: 'POST',
-    url: '/api/Team/{teamEntityName}/Roster',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -3186,7 +3188,8 @@ module.exports = {
   ApiTeamByteamEntityNameRoster2: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.TeamController.LeaveTeam',
     method: 'DELETE',
-    url: '/api/Team/{teamEntityName}/Roster',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3209,7 +3212,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.ValidateLeaveTeam',
     method: 'GET',
-    url: '/api/Team/{teamEntityName}/Roster/{playerEntityName}/Validation',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster/{playerEntityName}/Validation',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3247,7 +3251,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.GetOnlineTeams',
     method: 'GET',
-    url: '/api/Team/online',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/online',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientTeamApiTeamOnlineResponse',
@@ -3297,7 +3301,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.RemovePlayer',
     method: 'DELETE',
-    url: '/api/Team/{teamEntityName}/Roster/{playerEntityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster/{playerEntityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -3324,7 +3329,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.RosterInvite',
     method: 'POST',
-    url: '/api/Team/{teamEntityName}/Roster/Invite',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster/Invite',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -3355,7 +3361,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.TeamController.PostSetRoleAndTitle',
     method: 'PUT',
-    url: '/api/Team/{teamEntityName}/Roster/{playerEntityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Team/{teamEntityName}/Roster/{playerEntityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

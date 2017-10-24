@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{F94FE9B1-7543-4C34-88C7-C553D1835A7D}|Default">
+  <MonoDevelop.Ide.ItemProperties.GamingGridsApiHelper PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GamingGridsApiHelper/APIHelper.cs">
+    <Files>
+      <File FileName="GamingGridsApiHelper/Program.cs" Line="28" Column="1" />
+      <File FileName="GamingGridsApiHelper/APIHelper.cs" Line="152" Column="14" />
+      <File FileName="GamingGridsApiHelper/ApiInfo.cs" Line="21" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

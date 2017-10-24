@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.CreatePowerRankingProfile',
     method: 'POST',
-    url: '/api/PowerRanking/Profile',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/PowerRanking/Profile',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -35,7 +35,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.UpdatePowerRankingProfile',
     method: 'PUT',
-    url: '/api/PowerRanking/Profile/{powerRankingProfileId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/PowerRanking/Profile/{powerRankingProfileId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -90,7 +91,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.DeletePowerRankingProfile',
     method: 'DELETE',
-    url: '/api/PowerRanking/Profile/{powerRankingProfileId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/PowerRanking/Profile/{powerRankingProfileId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -115,7 +117,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.CreatePowerRankingDivision',
     method: 'POST',
-    url: '/api/PowerRanking/Division',
+    url: 'http://t2w.control.v2.dev6.gaminggrids.com/api/PowerRanking/Division',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -157,7 +159,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.UpdatePowerRankingDivision',
     method: 'PUT',
-    url: '/api/PowerRanking/Division/{powerRankingDivisionId}',
+    url:
+      'http://t2w.control.v2.dev6.gaminggrids.com/api/PowerRanking/Division/{powerRankingDivisionId}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(

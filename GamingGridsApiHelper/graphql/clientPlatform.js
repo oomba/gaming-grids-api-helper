@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.GlobalSearch',
     method: 'GET',
-    url: '/api/Platform/Search',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/Search',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -922,7 +922,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.PlayerWinnerSummary',
     method: 'GET',
-    url: '/api/Platform/summary/player/winners',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/summary/player/winners',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlatformApiPlatformSummaryPlayerWinnersResponse',
@@ -951,7 +952,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.DailyPlayerRanking',
     method: 'GET',
-    url: '/api/Platform/summary/player/ranking/daily',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/summary/player/ranking/daily',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlatformApiPlatformSummaryPlayerRankingDailyResponse',
@@ -979,7 +981,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.MonthlyPlayerRanking',
     method: 'GET',
-    url: '/api/Platform/summary/player/ranking/monthly/{year}/{month}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/summary/player/ranking/monthly/{year}/{month}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -1021,7 +1024,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.MarketingBanners',
     method: 'GET',
-    url: '/api/Platform/home/content',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/home/content',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlatformApiPlatformHomeContentResponse',
@@ -1047,7 +1050,7 @@ module.exports = {
   ApiPlatformFAQ: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.PlatformController.GetFaq',
     method: 'GET',
-    url: '/api/Platform/FAQ',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/FAQ',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlatformApiPlatformFAQResponse',
@@ -1074,7 +1077,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlatformController.GetVersion',
     method: 'GET',
-    url: '/api/Platform/Version',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Platform/Version',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlatformApiPlatformVersionResponse',

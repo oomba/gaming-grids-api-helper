@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Polling.v2.Controllers.TeamController.GetOnlineCaptainCount',
     method: 'GET',
-    url: '/api/Team/Captain/Online/count',
+    url:
+      'http://t2w.polling.v2.dev6.gaminggrids.com/api/Team/Captain/Online/count',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'pollingTeamApiTeamCaptainOnlineCountResponse',

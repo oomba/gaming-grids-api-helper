@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.ServerController.SendHeartbeat',
     method: 'POST',
-    url: '/api/Server/Heartbeat',
+    url: 'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Server/Heartbeat',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -43,7 +43,7 @@ module.exports = {
       'GamingGrids.Api.GameServer.v1.Controllers.ServerController.UpdateGameVersion',
     method: 'POST',
     url:
-      '/api/Server/game/{GameShortCode}/Platform/{PlatformShortCode}/version/update',
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Server/game/{GameShortCode}/Platform/{PlatformShortCode}/version/update',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -80,7 +80,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.ServerController.HeartbeatStatus',
     method: 'GET',
-    url: '/api/Server/Heartbeat/Status/{ipAddress}/{gamePort}',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Server/Heartbeat/Status/{ipAddress}/{gamePort}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -134,7 +135,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.ServerController.AssignedMatch',
     method: 'GET',
-    url: '/api/Server/{GamingServerId}/Match/Active',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Server/{GamingServerId}/Match/Active',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -595,7 +597,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.ServerController.IsServerOnline',
     method: 'GET',
-    url: '/api/Server/IsOnline/{ipAddress}/{gamePort}',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Server/IsOnline/{ipAddress}/{gamePort}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

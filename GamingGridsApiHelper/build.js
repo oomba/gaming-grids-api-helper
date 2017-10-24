@@ -144,7 +144,7 @@ const buildApis = () => {
       results[name] = {
         fullName: "'" + api.fullName + "'",
         method: "'" + api.httpVerb + "'",
-        url: "'/" + api.url + "'",
+        url: "'" + api.url + "'",
         args: {
           body: api.body
             ? getArgObject(fileName + name + 'Body', api.body.properties)

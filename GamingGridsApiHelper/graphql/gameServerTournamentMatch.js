@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.UpdateLiveScore',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Live/Score',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Live/Score',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -42,7 +43,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.MessageQueueList',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Message/Pending/List',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Message/Pending/List',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -83,7 +85,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.SendMessage',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Message/Send',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Message/Send',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -117,7 +120,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.GetActivePlayers',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Player/List/Active',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Player/List/Active',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -229,7 +233,7 @@ module.exports = {
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.ActivePlayersMini',
     method: 'GET',
     url:
-      '/api/Tournament/Match/{TournamentMatchId}/Player/List/Active/Minified',
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Player/List/Active/Minified',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -279,7 +283,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.RemovePlayer',
     method: 'DELETE',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Player/{entityName}',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Player/{entityName}',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -316,7 +321,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.ReportFeedback',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Player/Feedback/Report',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Player/Feedback/Report',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -359,7 +365,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.Finalize',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Finalize',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Finalize',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -419,7 +426,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.PostRequestAssistance',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Assistance/Request',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Assistance/Request',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -464,7 +472,7 @@ module.exports = {
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.List',
     method: 'GET',
     url:
-      '/api/Tournament/Match/{TournamentMatchId}/Snapshot/List/{roundNumber}',
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Snapshot/List/{roundNumber}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -504,7 +512,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.List',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Snapshot/List',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Snapshot/List',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -543,7 +552,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.Count',
     method: 'GET',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Snapshot/Count',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Snapshot/Count',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -569,7 +579,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.Create',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Snapshot/Create',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Snapshot/Create',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -606,7 +617,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.SendUrl',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/Playback',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/Playback',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -640,7 +652,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.WargamingMatchCallback',
     method: 'POST',
-    url: '/api/Tournament/Match/{TournamentMatchId}/WorldOfTanksCallback',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/{TournamentMatchId}/WorldOfTanksCallback',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -665,7 +678,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.GameServer.v1.Controllers.TournamentMatchController.LeagueOfLegendsCallback',
     method: 'POST',
-    url: '/api/Tournament/Match/LeagueOfLegendsCallback',
+    url:
+      'http://t2w.gameserver.v1.dev6.gaminggrids.com/api/Tournament/Match/LeagueOfLegendsCallback',
     args: {},
     response: new graphql.GraphQLObjectType({
       name:

@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.BySingleSignInGow',
     method: 'POST',
-    url: '/api/Authenticate/GOW/SSO',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/GOW/SSO',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -60,7 +60,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.GetUserToken',
     method: 'POST',
-    url: '/api/Authenticate/GOW/Token',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/GOW/Token',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -100,7 +100,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.PlayerLogin',
     method: 'POST',
-    url: '/api/Authenticate/PLayer',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/PLayer',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientAuthenticateApiAuthenticatePLayerResponse',
@@ -146,7 +146,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.OrganizationLogin',
     method: 'POST',
-    url: '/api/Authenticate/Organization',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/Organization',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientAuthenticateApiAuthenticateOrganizationResponse',
@@ -193,7 +194,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.GetValidateLoginToken',
     method: 'GET',
-    url: '/api/Authenticate/Token/Validate',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/Token/Validate',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientAuthenticateApiAuthenticateTokenValidateResponse',
@@ -207,7 +209,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.RequestPasswordChange',
     method: 'POST',
-    url: '/api/Authenticate/Password/Forgot',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/Password/Forgot',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -230,7 +233,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.PasswordChange',
     method: 'POST',
-    url: '/api/Authenticate/Password/Change',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/Password/Change',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -259,7 +263,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.AuthenticateController.AdminAuthenticateAsEntity',
     method: 'GET',
-    url: '/api/Authenticate/Admin/Impersonate/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Authenticate/Admin/Impersonate/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

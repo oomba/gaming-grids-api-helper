@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.GetMySteamLogin',
     method: 'GET',
-    url: '/api/Player/my/Profile/Steam',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Profile/Steam',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyProfileSteamResponse',
@@ -33,7 +34,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.ValidateSkrill',
     method: 'POST',
-    url: '/api/Player/my/Profile/Skrill',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Profile/Skrill',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyProfileSkrillResponse',
@@ -47,7 +49,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.GetIsSkrillValidated',
     method: 'GET',
-    url: '/api/Player/my/Profile/Skrill',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Profile/Skrill',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyProfileSkrill2Response',
@@ -62,7 +65,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.GetPlayerCanUseCash',
     method: 'GET',
-    url: '/api/Player/my/Profile/Cash',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Profile/Cash',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyProfileCashResponse',
@@ -77,7 +80,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.UpdateMyLanMode',
     method: 'PUT',
-    url: '/api/Player/my/Profile/LanMode',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Profile/LanMode',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -102,7 +106,7 @@ module.exports = {
   ApiPlayerMyGames: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.PlayerController.MyGames',
     method: 'GET',
-    url: '/api/Player/My/Games',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Games',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyGamesResponse',
@@ -1078,7 +1082,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.MyTopGame',
     method: 'GET',
-    url: '/api/Player/My/TopGame',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/TopGame',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyTopGameResponse',
@@ -2017,7 +2021,7 @@ module.exports = {
   ApiPlayerMyTeams: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.PlayerController.MyTeams',
     method: 'GET',
-    url: '/api/Player/My/Teams',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Teams',
     args: {
       uriParams: {
         type: new graphql.GraphQLNonNull(
@@ -2091,7 +2095,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.MyMatches',
     method: 'GET',
-    url: '/api/Player/My/Matches',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Matches',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyMatchesResponse',
@@ -3510,7 +3514,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.MyTournamentTemplates',
     method: 'GET',
-    url: '/api/Player/My/Tournament/{gameShortCode}/Templates',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Tournament/{gameShortCode}/Templates',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -4479,7 +4484,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.MaintainTournamentTemplate',
     method: 'POST',
-    url: '/api/Player/My/Tournament/Template',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Tournament/Template',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -4507,7 +4513,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.DeleteTournamentTemplate',
     method: 'DELETE',
-    url: '/api/Player/My/Tournament/Template/{templateId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/My/Tournament/Template/{templateId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -4531,7 +4538,7 @@ module.exports = {
   ApiPlayerByentityName: {
     fullName: 'GamingGrids.Api.Client.v2.Controllers.PlayerController.Profile',
     method: 'GET',
-    url: '/api/Player/{entityName}',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -7686,7 +7693,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.UpdatePlayerProfile',
     method: 'PUT',
-    url: '/api/Player/my/profile',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/profile',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -7750,7 +7757,7 @@ module.exports = {
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.ConfirmPlayer',
     method: 'POST',
     url:
-      '/api/Player/my/game/{gameShortCode}/platform/{platformCode}/Confirmation',
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/game/{gameShortCode}/platform/{platformCode}/Confirmation',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -7794,7 +7801,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.GetMyFreinds',
     method: 'GET',
-    url: '/api/Player/my/Friends',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friends',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPlayerApiPlayerMyFriendsResponse',
@@ -7834,7 +7841,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.GetIsMyFreinds',
     method: 'GET',
-    url: '/api/Player/my/Friend/{friendEntityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friend/{friendEntityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -7858,7 +7866,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.RequestFriend',
     method: 'POST',
-    url: '/api/Player/my/Friends/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friends/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -7881,7 +7890,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.ApproveFriend',
     method: 'POST',
-    url: '/api/Player/my/Friends/{entityName}/Accept',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friends/{entityName}/Accept',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -7904,7 +7914,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.DeclineFriend',
     method: 'POST',
-    url: '/api/Player/my/Friends/{entityName}/Decline',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friends/{entityName}/Decline',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -7927,7 +7938,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PlayerController.RemoveFriend',
     method: 'DELETE',
-    url: '/api/Player/my/Friends/{entityName}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Player/my/Friends/{entityName}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

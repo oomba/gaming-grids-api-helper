@@ -5,7 +5,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.CancelChallenge',
     method: 'DELETE',
-    url: '/api/Challenge/{tournamentId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -28,7 +29,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.CreateOffer',
     method: 'POST',
-    url: '/api/Challenge/{tournamentId}/Offer',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}/Offer',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
@@ -88,7 +90,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.AcceptOffer',
     method: 'PUT',
-    url: '/api/Challenge/{tournamentId}/My/Offer/{OfferId}/Accept',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}/My/Offer/{OfferId}/Accept',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -116,7 +119,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.RejectOffer',
     method: 'PUT',
-    url: '/api/Challenge/{tournamentId}/My/Offer/{OfferId}/Reject',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}/My/Offer/{OfferId}/Reject',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -144,7 +148,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.AcceptAcceptedOffer',
     method: 'PUT',
-    url: '/api/Challenge/{tournamentId}/My/Offer/Accepted/{OfferId}/Accept',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}/My/Offer/Accepted/{OfferId}/Accept',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -172,7 +177,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.ChallengeController.RejectAcceptedOffer',
     method: 'PUT',
-    url: '/api/Challenge/{tournamentId}/My/Offer/Accepted/{OfferId}/Reject',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/Challenge/{tournamentId}/My/Offer/Accepted/{OfferId}/Reject',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

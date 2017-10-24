@@ -5,7 +5,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PowerRankingController.GetPowerRankingProfiles',
     method: 'GET',
-    url: '/api/PowerRanking/Profiles',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/PowerRanking/Profiles',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPowerRankingApiPowerRankingProfilesResponse',
@@ -37,7 +37,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PowerRankingController.GetPowerRankingProfile',
     method: 'GET',
-    url: '/api/PowerRanking/Profile/{powerankingProfileId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/PowerRanking/Profile/{powerankingProfileId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(
@@ -77,7 +78,7 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PowerRankingController.GetPowerRankingDivisions',
     method: 'GET',
-    url: '/api/PowerRanking/Divisions',
+    url: 'http://t2w.client.v2.dev6.gaminggrids.com/api/PowerRanking/Divisions',
     args: {},
     response: new graphql.GraphQLObjectType({
       name: 'clientPowerRankingApiPowerRankingDivisionsResponse',
@@ -129,7 +130,8 @@ module.exports = {
     fullName:
       'GamingGrids.Api.Client.v2.Controllers.PowerRankingController.GetPowerRankingDivision',
     method: 'GET',
-    url: '/api/PowerRanking/Division/{poweRankingDivisionId}',
+    url:
+      'http://t2w.client.v2.dev6.gaminggrids.com/api/PowerRanking/Division/{poweRankingDivisionId}',
     args: {
       urlParams: {
         type: new graphql.GraphQLNonNull(

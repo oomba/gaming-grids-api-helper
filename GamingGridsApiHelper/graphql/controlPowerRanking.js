@@ -10,13 +10,13 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPowerRankingApiPowerRankingProfilebody',
+            name: 'controlPowerRankingApiPowerRankingProfileBody',
             fields: {
               PowerRankingProfile: { type: graphql.GraphQLString },
-              JoiningTournamentPoints: { type: graphql.GraphQLInt },
+              JoiningTournamentPoints: { type: graphql.GraphQLFloat },
               JoiningTournamentSizeMultiplier: { type: graphql.GraphQLBoolean },
-              PointsForWin: { type: graphql.GraphQLInt },
-              PointsForLoss: { type: graphql.GraphQLInt }
+              PointsForWin: { type: graphql.GraphQLFloat },
+              PointsForLoss: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -25,13 +25,68 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'controlPowerRankingApiPowerRankingProfileResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
     })
   },
   ApiPowerRankingProfileBypowerRankingProfileId: {
+    fullName:
+      'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.UpdatePowerRankingProfile',
+    method: 'PUT',
+    url: '/api/PowerRanking/Profile/{powerRankingProfileId}',
+    args: {
+      body: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name:
+              'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdBody',
+            fields: {
+              PowerRankingProfile: { type: graphql.GraphQLString },
+              JoiningTournamentPoints: { type: graphql.GraphQLFloat },
+              JoiningTournamentSizeMultiplier: { type: graphql.GraphQLBoolean },
+              PointsForWin: { type: graphql.GraphQLFloat },
+              PointsForLoss: { type: graphql.GraphQLFloat }
+            }
+          })
+        )
+      },
+      urlParams: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name:
+              'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdUrlParams',
+            fields: { powerRankingProfileId: { type: graphql.GraphQLFloat } }
+          })
+        )
+      }
+    },
+    response: new graphql.GraphQLObjectType({
+      name:
+        'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdResponse',
+      fields: {
+        Response: {
+          type: new graphql.GraphQLObjectType({
+            name:
+              'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdResponseResponse',
+            fields: {
+              PowerRankingProfileId: { type: graphql.GraphQLFloat },
+              PowerRankingProfile: { type: graphql.GraphQLString },
+              JoiningTournamentPoints: { type: graphql.GraphQLFloat },
+              JoiningTournamentSizeMultiplier: { type: graphql.GraphQLBoolean },
+              PointsForWin: { type: graphql.GraphQLFloat },
+              PointsForLoss: { type: graphql.GraphQLFloat },
+              IsActive: { type: graphql.GraphQLBoolean }
+            }
+          })
+        },
+        Success: { type: graphql.GraphQLBoolean },
+        Message: { type: graphql.GraphQLString }
+      }
+    })
+  },
+  ApiPowerRankingProfileBypowerRankingProfileId2: {
     fullName:
       'GamingGrids.Api.Control.v2.Controllers.PowerRankingController.DeletePowerRankingProfile',
     method: 'DELETE',
@@ -41,15 +96,15 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdurlParams',
-            fields: { powerRankingProfileId: { type: graphql.GraphQLInt } }
+              'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileId2UrlParams',
+            fields: { powerRankingProfileId: { type: graphql.GraphQLFloat } }
           })
         )
       }
     },
     response: new graphql.GraphQLObjectType({
       name:
-        'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileIdResponse',
+        'controlPowerRankingApiPowerRankingProfileBypowerRankingProfileId2Response',
       fields: {
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
@@ -65,21 +120,21 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPowerRankingApiPowerRankingDivisionbody',
+            name: 'controlPowerRankingApiPowerRankingDivisionBody',
             fields: {
               PowerRankingDivision: { type: graphql.GraphQLString },
-              TopPoints: { type: graphql.GraphQLInt },
-              BottomPoints: { type: graphql.GraphQLInt },
+              TopPoints: { type: graphql.GraphQLFloat },
+              BottomPoints: { type: graphql.GraphQLFloat },
               PowerRankingImageLogoUrl: { type: graphql.GraphQLString },
               PowerRankingLevels: {
                 type: new graphql.GraphQLList(
                   new graphql.GraphQLInputObjectType({
                     name:
-                      'controlPowerRankingApiPowerRankingDivisionbodyPowerRankingLevelsResponse',
+                      'controlPowerRankingApiPowerRankingDivisionBodyPowerRankingLevelsResponse',
                     fields: {
-                      PowerRankingLevelNumber: { type: graphql.GraphQLInt },
-                      TopPoints: { type: graphql.GraphQLInt },
-                      BottomPoints: { type: graphql.GraphQLInt }
+                      PowerRankingLevelNumber: { type: graphql.GraphQLFloat },
+                      TopPoints: { type: graphql.GraphQLFloat },
+                      BottomPoints: { type: graphql.GraphQLFloat }
                     }
                   })
                 )
@@ -92,7 +147,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'controlPowerRankingApiPowerRankingDivisionResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -108,21 +163,21 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdbody',
+              'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdBody',
             fields: {
               PowerRankingDivision: { type: graphql.GraphQLString },
-              TopPoints: { type: graphql.GraphQLInt },
-              BottomPoints: { type: graphql.GraphQLInt },
+              TopPoints: { type: graphql.GraphQLFloat },
+              BottomPoints: { type: graphql.GraphQLFloat },
               PowerRankingImageLogoUrl: { type: graphql.GraphQLString },
               PowerRankingLevels: {
                 type: new graphql.GraphQLList(
                   new graphql.GraphQLInputObjectType({
                     name:
-                      'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdbodyPowerRankingLevelsResponse',
+                      'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdBodyPowerRankingLevelsResponse',
                     fields: {
-                      PowerRankingLevelNumber: { type: graphql.GraphQLInt },
-                      TopPoints: { type: graphql.GraphQLInt },
-                      BottomPoints: { type: graphql.GraphQLInt }
+                      PowerRankingLevelNumber: { type: graphql.GraphQLFloat },
+                      TopPoints: { type: graphql.GraphQLFloat },
+                      BottomPoints: { type: graphql.GraphQLFloat }
                     }
                   })
                 )
@@ -135,8 +190,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdurlParams',
-            fields: { powerRankingDivisionId: { type: graphql.GraphQLInt } }
+              'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdUrlParams',
+            fields: { powerRankingDivisionId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -150,20 +205,20 @@ module.exports = {
             name:
               'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdResponseResponse',
             fields: {
-              PowerRankingDivisionId: { type: graphql.GraphQLInt },
+              PowerRankingDivisionId: { type: graphql.GraphQLFloat },
               PowerRankingDivision: { type: graphql.GraphQLString },
-              TopPoints: { type: graphql.GraphQLInt },
-              BottomPoints: { type: graphql.GraphQLInt },
-              NumberOfLevels: { type: graphql.GraphQLInt },
+              TopPoints: { type: graphql.GraphQLFloat },
+              BottomPoints: { type: graphql.GraphQLFloat },
+              NumberOfLevels: { type: graphql.GraphQLFloat },
               PowerRankingLevels: {
                 type: new graphql.GraphQLList(
                   new graphql.GraphQLObjectType({
                     name:
                       'controlPowerRankingApiPowerRankingDivisionBypowerRankingDivisionIdResponsePowerRankingLevelsResponse',
                     fields: {
-                      PowerRankingLevelNumber: { type: graphql.GraphQLInt },
-                      TopPoints: { type: graphql.GraphQLInt },
-                      BottomPoints: { type: graphql.GraphQLInt }
+                      PowerRankingLevelNumber: { type: graphql.GraphQLFloat },
+                      TopPoints: { type: graphql.GraphQLFloat },
+                      BottomPoints: { type: graphql.GraphQLFloat }
                     }
                   })
                 )

@@ -11,8 +11,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -36,9 +36,9 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerByentityNameurlParams',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerByentityNameUrlParams',
             fields: {
-              tournamentMatchId: { type: graphql.GraphQLInt },
+              tournamentMatchId: { type: graphql.GraphQLFloat },
               entityName: { type: graphql.GraphQLString }
             }
           })
@@ -49,7 +49,7 @@ module.exports = {
       name:
         'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerByentityNameResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -65,7 +65,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdMessagebody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdMessageBody',
             fields: { Message: { type: graphql.GraphQLString } }
           })
         )
@@ -74,8 +74,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdMessageurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdMessageUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -99,10 +99,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScheduleDelayByminutesurlParams',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScheduleDelayByminutesUrlParams',
             fields: {
-              tournamentMatchId: { type: graphql.GraphQLInt },
-              minutes: { type: graphql.GraphQLInt }
+              tournamentMatchId: { type: graphql.GraphQLFloat },
+              minutes: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -127,7 +127,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModebody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeBody',
             fields: { ManualMode: { type: graphql.GraphQLBoolean } }
           })
         )
@@ -136,8 +136,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -161,7 +161,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAdministratorbody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAdministratorBody',
             fields: { EntityName: { type: graphql.GraphQLString } }
           })
         )
@@ -170,8 +170,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAdministratorurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAdministratorUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -195,7 +195,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAssistanceByassistanceIdbody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAssistanceByassistanceIdBody',
             fields: { Comments: { type: graphql.GraphQLString } }
           })
         )
@@ -204,10 +204,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAssistanceByassistanceIdurlParams',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdAssistanceByassistanceIdUrlParams',
             fields: {
-              tournamentMatchId: { type: graphql.GraphQLInt },
-              assistanceId: { type: graphql.GraphQLInt }
+              tournamentMatchId: { type: graphql.GraphQLFloat },
+              assistanceId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -224,19 +224,16 @@ module.exports = {
   },
   ApiTournamentMatchBytournamentMatchIdPlayer: {
     fullName:
-      'GamingGrids.Api.Control.v2.Controllers.TournamentMatchController.CheckInPlayer',
-    method: 'POST',
+      'GamingGrids.Api.Control.v2.Controllers.TournamentMatchController.RemovePlayer',
+    method: 'DELETE',
     url: '/api/Tournament/Match/{tournamentMatchId}/Player',
     args: {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerbody',
-            fields: {
-              EntityName: { type: graphql.GraphQLString },
-              IsOnTeamA: { type: graphql.GraphQLBoolean }
-            }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerBody',
+            fields: { EntityName: { type: graphql.GraphQLString } }
           })
         )
       },
@@ -244,8 +241,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayerUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -269,7 +266,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdSchedulebody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScheduleBody',
             fields: {
               StartDateTime: { type: graphql.GraphQLString },
               AdministratorComment: { type: graphql.GraphQLString }
@@ -281,8 +278,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScheduleurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScheduleUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -306,9 +303,9 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStreamingVideobody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStreamingVideoBody',
             fields: {
-              StreamingServiceId: { type: graphql.GraphQLInt },
+              StreamingServiceId: { type: graphql.GraphQLFloat },
               BroadcastUrl: { type: graphql.GraphQLString },
               AllowedSpectators: { type: graphql.GraphQLString }
             }
@@ -319,8 +316,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStreamingVideourlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStreamingVideoUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -344,7 +341,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeManualServerbody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeManualServerBody',
             fields: { ManualConnectionInfo: { type: graphql.GraphQLString } }
           })
         )
@@ -353,8 +350,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeManualServerurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeManualServerUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -362,6 +359,43 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name:
         'controlTournamentMatchApiTournamentMatchBytournamentMatchIdModeManualServerResponse',
+      fields: {
+        Success: { type: graphql.GraphQLBoolean },
+        Message: { type: graphql.GraphQLString }
+      }
+    })
+  },
+  ApiTournamentMatchBytournamentMatchIdPlayer2: {
+    fullName:
+      'GamingGrids.Api.Control.v2.Controllers.TournamentMatchController.CheckInPlayer',
+    method: 'POST',
+    url: '/api/Tournament/Match/{tournamentMatchId}/Player',
+    args: {
+      body: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name:
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayer2Body',
+            fields: {
+              EntityName: { type: graphql.GraphQLString },
+              IsOnTeamA: { type: graphql.GraphQLBoolean }
+            }
+          })
+        )
+      },
+      urlParams: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name:
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayer2UrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
+          })
+        )
+      }
+    },
+    response: new graphql.GraphQLObjectType({
+      name:
+        'controlTournamentMatchApiTournamentMatchBytournamentMatchIdPlayer2Response',
       fields: {
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
@@ -378,8 +412,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStatusEnforceLiveurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdStatusEnforceLiveUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -403,8 +437,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdDisputeurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdDisputeUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -428,11 +462,11 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdServerIssuebody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdServerIssueBody',
             fields: {
-              RegionId: { type: graphql.GraphQLInt },
-              ServerId: { type: graphql.GraphQLInt },
-              EnforceSnapshotRound: { type: graphql.GraphQLInt },
+              RegionId: { type: graphql.GraphQLFloat },
+              ServerId: { type: graphql.GraphQLFloat },
+              EnforceSnapshotRound: { type: graphql.GraphQLFloat },
               AdministratorComment: { type: graphql.GraphQLString }
             }
           })
@@ -442,8 +476,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdServerIssueurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdServerIssueUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -467,7 +501,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScoringEnforcebody',
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScoringEnforceBody',
             fields: {
               ScoreA: { type: graphql.GraphQLFloat },
               ScoreB: { type: graphql.GraphQLFloat },
@@ -483,8 +517,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScoringEnforceurlParams',
-            fields: { tournamentMatchId: { type: graphql.GraphQLInt } }
+              'controlTournamentMatchApiTournamentMatchBytournamentMatchIdScoringEnforceUrlParams',
+            fields: { tournamentMatchId: { type: graphql.GraphQLFloat } }
           })
         )
       }

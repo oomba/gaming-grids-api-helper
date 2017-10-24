@@ -10,10 +10,10 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'pollingNotificationsApiNotificationsuriParams',
+            name: 'pollingNotificationsApiNotificationsUriParams',
             fields: {
               lastDateTime: { type: graphql.GraphQLString },
-              topCount: { type: graphql.GraphQLInt }
+              topCount: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -51,7 +51,7 @@ module.exports = {
                                   name:
                                     'pollingNotificationsApiNotificationsResponseDismissedNotificationsNotificationsMessageAttributesResponse',
                                   fields: {
-                                    AttributeId: { type: graphql.GraphQLInt },
+                                    AttributeId: { type: graphql.GraphQLFloat },
                                     DisplayName: {
                                       type: graphql.GraphQLString
                                     },
@@ -80,18 +80,20 @@ module.exports = {
                                 })
                               )
                             },
-                            NotificationId: { type: graphql.GraphQLInt },
-                            UserNotifiedEntityId: { type: graphql.GraphQLInt },
-                            MessageId: { type: graphql.GraphQLInt },
+                            NotificationId: { type: graphql.GraphQLFloat },
+                            UserNotifiedEntityId: {
+                              type: graphql.GraphQLFloat
+                            },
+                            MessageId: { type: graphql.GraphQLFloat },
                             CreatedDateTime: { type: graphql.GraphQLString },
-                            NotificationStateId: { type: graphql.GraphQLInt },
+                            NotificationStateId: { type: graphql.GraphQLFloat },
                             ActionDateTime: { type: graphql.GraphQLString }
                           }
                         })
                       )
                     },
-                    ReturnedNoticationsCount: { type: graphql.GraphQLInt },
-                    TotalNoticationsCount: { type: graphql.GraphQLInt }
+                    ReturnedNoticationsCount: { type: graphql.GraphQLFloat },
+                    TotalNoticationsCount: { type: graphql.GraphQLFloat }
                   }
                 })
               },
@@ -120,7 +122,7 @@ module.exports = {
                                   name:
                                     'pollingNotificationsApiNotificationsResponsePendingNotificationsNotificationsMessageAttributesResponse',
                                   fields: {
-                                    AttributeId: { type: graphql.GraphQLInt },
+                                    AttributeId: { type: graphql.GraphQLFloat },
                                     DisplayName: {
                                       type: graphql.GraphQLString
                                     },
@@ -149,18 +151,20 @@ module.exports = {
                                 })
                               )
                             },
-                            NotificationId: { type: graphql.GraphQLInt },
-                            UserNotifiedEntityId: { type: graphql.GraphQLInt },
-                            MessageId: { type: graphql.GraphQLInt },
+                            NotificationId: { type: graphql.GraphQLFloat },
+                            UserNotifiedEntityId: {
+                              type: graphql.GraphQLFloat
+                            },
+                            MessageId: { type: graphql.GraphQLFloat },
                             CreatedDateTime: { type: graphql.GraphQLString },
-                            NotificationStateId: { type: graphql.GraphQLInt },
+                            NotificationStateId: { type: graphql.GraphQLFloat },
                             ActionDateTime: { type: graphql.GraphQLString }
                           }
                         })
                       )
                     },
-                    ReturnedNoticationsCount: { type: graphql.GraphQLInt },
-                    TotalNoticationsCount: { type: graphql.GraphQLInt }
+                    ReturnedNoticationsCount: { type: graphql.GraphQLFloat },
+                    TotalNoticationsCount: { type: graphql.GraphQLFloat }
                   }
                 })
               }

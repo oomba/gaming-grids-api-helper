@@ -15,14 +15,14 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'clientPowerRankingApiPowerRankingProfilesResponseResponse',
               fields: {
-                PowerRankingProfileId: { type: graphql.GraphQLInt },
+                PowerRankingProfileId: { type: graphql.GraphQLFloat },
                 PowerRankingProfile: { type: graphql.GraphQLString },
-                JoiningTournamentPoints: { type: graphql.GraphQLInt },
+                JoiningTournamentPoints: { type: graphql.GraphQLFloat },
                 JoiningTournamentSizeMultiplier: {
                   type: graphql.GraphQLBoolean
                 },
-                PointsForWin: { type: graphql.GraphQLInt },
-                PointsForLoss: { type: graphql.GraphQLInt },
+                PointsForWin: { type: graphql.GraphQLFloat },
+                PointsForLoss: { type: graphql.GraphQLFloat },
                 IsActive: { type: graphql.GraphQLBoolean }
               }
             })
@@ -43,8 +43,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientPowerRankingApiPowerRankingProfileBypowerankingProfileIdurlParams',
-            fields: { powerankingProfileId: { type: graphql.GraphQLInt } }
+              'clientPowerRankingApiPowerRankingProfileBypowerankingProfileIdUrlParams',
+            fields: { powerankingProfileId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -58,12 +58,12 @@ module.exports = {
             name:
               'clientPowerRankingApiPowerRankingProfileBypowerankingProfileIdResponseResponse',
             fields: {
-              PowerRankingProfileId: { type: graphql.GraphQLInt },
+              PowerRankingProfileId: { type: graphql.GraphQLFloat },
               PowerRankingProfile: { type: graphql.GraphQLString },
-              JoiningTournamentPoints: { type: graphql.GraphQLInt },
+              JoiningTournamentPoints: { type: graphql.GraphQLFloat },
               JoiningTournamentSizeMultiplier: { type: graphql.GraphQLBoolean },
-              PointsForWin: { type: graphql.GraphQLInt },
-              PointsForLoss: { type: graphql.GraphQLInt },
+              PointsForWin: { type: graphql.GraphQLFloat },
+              PointsForLoss: { type: graphql.GraphQLFloat },
               IsActive: { type: graphql.GraphQLBoolean }
             }
           })
@@ -88,20 +88,20 @@ module.exports = {
               name:
                 'clientPowerRankingApiPowerRankingDivisionsResponseResponse',
               fields: {
-                PowerRankingDivisionId: { type: graphql.GraphQLInt },
+                PowerRankingDivisionId: { type: graphql.GraphQLFloat },
                 PowerRankingDivision: { type: graphql.GraphQLString },
-                TopPoints: { type: graphql.GraphQLInt },
-                BottomPoints: { type: graphql.GraphQLInt },
-                NumberOfLevels: { type: graphql.GraphQLInt },
+                TopPoints: { type: graphql.GraphQLFloat },
+                BottomPoints: { type: graphql.GraphQLFloat },
+                NumberOfLevels: { type: graphql.GraphQLFloat },
                 PowerRankingLevels: {
                   type: new graphql.GraphQLList(
                     new graphql.GraphQLObjectType({
                       name:
                         'clientPowerRankingApiPowerRankingDivisionsResponsePowerRankingLevelsResponse',
                       fields: {
-                        PowerRankingLevelNumber: { type: graphql.GraphQLInt },
-                        TopPoints: { type: graphql.GraphQLInt },
-                        BottomPoints: { type: graphql.GraphQLInt }
+                        PowerRankingLevelNumber: { type: graphql.GraphQLFloat },
+                        TopPoints: { type: graphql.GraphQLFloat },
+                        BottomPoints: { type: graphql.GraphQLFloat }
                       }
                     })
                   )
@@ -135,8 +135,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientPowerRankingApiPowerRankingDivisionBypoweRankingDivisionIdurlParams',
-            fields: { poweRankingDivisionId: { type: graphql.GraphQLInt } }
+              'clientPowerRankingApiPowerRankingDivisionBypoweRankingDivisionIdUrlParams',
+            fields: { poweRankingDivisionId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -150,20 +150,20 @@ module.exports = {
             name:
               'clientPowerRankingApiPowerRankingDivisionBypoweRankingDivisionIdResponseResponse',
             fields: {
-              PowerRankingDivisionId: { type: graphql.GraphQLInt },
+              PowerRankingDivisionId: { type: graphql.GraphQLFloat },
               PowerRankingDivision: { type: graphql.GraphQLString },
-              TopPoints: { type: graphql.GraphQLInt },
-              BottomPoints: { type: graphql.GraphQLInt },
-              NumberOfLevels: { type: graphql.GraphQLInt },
+              TopPoints: { type: graphql.GraphQLFloat },
+              BottomPoints: { type: graphql.GraphQLFloat },
+              NumberOfLevels: { type: graphql.GraphQLFloat },
               PowerRankingLevels: {
                 type: new graphql.GraphQLList(
                   new graphql.GraphQLObjectType({
                     name:
                       'clientPowerRankingApiPowerRankingDivisionBypoweRankingDivisionIdResponsePowerRankingLevelsResponse',
                     fields: {
-                      PowerRankingLevelNumber: { type: graphql.GraphQLInt },
-                      TopPoints: { type: graphql.GraphQLInt },
-                      BottomPoints: { type: graphql.GraphQLInt }
+                      PowerRankingLevelNumber: { type: graphql.GraphQLFloat },
+                      TopPoints: { type: graphql.GraphQLFloat },
+                      BottomPoints: { type: graphql.GraphQLFloat }
                     }
                   })
                 )

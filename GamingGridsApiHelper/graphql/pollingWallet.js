@@ -10,7 +10,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'pollingWalletApiWalletBalanceRealResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -25,7 +25,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'pollingWalletApiWalletBalanceVirtualResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }

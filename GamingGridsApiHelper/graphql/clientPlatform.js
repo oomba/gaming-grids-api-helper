@@ -10,18 +10,18 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientPlatformApiPlatformSearchuriParams',
+            name: 'clientPlatformApiPlatformSearchUriParams',
             fields: {
               search: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'clientPlatformApiPlatformSearchuriParamssearchResponse',
+                    'clientPlatformApiPlatformSearchUriParamssearchResponse',
                   fields: {
-                    TopPlayersCount: { type: graphql.GraphQLInt },
-                    TopTeamsCount: { type: graphql.GraphQLInt },
-                    TopTournamentCount: { type: graphql.GraphQLInt },
+                    TopPlayersCount: { type: graphql.GraphQLFloat },
+                    TopTeamsCount: { type: graphql.GraphQLFloat },
+                    TopTournamentCount: { type: graphql.GraphQLFloat },
                     SearchTerm: { type: graphql.GraphQLString },
-                    TopGamesCount: { type: graphql.GraphQLInt }
+                    TopGamesCount: { type: graphql.GraphQLFloat }
                   }
                 })
               }
@@ -43,30 +43,32 @@ module.exports = {
                     name:
                       'clientPlatformApiPlatformSearchResponseTournamentsResponse',
                     fields: {
-                      EntityOwnerId: { type: graphql.GraphQLInt },
+                      EntityOwnerId: { type: graphql.GraphQLFloat },
                       IsChallenge: { type: graphql.GraphQLBoolean },
                       HasPassword: { type: graphql.GraphQLBoolean },
-                      TournamentTypeId: { type: graphql.GraphQLInt },
+                      TournamentTypeId: { type: graphql.GraphQLFloat },
                       HasConsolationRound: { type: graphql.GraphQLBoolean },
-                      EstimatedPrizePool: { type: graphql.GraphQLInt },
+                      EstimatedPrizePool: { type: graphql.GraphQLFloat },
                       Organizer: { type: graphql.GraphQLString },
-                      PrizePoolAmount: { type: graphql.GraphQLInt },
-                      EntryFee: { type: graphql.GraphQLInt },
-                      ServiceFee: { type: graphql.GraphQLInt },
-                      TotalFee: { type: graphql.GraphQLInt },
+                      PrizePoolAmount: { type: graphql.GraphQLFloat },
+                      EntryFee: { type: graphql.GraphQLFloat },
+                      ServiceFee: { type: graphql.GraphQLFloat },
+                      TotalFee: { type: graphql.GraphQLFloat },
                       IsTournamentSpecificAdministrator: {
                         type: graphql.GraphQLBoolean
                       },
                       IsPublic: { type: graphql.GraphQLBoolean },
-                      ChallengeMinEntryFee: { type: graphql.GraphQLInt },
-                      ChallengeMaxEntryFee: { type: graphql.GraphQLInt },
+                      ChallengeMinEntryFee: { type: graphql.GraphQLFloat },
+                      ChallengeMaxEntryFee: { type: graphql.GraphQLFloat },
                       IsPublished: { type: graphql.GraphQLBoolean },
                       GameName: { type: graphql.GraphQLString },
-                      GameTournamentCount: { type: graphql.GraphQLInt },
+                      GameTournamentCount: { type: graphql.GraphQLFloat },
                       DoesCycle: { type: graphql.GraphQLBoolean },
-                      MaxCycleCount: { type: graphql.GraphQLInt },
-                      CycleCount: { type: graphql.GraphQLInt },
-                      CanOnlyRegisterFromRegionId: { type: graphql.GraphQLInt },
+                      MaxCycleCount: { type: graphql.GraphQLFloat },
+                      CycleCount: { type: graphql.GraphQLFloat },
+                      CanOnlyRegisterFromRegionId: {
+                        type: graphql.GraphQLFloat
+                      },
                       CanOnlyRegisterFromRegionName: {
                         type: graphql.GraphQLString
                       },
@@ -99,24 +101,28 @@ module.exports = {
                           }
                         })
                       },
-                      TeamSize: { type: graphql.GraphQLInt },
-                      CurrentNumberOfParticipants: { type: graphql.GraphQLInt },
-                      MaximumNumberOfEntities: { type: graphql.GraphQLInt },
-                      TournamentId: { type: graphql.GraphQLInt },
+                      TeamSize: { type: graphql.GraphQLFloat },
+                      CurrentNumberOfParticipants: {
+                        type: graphql.GraphQLFloat
+                      },
+                      MaximumNumberOfEntities: { type: graphql.GraphQLFloat },
+                      TournamentId: { type: graphql.GraphQLFloat },
                       PlatformGame: {
                         type: new graphql.GraphQLObjectType({
                           name:
                             'clientPlatformApiPlatformSearchResponseTournamentsPlatformGameResponse',
                           fields: {
                             GamePlatformFranchiseTitleId: {
-                              type: graphql.GraphQLInt
+                              type: graphql.GraphQLFloat
                             },
                             Platform: {
                               type: new graphql.GraphQLObjectType({
                                 name:
                                   'clientPlatformApiPlatformSearchResponseTournamentsPlatformGamePlatformResponse',
                                 fields: {
-                                  GamePlatformId: { type: graphql.GraphQLInt },
+                                  GamePlatformId: {
+                                    type: graphql.GraphQLFloat
+                                  },
                                   GamePlatformCode: {
                                     type: graphql.GraphQLString
                                   },
@@ -144,7 +150,7 @@ module.exports = {
                                 name:
                                   'clientPlatformApiPlatformSearchResponseTournamentsPlatformGameGameResponse',
                                 fields: {
-                                  GameTitleId: { type: graphql.GraphQLInt },
+                                  GameTitleId: { type: graphql.GraphQLFloat },
                                   GameName: { type: graphql.GraphQLString },
                                   GameShortCode: {
                                     type: graphql.GraphQLString
@@ -196,10 +202,10 @@ module.exports = {
                                     })
                                   },
                                   MaximumPlayersAllowed: {
-                                    type: graphql.GraphQLInt
+                                    type: graphql.GraphQLFloat
                                   },
                                   MinimumMinutesBetweenTournamentRounds: {
-                                    type: graphql.GraphQLInt
+                                    type: graphql.GraphQLFloat
                                   },
                                   Franchise: {
                                     type: new graphql.GraphQLObjectType({
@@ -207,7 +213,7 @@ module.exports = {
                                         'clientPlatformApiPlatformSearchResponseTournamentsPlatformGameGameFranchiseResponse',
                                       fields: {
                                         GameFranchiseId: {
-                                          type: graphql.GraphQLInt
+                                          type: graphql.GraphQLFloat
                                         },
                                         GameFranchise: {
                                           type: graphql.GraphQLString
@@ -266,7 +272,7 @@ module.exports = {
                                         'clientPlatformApiPlatformSearchResponseTournamentsPlatformGameGameDeveloperResponse',
                                       fields: {
                                         GameDeveloperId: {
-                                          type: graphql.GraphQLInt
+                                          type: graphql.GraphQLFloat
                                         },
                                         GameDeveloper: {
                                           type: graphql.GraphQLString
@@ -294,7 +300,7 @@ module.exports = {
                               })
                             },
                             GamePlatformFranchiseTitleStateId: {
-                              type: graphql.GraphQLInt
+                              type: graphql.GraphQLFloat
                             },
                             GameAddedDateTime: { type: graphql.GraphQLString },
                             GameDownloadLink: { type: graphql.GraphQLString },
@@ -329,7 +335,7 @@ module.exports = {
                                 }
                               })
                             },
-                            TotalWinnings: { type: graphql.GraphQLInt },
+                            TotalWinnings: { type: graphql.GraphQLFloat },
                             ThirdPartyApplicationId: {
                               type: graphql.GraphQLString
                             },
@@ -345,15 +351,15 @@ module.exports = {
                             IssueGamesServerToMatch: {
                               type: graphql.GraphQLBoolean
                             },
-                            TournamentCount: { type: graphql.GraphQLInt },
+                            TournamentCount: { type: graphql.GraphQLFloat },
                             ValidationMethodTypeId: {
-                              type: graphql.GraphQLInt
+                              type: graphql.GraphQLFloat
                             },
                             ExternalCallbackTemplateId: {
-                              type: graphql.GraphQLInt
+                              type: graphql.GraphQLFloat
                             },
                             InternalCallbackTemplateId: {
-                              type: graphql.GraphQLInt
+                              type: graphql.GraphQLFloat
                             },
                             GameServerModVersion: { type: graphql.GraphQLFloat }
                           }
@@ -381,7 +387,7 @@ module.exports = {
                               'clientPlatformApiPlatformSearchResponseGamesPlatformsResponse',
                             fields: {
                               GamePlatformFranchiseTitleId: {
-                                type: graphql.GraphQLInt
+                                type: graphql.GraphQLFloat
                               },
                               Platform: {
                                 type: new graphql.GraphQLObjectType({
@@ -389,7 +395,7 @@ module.exports = {
                                     'clientPlatformApiPlatformSearchResponseGamesPlatformsPlatformResponse',
                                   fields: {
                                     GamePlatformId: {
-                                      type: graphql.GraphQLInt
+                                      type: graphql.GraphQLFloat
                                     },
                                     GamePlatformCode: {
                                       type: graphql.GraphQLString
@@ -420,7 +426,7 @@ module.exports = {
                                   name:
                                     'clientPlatformApiPlatformSearchResponseGamesPlatformsGameResponse',
                                   fields: {
-                                    GameTitleId: { type: graphql.GraphQLInt },
+                                    GameTitleId: { type: graphql.GraphQLFloat },
                                     GameName: { type: graphql.GraphQLString },
                                     GameShortCode: {
                                       type: graphql.GraphQLString
@@ -474,10 +480,10 @@ module.exports = {
                                       })
                                     },
                                     MaximumPlayersAllowed: {
-                                      type: graphql.GraphQLInt
+                                      type: graphql.GraphQLFloat
                                     },
                                     MinimumMinutesBetweenTournamentRounds: {
-                                      type: graphql.GraphQLInt
+                                      type: graphql.GraphQLFloat
                                     },
                                     Franchise: {
                                       type: new graphql.GraphQLObjectType({
@@ -485,7 +491,7 @@ module.exports = {
                                           'clientPlatformApiPlatformSearchResponseGamesPlatformsGameFranchiseResponse',
                                         fields: {
                                           GameFranchiseId: {
-                                            type: graphql.GraphQLInt
+                                            type: graphql.GraphQLFloat
                                           },
                                           GameFranchise: {
                                             type: graphql.GraphQLString
@@ -550,7 +556,7 @@ module.exports = {
                                           'clientPlatformApiPlatformSearchResponseGamesPlatformsGameDeveloperResponse',
                                         fields: {
                                           GameDeveloperId: {
-                                            type: graphql.GraphQLInt
+                                            type: graphql.GraphQLFloat
                                           },
                                           GameDeveloper: {
                                             type: graphql.GraphQLString
@@ -578,7 +584,7 @@ module.exports = {
                                 })
                               },
                               GamePlatformFranchiseTitleStateId: {
-                                type: graphql.GraphQLInt
+                                type: graphql.GraphQLFloat
                               },
                               GameAddedDateTime: {
                                 type: graphql.GraphQLString
@@ -621,7 +627,7 @@ module.exports = {
                                   }
                                 })
                               },
-                              TotalWinnings: { type: graphql.GraphQLInt },
+                              TotalWinnings: { type: graphql.GraphQLFloat },
                               ThirdPartyApplicationId: {
                                 type: graphql.GraphQLString
                               },
@@ -639,15 +645,15 @@ module.exports = {
                               IssueGamesServerToMatch: {
                                 type: graphql.GraphQLBoolean
                               },
-                              TournamentCount: { type: graphql.GraphQLInt },
+                              TournamentCount: { type: graphql.GraphQLFloat },
                               ValidationMethodTypeId: {
-                                type: graphql.GraphQLInt
+                                type: graphql.GraphQLFloat
                               },
                               ExternalCallbackTemplateId: {
-                                type: graphql.GraphQLInt
+                                type: graphql.GraphQLFloat
                               },
                               InternalCallbackTemplateId: {
-                                type: graphql.GraphQLInt
+                                type: graphql.GraphQLFloat
                               },
                               GameServerModVersion: {
                                 type: graphql.GraphQLFloat
@@ -656,7 +662,7 @@ module.exports = {
                           })
                         )
                       },
-                      GameTitleId: { type: graphql.GraphQLInt },
+                      GameTitleId: { type: graphql.GraphQLFloat },
                       GameName: { type: graphql.GraphQLString },
                       GameShortCode: { type: graphql.GraphQLString },
                       GameDescription: { type: graphql.GraphQLString },
@@ -691,16 +697,16 @@ module.exports = {
                           }
                         })
                       },
-                      MaximumPlayersAllowed: { type: graphql.GraphQLInt },
+                      MaximumPlayersAllowed: { type: graphql.GraphQLFloat },
                       MinimumMinutesBetweenTournamentRounds: {
-                        type: graphql.GraphQLInt
+                        type: graphql.GraphQLFloat
                       },
                       Franchise: {
                         type: new graphql.GraphQLObjectType({
                           name:
                             'clientPlatformApiPlatformSearchResponseGamesFranchiseResponse',
                           fields: {
-                            GameFranchiseId: { type: graphql.GraphQLInt },
+                            GameFranchiseId: { type: graphql.GraphQLFloat },
                             GameFranchise: { type: graphql.GraphQLString },
                             ImageLarge: {
                               type: new graphql.GraphQLObjectType({
@@ -741,7 +747,7 @@ module.exports = {
                           name:
                             'clientPlatformApiPlatformSearchResponseGamesDeveloperResponse',
                           fields: {
-                            GameDeveloperId: { type: graphql.GraphQLInt },
+                            GameDeveloperId: { type: graphql.GraphQLFloat },
                             GameDeveloper: { type: graphql.GraphQLString },
                             Website: { type: graphql.GraphQLString },
                             IsActive: { type: graphql.GraphQLBoolean }
@@ -762,14 +768,14 @@ module.exports = {
                     name:
                       'clientPlatformApiPlatformSearchResponsePlayersResponse',
                     fields: {
-                      EntityPlayerId: { type: graphql.GraphQLInt },
+                      EntityPlayerId: { type: graphql.GraphQLFloat },
                       IsOnline: { type: graphql.GraphQLBoolean },
-                      ParentOrganizationId: { type: graphql.GraphQLInt },
-                      GenderId: { type: graphql.GraphQLInt },
+                      ParentOrganizationId: { type: graphql.GraphQLFloat },
+                      GenderId: { type: graphql.GraphQLFloat },
                       Gender: { type: graphql.GraphQLString },
                       BirthDate: { type: graphql.GraphQLString },
                       LastActivityDateTime: { type: graphql.GraphQLString },
-                      NumberOfTeams: { type: graphql.GraphQLInt },
+                      NumberOfTeams: { type: graphql.GraphQLFloat },
                       LastLoginDateTime: { type: graphql.GraphQLString },
                       GameNicknames: {
                         type: new graphql.GraphQLList(
@@ -790,17 +796,21 @@ module.exports = {
                             name:
                               'clientPlatformApiPlatformSearchResponsePlayersStreamingServicesResponse',
                             fields: {
-                              EntityId: { type: graphql.GraphQLInt },
+                              EntityId: { type: graphql.GraphQLFloat },
                               StreamName: { type: graphql.GraphQLString },
                               StreamLink: { type: graphql.GraphQLString },
                               StreamCurrentlyActive: {
                                 type: graphql.GraphQLBoolean
                               },
-                              StreamActiveViewers: { type: graphql.GraphQLInt },
+                              StreamActiveViewers: {
+                                type: graphql.GraphQLFloat
+                              },
                               LastUpdatedDateTime: {
                                 type: graphql.GraphQLString
                               },
-                              StreamingServiceId: { type: graphql.GraphQLInt },
+                              StreamingServiceId: {
+                                type: graphql.GraphQLFloat
+                              },
                               StreamingService: { type: graphql.GraphQLString },
                               SourceName: { type: graphql.GraphQLString }
                             }
@@ -817,17 +827,17 @@ module.exports = {
                       RegistrationIp: { type: graphql.GraphQLString },
                       RegistrationDateTime: { type: graphql.GraphQLString },
                       ClientApiId: { type: graphql.GraphQLString },
-                      EntityMembershipTypeId: { type: graphql.GraphQLInt },
+                      EntityMembershipTypeId: { type: graphql.GraphQLFloat },
                       EntityMembershipId: { type: graphql.GraphQLString },
                       EntityMembershipToken: { type: graphql.GraphQLString },
                       EmailAddress: { type: graphql.GraphQLString },
-                      TeamMatchPlayStatisticsId: { type: graphql.GraphQLInt },
+                      TeamMatchPlayStatisticsId: { type: graphql.GraphQLFloat },
                       TournamentManagementPolicyId: {
-                        type: graphql.GraphQLInt
+                        type: graphql.GraphQLFloat
                       },
                       LanModeEnabled: { type: graphql.GraphQLBoolean },
                       LanSeatLocation: { type: graphql.GraphQLString },
-                      PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+                      PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
                       PlayerSubscriptionExpirationDate: {
                         type: graphql.GraphQLString
                       },
@@ -838,8 +848,8 @@ module.exports = {
                             name:
                               'clientPlatformApiPlatformSearchResponsePlayersRaffleTicketsResponse',
                             fields: {
-                              RaffleTicketId: { type: graphql.GraphQLInt },
-                              EntityId: { type: graphql.GraphQLInt },
+                              RaffleTicketId: { type: graphql.GraphQLFloat },
+                              EntityId: { type: graphql.GraphQLFloat },
                               RaffleTicket: { type: graphql.GraphQLString },
                               IsDailyTicket: { type: graphql.GraphQLBoolean },
                               RaffleTicketDate: { type: graphql.GraphQLString }
@@ -847,12 +857,12 @@ module.exports = {
                           })
                         )
                       },
-                      EntityId: { type: graphql.GraphQLInt },
-                      AddressCountryId: { type: graphql.GraphQLInt },
-                      GamingServerRegionId: { type: graphql.GraphQLInt },
+                      EntityId: { type: graphql.GraphQLFloat },
+                      AddressCountryId: { type: graphql.GraphQLFloat },
+                      GamingServerRegionId: { type: graphql.GraphQLFloat },
                       IsActive: { type: graphql.GraphQLBoolean },
                       CreatedDateTime: { type: graphql.GraphQLString },
-                      MatchPlayStatisticsId: { type: graphql.GraphQLInt },
+                      MatchPlayStatisticsId: { type: graphql.GraphQLFloat },
                       EntityName: { type: graphql.GraphQLString },
                       EntityIsTeam: { type: graphql.GraphQLBoolean },
                       DisplayName: { type: graphql.GraphQLString },
@@ -876,15 +886,15 @@ module.exports = {
                     fields: {
                       IsFriendsTeam: { type: graphql.GraphQLBoolean },
                       CanEditProfile: { type: graphql.GraphQLBoolean },
-                      EntityTeamId: { type: graphql.GraphQLInt },
+                      EntityTeamId: { type: graphql.GraphQLFloat },
                       TeamDescription: { type: graphql.GraphQLString },
-                      NumberOfPlayers: { type: graphql.GraphQLInt },
-                      EntityId: { type: graphql.GraphQLInt },
-                      AddressCountryId: { type: graphql.GraphQLInt },
-                      GamingServerRegionId: { type: graphql.GraphQLInt },
+                      NumberOfPlayers: { type: graphql.GraphQLFloat },
+                      EntityId: { type: graphql.GraphQLFloat },
+                      AddressCountryId: { type: graphql.GraphQLFloat },
+                      GamingServerRegionId: { type: graphql.GraphQLFloat },
                       IsActive: { type: graphql.GraphQLBoolean },
                       CreatedDateTime: { type: graphql.GraphQLString },
-                      MatchPlayStatisticsId: { type: graphql.GraphQLInt },
+                      MatchPlayStatisticsId: { type: graphql.GraphQLFloat },
                       EntityName: { type: graphql.GraphQLString },
                       EntityIsTeam: { type: graphql.GraphQLBoolean },
                       DisplayName: { type: graphql.GraphQLString },
@@ -923,10 +933,10 @@ module.exports = {
               name:
                 'clientPlatformApiPlatformSummaryPlayerWinnersResponseResponse',
               fields: {
-                TournamentId: { type: graphql.GraphQLInt },
+                TournamentId: { type: graphql.GraphQLFloat },
                 TournamentName: { type: graphql.GraphQLString },
                 TournamentDate: { type: graphql.GraphQLString },
-                EntityId: { type: graphql.GraphQLInt },
+                EntityId: { type: graphql.GraphQLFloat },
                 DisplayName: { type: graphql.GraphQLString }
               }
             })
@@ -952,10 +962,10 @@ module.exports = {
               name:
                 'clientPlatformApiPlatformSummaryPlayerRankingDailyResponseResponse',
               fields: {
-                PowerRankingPoints: { type: graphql.GraphQLInt },
-                EntityParticipantId: { type: graphql.GraphQLInt },
+                PowerRankingPoints: { type: graphql.GraphQLFloat },
+                EntityParticipantId: { type: graphql.GraphQLFloat },
                 DisplayName: { type: graphql.GraphQLString },
-                RankingPosition: { type: graphql.GraphQLInt }
+                RankingPosition: { type: graphql.GraphQLFloat }
               }
             })
           )
@@ -975,10 +985,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientPlatformApiPlatformSummaryPlayerRankingMonthlyByyearBymonthurlParams',
+              'clientPlatformApiPlatformSummaryPlayerRankingMonthlyByyearBymonthUrlParams',
             fields: {
-              year: { type: graphql.GraphQLInt },
-              month: { type: graphql.GraphQLInt }
+              year: { type: graphql.GraphQLFloat },
+              month: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -994,10 +1004,10 @@ module.exports = {
               name:
                 'clientPlatformApiPlatformSummaryPlayerRankingMonthlyByyearBymonthResponseResponse',
               fields: {
-                PowerRankingPoints: { type: graphql.GraphQLInt },
-                EntityParticipantId: { type: graphql.GraphQLInt },
+                PowerRankingPoints: { type: graphql.GraphQLFloat },
+                EntityParticipantId: { type: graphql.GraphQLFloat },
                 DisplayName: { type: graphql.GraphQLString },
-                RankingPosition: { type: graphql.GraphQLInt }
+                RankingPosition: { type: graphql.GraphQLFloat }
               }
             })
           )
@@ -1021,7 +1031,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'clientPlatformApiPlatformHomeContentResponseResponse',
               fields: {
-                MarketingBannerId: { type: graphql.GraphQLInt },
+                MarketingBannerId: { type: graphql.GraphQLFloat },
                 MarketingBannerTitle: { type: graphql.GraphQLString },
                 MarketingBannerLinkUrl: { type: graphql.GraphQLString },
                 MarketingBannerImageUrl: { type: graphql.GraphQLString }
@@ -1047,8 +1057,8 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'clientPlatformApiPlatformFAQResponseResponse',
               fields: {
-                FrequentlyAskedQuestionId: { type: graphql.GraphQLInt },
-                LanguageId: { type: graphql.GraphQLInt },
+                FrequentlyAskedQuestionId: { type: graphql.GraphQLFloat },
+                LanguageId: { type: graphql.GraphQLFloat },
                 Question: { type: graphql.GraphQLString },
                 Answer: { type: graphql.GraphQLString }
               }

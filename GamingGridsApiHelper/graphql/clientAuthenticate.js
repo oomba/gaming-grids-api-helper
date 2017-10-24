@@ -10,7 +10,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAuthenticateApiAuthenticateGOWSSObody',
+            name: 'clientAuthenticateApiAuthenticateGOWSSOBody',
             fields: { Token: { type: graphql.GraphQLString } }
           })
         )
@@ -23,7 +23,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'clientAuthenticateApiAuthenticateGOWSSOResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -36,13 +36,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'clientAuthenticateApiAuthenticateGOWSSOResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }
@@ -65,7 +65,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAuthenticateApiAuthenticateGOWTokenbody',
+            name: 'clientAuthenticateApiAuthenticateGOWTokenBody',
             fields: { Token: { type: graphql.GraphQLString } }
           })
         )
@@ -109,7 +109,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'clientAuthenticateApiAuthenticatePLayerResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -122,13 +122,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'clientAuthenticateApiAuthenticatePLayerResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }
@@ -156,7 +156,7 @@ module.exports = {
             name:
               'clientAuthenticateApiAuthenticateOrganizationResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -169,13 +169,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'clientAuthenticateApiAuthenticateOrganizationResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }
@@ -212,7 +212,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAuthenticateApiAuthenticatePasswordForgotbody',
+            name: 'clientAuthenticateApiAuthenticatePasswordForgotBody',
             fields: { EmailAddress: { type: graphql.GraphQLString } }
           })
         )
@@ -235,7 +235,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAuthenticateApiAuthenticatePasswordChangebody',
+            name: 'clientAuthenticateApiAuthenticatePasswordChangeBody',
             fields: {
               Token: { type: graphql.GraphQLString },
               OldPwd: { type: graphql.GraphQLString },
@@ -265,7 +265,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientAuthenticateApiAuthenticateAdminImpersonateByentityNameurlParams',
+              'clientAuthenticateApiAuthenticateAdminImpersonateByentityNameUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
@@ -280,7 +280,7 @@ module.exports = {
             name:
               'clientAuthenticateApiAuthenticateAdminImpersonateByentityNameResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -293,13 +293,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'clientAuthenticateApiAuthenticateAdminImpersonateByentityNameResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }

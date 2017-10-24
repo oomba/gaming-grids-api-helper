@@ -10,7 +10,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlMarketingApiPlatformMarketingBannerbody',
+            name: 'controlMarketingApiPlatformMarketingBannerBody',
             fields: {
               MarketingBannerTitle: { type: graphql.GraphQLString },
               MarketingBannerLinkUrl: { type: graphql.GraphQLString },
@@ -38,8 +38,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlMarketingApiPlatformMarketingBannerBybannerIdurlParams',
-            fields: { bannerId: { type: graphql.GraphQLInt } }
+              'controlMarketingApiPlatformMarketingBannerBybannerIdUrlParams',
+            fields: { bannerId: { type: graphql.GraphQLFloat } }
           })
         )
       }

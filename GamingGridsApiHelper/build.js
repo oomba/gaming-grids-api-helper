@@ -19,7 +19,7 @@ const convertToGraphQLType = (type, name) => {
       graphQLName = 'graphql.GraphQLString'
       break
     case 'Number':
-      graphQLName = 'graphql.GraphQLInt'
+      graphQLName = 'graphql.GraphQLFloat'
       break
     case 'Object':
       graphQLName = 'graphql.GraphQLString'
@@ -91,30 +91,34 @@ const getResponseObject = (name, obj, inner, inputType) => {
 }
 
 const getResponseQuery = response => {
-  const responseQuery =
-    response.properties ?
-    response.properties.reduce((results, p) => {
-      results[p.name] = p.properties ? getResponseQuery(p) : true
-      return results
-    }, {}) : {
-      [response.name]: true
-    }
+  const responseQuery = response.properties
+    ? response.properties.reduce((results, p) => {
+        results[p.name] = p.properties ? getResponseQuery(p) : true
+        return results
+      }, {})
+    : {
+        [response.name]: true
+      }
   return responseQuery
 }
 
 const formatResponseQuery = json => {
-  return '\t\t\t\t' + JSON.stringify(json, null, 2)
-    .replace(/"/g, '')
-    .replace(/,/g, '')
-    .replace(/: true/g, '')
-    .replace(/:/g, '').split('\n').join('\n\t\t\t\t')
+  return (
+    '\t\t\t' +
+    JSON.stringify(json, null, 2)
+      .replace(/"/g, '')
+      .replace(/,/g, '')
+      .replace(/: true/g, '')
+      .replace(/:/g, '')
+      .split('\n')
+      .join('\n\t\t\t')
+  )
 }
 
 const buildApis = () => {
   var basePath = 'json'
-  var files = fs
-    .readdirSync(path.join(__dirname, basePath))
-    // .filter(x => x.includes('client-Game.json'))
+  var files = fs.readdirSync(path.join(__dirname, basePath))
+  // .filter(x => x.includes('client-Platform.json'))
 
   files.forEach(file => {
     var fileData = fs.readFileSync(path.join(__dirname, basePath, file))
@@ -130,54 +134,44 @@ const buildApis = () => {
         return results
       }, '')
 
+    // GraphQL Server Object
     let obj = fileJson.reduce((results, api) => {
-      results[api.name] = {
+      let name = api.name
+      let keys = Object.keys(results).filter(key => key.toLowerCase() === name.toLowerCase())
+      if(keys.length > 0) {
+        name = name + '2'
+      }
+      results[name] = {
         fullName: "'" + api.fullName + "'",
         method: "'" + api.httpVerb + "'",
         url: "'/" + api.url + "'",
         args: {
           body: api.body
-            ? getArgObject(fileName + api.name + 'body', api.body.properties)
+            ? getArgObject(fileName + name + 'Body', api.body.properties)
             : undefined,
           uriParams: getArgObject(
-            fileName + api.name + 'uriParams',
+            fileName + name + 'UriParams',
             api.uriParams
           ),
           urlParams: getArgObject(
-            fileName + api.name + 'urlParams',
+            fileName + name + 'UrlParams',
             api.urlParams
           )
         },
         response: getResponseObject(
-          fileName + api.name,
+          fileName + name,
           api.response,
           false,
           false
         )
       }
+
       if (Object.keys(results[api.name].args).length === 0) {
         results[api.name].args = undefined
       }
+
       return results
     }, {})
-
-    let query = fileJson.reduce((results, api) => {
-      const name = api.name.slice(3, 4).toLowerCase() + api.name.slice(4)
-      let query = '"({args, response})" => { \n\t\tlet query = `'
-      query += api.httpVerb === 'GET' ? 'query ' : 'mutation'
-
-      if (api.uriParams || api.urlParams || api.body) {
-        query += '(${JSON.stringify(...args)}'
-        query += ') '
-      }
-      query += api.name + ' {\n'
-      query += formatResponseQuery(getResponseQuery(api.response))
-      query += '\n\t\t}'
-      query += '`\n'
-      query += '\t\treturn query\n\t"},\n'
-      results += '\t' + name + ':' + query
-      return results
-    }, '')
 
     let fileContents =
       "const graphql = require('graphql')\n\nmodule.exports = " +
@@ -208,8 +202,61 @@ const buildApis = () => {
       if (error) console.log(error)
     })
 
+    // Front End GraphQL Query
+    let query = fileJson.reduce((results, api) => {
+      let name = api.name.slice(3, 4).toLowerCase() + api.name.slice(4)
+      let query = 'gql`'
+      query += api.httpVerb === 'GET' ? 'query' : 'mutation'
+      query += ' ' + name
+      if (api.uriParams || api.urlParams || api.body) {
+        query += '('
+        if (api.uriParams) {
+          query += '$uriParams: ' + fileName + api.name + 'UriParams!, '
+        }
+        if (api.urlParams) {
+          query += '$urlParams: ' + fileName + api.name + 'UrlParams!, '
+        }
+        if (api.body) {
+          query += '$body: ' + fileName + api.name + 'Body!, '
+        }
+        query = query.slice(0, query.length - 2) // remove comma
+        query += ') {\n\t\t'
+        query += api.name + '('
+        if (api.uriParams) {
+          query += 'uriParams: $uriParams, '
+        }
+        if (api.urlParams) {
+          query += 'urlParams: $urlParams, '
+        }
+        if (api.body) {
+          query += 'body: $body, '
+        }
+        query = query.slice(0, query.length - 2) // remove comma
+        query += ') \n'
+      } else {
+        query += ' {\n\t\t'
+        query += api.name + ' \n'
+      } 
+      query += formatResponseQuery(getResponseQuery(api.response))
+      query += '\n\t}'
+      query += '`,\n'
+      if(results.toLowerCase().indexOf(name.toLowerCase() + ':') !== -1) {
+        name = name + '2'
+      }
+      results += '\t' + name + ':' + query
+      return results
+    }, '')
+
     let queryFileContents =
-      'const ' + fileName + ' = {\n' + query.slice(0, query.length - 2) + '\n}'
+      "import gql from 'graphql-tag'\n\n" +
+      'const ' +
+      fileName +
+      ' = {\n' +
+      query.slice(0, query.length - 2) +
+      '\n}\n\n' +
+      'export default ' +
+      fileName +
+      '\n'
     queryFileContents = queryFileContents.replace(/"/g, '')
 
     queryFileContents = format({

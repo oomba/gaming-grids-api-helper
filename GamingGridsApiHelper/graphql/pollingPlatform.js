@@ -10,7 +10,7 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'pollingPlatformApiPlatformMaintenanceStatusuriParams',
+            name: 'pollingPlatformApiPlatformMaintenanceStatusUriParams',
             fields: { lastUpdatedDateTime: { type: graphql.GraphQLString } }
           })
         )
@@ -26,7 +26,7 @@ module.exports = {
               MaintenanceMode: { type: graphql.GraphQLBoolean },
               AdministratorOnlyAccess: { type: graphql.GraphQLBoolean },
               StatusNoticeText: { type: graphql.GraphQLString },
-              LastUpdatedByAdministratorId: { type: graphql.GraphQLInt },
+              LastUpdatedByAdministratorId: { type: graphql.GraphQLFloat },
               LastUpdatedDateTime: { type: graphql.GraphQLString }
             }
           })

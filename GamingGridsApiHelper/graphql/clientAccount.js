@@ -10,9 +10,9 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountEmailbody',
+            name: 'clientAccountApiAccountEmailBody',
             fields: {
-              MembershipTypeId: { type: graphql.GraphQLInt },
+              MembershipTypeId: { type: graphql.GraphQLFloat },
               FirstName: { type: graphql.GraphQLString },
               LastName: { type: graphql.GraphQLString },
               CustomData: { type: graphql.GraphQLString },
@@ -40,10 +40,10 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountEmailRegisterBytokenbody',
+            name: 'clientAccountApiAccountEmailRegisterBytokenBody',
             fields: {
               BirthDate: { type: graphql.GraphQLString },
-              EntityGenderId: { type: graphql.GraphQLInt },
+              EntityGenderId: { type: graphql.GraphQLFloat },
               AuthenticateSkrill: { type: graphql.GraphQLBoolean },
               DisplayName: { type: graphql.GraphQLString },
               FirstName: { type: graphql.GraphQLString },
@@ -51,10 +51,10 @@ module.exports = {
               Pwd: { type: graphql.GraphQLString },
               Address: { type: graphql.GraphQLString },
               City: { type: graphql.GraphQLString },
-              AddressStateProvenceId: { type: graphql.GraphQLInt },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
               OtherAddressStateProvence: { type: graphql.GraphQLString },
               PostalCode: { type: graphql.GraphQLString },
-              AddressCountryId: { type: graphql.GraphQLInt }
+              AddressCountryId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -62,7 +62,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountEmailRegisterBytokenurlParams',
+            name: 'clientAccountApiAccountEmailRegisterBytokenUrlParams',
             fields: { token: { type: graphql.GraphQLString } }
           })
         )
@@ -75,7 +75,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'clientAccountApiAccountEmailRegisterBytokenResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -88,13 +88,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'clientAccountApiAccountEmailRegisterBytokenResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }
@@ -117,7 +117,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountEmailConfirmationBytokenurlParams',
+            name: 'clientAccountApiAccountEmailConfirmationBytokenUrlParams',
             fields: { token: { type: graphql.GraphQLString } }
           })
         )
@@ -134,15 +134,15 @@ module.exports = {
               Token: { type: graphql.GraphQLString },
               MembershipId: { type: graphql.GraphQLString },
               EmailAddress: { type: graphql.GraphQLString },
-              MembershipTypeId: { type: graphql.GraphQLInt },
+              MembershipTypeId: { type: graphql.GraphQLFloat },
               IpAddress: { type: graphql.GraphQLString },
               FirstName: { type: graphql.GraphQLString },
               LastName: { type: graphql.GraphQLString },
-              AddressCountryId: { type: graphql.GraphQLInt },
+              AddressCountryId: { type: graphql.GraphQLFloat },
               AddressCountry: { type: graphql.GraphQLString },
-              AddressStateId: { type: graphql.GraphQLInt },
+              AddressStateId: { type: graphql.GraphQLFloat },
               AddressState: { type: graphql.GraphQLString },
-              RegionId: { type: graphql.GraphQLInt },
+              RegionId: { type: graphql.GraphQLFloat },
               TempPassword: { type: graphql.GraphQLString },
               CustomData: { type: graphql.GraphQLString },
               CreatedDateTime: { type: graphql.GraphQLString }
@@ -163,7 +163,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountConfirmationBytokenbody',
+            name: 'clientAccountApiAccountConfirmationBytokenBody',
             fields: { EmailAddress: { type: graphql.GraphQLString } }
           })
         )
@@ -171,7 +171,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountConfirmationBytokenurlParams',
+            name: 'clientAccountApiAccountConfirmationBytokenUrlParams',
             fields: { token: { type: graphql.GraphQLString } }
           })
         )
@@ -194,10 +194,10 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientAccountApiAccountbody',
+            name: 'clientAccountApiAccountBody',
             fields: {
               Token: { type: graphql.GraphQLString },
-              MembershipTypeId: { type: graphql.GraphQLInt },
+              MembershipTypeId: { type: graphql.GraphQLFloat },
               DisplayName: { type: graphql.GraphQLString },
               EmailAddress: { type: graphql.GraphQLString },
               Pwd: { type: graphql.GraphQLString },
@@ -215,7 +215,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'clientAccountApiAccountResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -228,12 +228,12 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name: 'clientAccountApiAccountResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }

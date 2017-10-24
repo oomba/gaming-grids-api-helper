@@ -11,7 +11,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdLiveScorebody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdLiveScoreBody',
             fields: {
               CurrentInGameScoreA: { type: graphql.GraphQLFloat },
               CurrentInGameScoreB: { type: graphql.GraphQLFloat }
@@ -23,7 +23,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdLiveScoreurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdLiveScoreUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -48,7 +48,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessagePendingListurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessagePendingListUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -64,9 +64,9 @@ module.exports = {
               name:
                 'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessagePendingListResponseResponse',
               fields: {
-                MessageId: { type: graphql.GraphQLInt },
-                TournamentMatchId: { type: graphql.GraphQLInt },
-                MessageDirection: { type: graphql.GraphQLInt },
+                MessageId: { type: graphql.GraphQLFloat },
+                TournamentMatchId: { type: graphql.GraphQLFloat },
+                MessageDirection: { type: graphql.GraphQLFloat },
                 Message: { type: graphql.GraphQLString },
                 PendingServerProcessing: { type: graphql.GraphQLBoolean },
                 MessageDateTime: { type: graphql.GraphQLString }
@@ -89,7 +89,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessageSendbody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessageSendBody',
             fields: { Message: { type: graphql.GraphQLString } }
           })
         )
@@ -98,7 +98,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessageSendurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdMessageSendUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -123,7 +123,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -139,9 +139,9 @@ module.exports = {
               name:
                 'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveResponseResponse',
               fields: {
-                TournamentMatchId: { type: graphql.GraphQLInt },
-                TournamentId: { type: graphql.GraphQLInt },
-                EntityPlayerId: { type: graphql.GraphQLInt },
+                TournamentMatchId: { type: graphql.GraphQLFloat },
+                TournamentId: { type: graphql.GraphQLFloat },
+                EntityPlayerId: { type: graphql.GraphQLFloat },
                 IsTeamCaptain: { type: graphql.GraphQLBoolean },
                 IsOnTeamA: { type: graphql.GraphQLBoolean },
                 Nickname: { type: graphql.GraphQLString },
@@ -182,7 +182,7 @@ module.exports = {
                     name:
                       'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveResponseAddressCountryResponse',
                     fields: {
-                      AddressCountryId: { type: graphql.GraphQLInt },
+                      AddressCountryId: { type: graphql.GraphQLFloat },
                       AddressCountryCode: { type: graphql.GraphQLString },
                       AddressCountry3LetterCode: {
                         type: graphql.GraphQLString
@@ -192,7 +192,7 @@ module.exports = {
                       FlagSmallImageUrl: { type: graphql.GraphQLString },
                       FlagLargeImageUrl: { type: graphql.GraphQLString },
                       ShowInList: { type: graphql.GraphQLBoolean },
-                      OrderBy: { type: graphql.GraphQLInt }
+                      OrderBy: { type: graphql.GraphQLFloat }
                     }
                   })
                 },
@@ -202,13 +202,13 @@ module.exports = {
                       name:
                         'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveResponseStreamingServicesResponse',
                       fields: {
-                        EntityId: { type: graphql.GraphQLInt },
+                        EntityId: { type: graphql.GraphQLFloat },
                         StreamName: { type: graphql.GraphQLString },
                         StreamLink: { type: graphql.GraphQLString },
                         StreamCurrentlyActive: { type: graphql.GraphQLBoolean },
-                        StreamActiveViewers: { type: graphql.GraphQLInt },
+                        StreamActiveViewers: { type: graphql.GraphQLFloat },
                         LastUpdatedDateTime: { type: graphql.GraphQLString },
-                        StreamingServiceId: { type: graphql.GraphQLInt },
+                        StreamingServiceId: { type: graphql.GraphQLFloat },
                         StreamingService: { type: graphql.GraphQLString },
                         SourceName: { type: graphql.GraphQLString }
                       }
@@ -235,7 +235,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveMinifiedurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveMinifiedUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -251,9 +251,9 @@ module.exports = {
               name:
                 'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerListActiveMinifiedResponseResponse',
               fields: {
-                TournamentMatchId: { type: graphql.GraphQLInt },
-                TournamentId: { type: graphql.GraphQLInt },
-                EntityPlayerId: { type: graphql.GraphQLInt },
+                TournamentMatchId: { type: graphql.GraphQLFloat },
+                TournamentId: { type: graphql.GraphQLFloat },
+                EntityPlayerId: { type: graphql.GraphQLFloat },
                 IsTeamCaptain: { type: graphql.GraphQLBoolean },
                 IsOnTeamA: { type: graphql.GraphQLBoolean },
                 Nickname: { type: graphql.GraphQLString },
@@ -285,7 +285,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerByentityNamebody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerByentityNameBody',
             fields: { HasPenalty: { type: graphql.GraphQLBoolean } }
           })
         )
@@ -294,7 +294,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerByentityNameurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerByentityNameUrlParams',
             fields: {
               entityName: { type: graphql.GraphQLString },
               TournamentMatchId: { type: graphql.GraphQLString }
@@ -322,13 +322,13 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerFeedbackReportbody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerFeedbackReportBody',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
-              TournamentMatchId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
               GameShortCode: { type: graphql.GraphQLString },
-              FeedbackReportedById: { type: graphql.GraphQLInt },
-              FeedbackRating: { type: graphql.GraphQLInt },
+              FeedbackReportedById: { type: graphql.GraphQLFloat },
+              FeedbackRating: { type: graphql.GraphQLFloat },
               FeedbackMessage: { type: graphql.GraphQLString },
               InappropriateFlags: { type: graphql.GraphQLBoolean },
               ReportToAdministrator: { type: graphql.GraphQLBoolean }
@@ -340,7 +340,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerFeedbackReporturlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlayerFeedbackReportUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -365,12 +365,12 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizebody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizeBody',
             fields: {
               ParticipantAResults: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizebodyParticipantAResultsResponse',
+                    'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizeBodyParticipantAResultsResponse',
                   fields: {
                     IsNoShow: { type: graphql.GraphQLBoolean },
                     DidForfeit: { type: graphql.GraphQLBoolean },
@@ -381,7 +381,7 @@ module.exports = {
               ParticipantBResults: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizebodyParticipantBResultsResponse',
+                    'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizeBodyParticipantBResultsResponse',
                   fields: {
                     IsNoShow: { type: graphql.GraphQLBoolean },
                     DidForfeit: { type: graphql.GraphQLBoolean },
@@ -400,7 +400,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizeurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdFinalizeUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -425,8 +425,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdAssistanceRequestbody',
-            fields: { EntityId: { type: graphql.GraphQLInt } }
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdAssistanceRequestBody',
+            fields: { EntityId: { type: graphql.GraphQLFloat } }
           })
         )
       },
@@ -434,7 +434,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdAssistanceRequesturlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdAssistanceRequestUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -449,8 +449,8 @@ module.exports = {
             name:
               'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdAssistanceRequestResponseResponse',
             fields: {
-              AssistanceRequestedById: { type: graphql.GraphQLInt },
-              TournamentMatchAssistanceId: { type: graphql.GraphQLInt }
+              AssistanceRequestedById: { type: graphql.GraphQLFloat },
+              TournamentMatchAssistanceId: { type: graphql.GraphQLFloat }
             }
           })
         },
@@ -470,9 +470,9 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListByroundNumberurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListByroundNumberUrlParams',
             fields: {
-              roundNumber: { type: graphql.GraphQLInt },
+              roundNumber: { type: graphql.GraphQLFloat },
               TournamentMatchId: { type: graphql.GraphQLString }
             }
           })
@@ -488,8 +488,8 @@ module.exports = {
             name:
               'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListByroundNumberResponseResponse',
             fields: {
-              TournamentMatchId: { type: graphql.GraphQLInt },
-              RoundNumber: { type: graphql.GraphQLInt },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
+              RoundNumber: { type: graphql.GraphQLFloat },
               Snapshot: { type: graphql.GraphQLString },
               SnapshotDateTime: { type: graphql.GraphQLString }
             }
@@ -510,7 +510,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -526,8 +526,8 @@ module.exports = {
               name:
                 'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotListResponseResponse',
               fields: {
-                TournamentMatchId: { type: graphql.GraphQLInt },
-                RoundNumber: { type: graphql.GraphQLInt },
+                TournamentMatchId: { type: graphql.GraphQLFloat },
+                RoundNumber: { type: graphql.GraphQLFloat },
                 Snapshot: { type: graphql.GraphQLString },
                 SnapshotDateTime: { type: graphql.GraphQLString }
               }
@@ -549,7 +549,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCounturlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCountUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -559,7 +559,7 @@ module.exports = {
       name:
         'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCountResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -575,9 +575,9 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCreatebody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCreateBody',
             fields: {
-              RoundNumber: { type: graphql.GraphQLInt },
+              RoundNumber: { type: graphql.GraphQLFloat },
               Snapshot: { type: graphql.GraphQLString }
             }
           })
@@ -587,7 +587,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCreateurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdSnapshotCreateUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -612,7 +612,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlaybackbody',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlaybackBody',
             fields: { PlaybackUrl: { type: graphql.GraphQLString } }
           })
         )
@@ -621,7 +621,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlaybackurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdPlaybackUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )
@@ -646,7 +646,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdWorldOfTanksCallbackurlParams',
+              'gameServerTournamentMatchApiTournamentMatchByTournamentMatchIdWorldOfTanksCallbackUrlParams',
             fields: { TournamentMatchId: { type: graphql.GraphQLString } }
           })
         )

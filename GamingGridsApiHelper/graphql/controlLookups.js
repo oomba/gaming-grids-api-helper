@@ -15,7 +15,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlLookupsApiLookupsRosterRolesResponseResponse',
               fields: {
-                RosterRoleId: { type: graphql.GraphQLInt },
+                RosterRoleId: { type: graphql.GraphQLFloat },
                 RosterRoleName: { type: graphql.GraphQLString }
               }
             })
@@ -55,11 +55,11 @@ module.exports = {
             name:
               'controlLookupsApiLookupsDefaultXperiencePointsResponseResponse',
             fields: {
-              PointsToJoinTournament: { type: graphql.GraphQLInt },
-              PointsToWinTournamentRound: { type: graphql.GraphQLInt },
-              PointsToTournamentPlace1: { type: graphql.GraphQLInt },
-              PointsToTournamentPlace2: { type: graphql.GraphQLInt },
-              PointsToTournamentPlace3: { type: graphql.GraphQLInt }
+              PointsToJoinTournament: { type: graphql.GraphQLFloat },
+              PointsToWinTournamentRound: { type: graphql.GraphQLFloat },
+              PointsToTournamentPlace1: { type: graphql.GraphQLFloat },
+              PointsToTournamentPlace2: { type: graphql.GraphQLFloat },
+              PointsToTournamentPlace3: { type: graphql.GraphQLFloat }
             }
           })
         },
@@ -114,7 +114,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsRegistrationRegionRestrictionTypeListResponseResponse',
               fields: {
-                RegistrationRestrictionTypeId: { type: graphql.GraphQLInt },
+                RegistrationRestrictionTypeId: { type: graphql.GraphQLFloat },
                 RegistrationRestrictionType: { type: graphql.GraphQLString }
               }
             })
@@ -141,7 +141,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsRegistrationCountryRestrictionTypeListResponseResponse',
               fields: {
-                RegistrationRestrictionTypeId: { type: graphql.GraphQLInt },
+                RegistrationRestrictionTypeId: { type: graphql.GraphQLFloat },
                 RegistrationRestrictionType: { type: graphql.GraphQLString }
               }
             })
@@ -167,7 +167,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsFileStorageTypeListResponseResponse',
               fields: {
-                FileStorageTypeId: { type: graphql.GraphQLInt },
+                FileStorageTypeId: { type: graphql.GraphQLFloat },
                 FileStorageType: { type: graphql.GraphQLString }
               }
             })
@@ -192,7 +192,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlLookupsApiLookupsEmailSubjectListResponseResponse',
               fields: {
-                EmailSubjectId: { type: graphql.GraphQLInt },
+                EmailSubjectId: { type: graphql.GraphQLFloat },
                 EmailSubject: { type: graphql.GraphQLString }
               }
             })
@@ -217,7 +217,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlLookupsApiLookupsCountryListResponseResponse',
               fields: {
-                AddressCountryId: { type: graphql.GraphQLInt },
+                AddressCountryId: { type: graphql.GraphQLFloat },
                 AddressCountryCode: { type: graphql.GraphQLString },
                 AddressCountry3LetterCode: { type: graphql.GraphQLString },
                 AddressCountry: { type: graphql.GraphQLString },
@@ -225,7 +225,7 @@ module.exports = {
                 FlagSmallImageUrl: { type: graphql.GraphQLString },
                 FlagLargeImageUrl: { type: graphql.GraphQLString },
                 ShowInList: { type: graphql.GraphQLBoolean },
-                OrderBy: { type: graphql.GraphQLInt }
+                OrderBy: { type: graphql.GraphQLFloat }
               }
             })
           )
@@ -244,8 +244,8 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlLookupsApiLookupsStateListBycountryIdurlParams',
-            fields: { countryId: { type: graphql.GraphQLInt } }
+            name: 'controlLookupsApiLookupsStateListBycountryIdUrlParams',
+            fields: { countryId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -259,8 +259,8 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsStateListBycountryIdResponseResponse',
               fields: {
-                AddressStateProvenceId: { type: graphql.GraphQLInt },
-                AddressCountryId: { type: graphql.GraphQLInt },
+                AddressStateProvenceId: { type: graphql.GraphQLFloat },
+                AddressCountryId: { type: graphql.GraphQLFloat },
                 AddressStateProvenceCode: { type: graphql.GraphQLString },
                 AddressStateProvence: { type: graphql.GraphQLString },
                 AllowsRealMoney: { type: graphql.GraphQLBoolean }
@@ -288,7 +288,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsQualifierTieBreakerTypesResponseResponse',
               fields: {
-                QualifierTieBreakerTypeId: { type: graphql.GraphQLInt },
+                QualifierTieBreakerTypeId: { type: graphql.GraphQLFloat },
                 QualifierTieBreakerType: { type: graphql.GraphQLString },
                 QualifierTieBreakerTypeDescription: {
                   type: graphql.GraphQLString
@@ -317,7 +317,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsTournamentPrizeFundingTypesResponseResponse',
               fields: {
-                TournamentPrizeFundingTypeId: { type: graphql.GraphQLInt },
+                TournamentPrizeFundingTypeId: { type: graphql.GraphQLFloat },
                 TournamentPrizeFundingType: { type: graphql.GraphQLString }
               }
             })
@@ -343,7 +343,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsTournamentSeedingTypesResponseResponse',
               fields: {
-                TournamentSeedingTypeId: { type: graphql.GraphQLInt },
+                TournamentSeedingTypeId: { type: graphql.GraphQLFloat },
                 TournamentSeedingTypeName: { type: graphql.GraphQLString }
               }
             })
@@ -369,7 +369,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsTournamentPairingTypesResponseResponse',
               fields: {
-                TournamentPairingTypeId: { type: graphql.GraphQLInt },
+                TournamentPairingTypeId: { type: graphql.GraphQLFloat },
                 TournamentPairingTypeName: { type: graphql.GraphQLString }
               }
             })
@@ -394,7 +394,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlLookupsApiLookupsStreamingServicesResponseResponse',
               fields: {
-                StreamingServiceId: { type: graphql.GraphQLInt },
+                StreamingServiceId: { type: graphql.GraphQLFloat },
                 StreamingService: { type: graphql.GraphQLString },
                 SourceName: { type: graphql.GraphQLString }
               }
@@ -420,7 +420,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlLookupsApiLookupsTournamentTypesResponseResponse',
               fields: {
-                TournamentTypeId: { type: graphql.GraphQLInt },
+                TournamentTypeId: { type: graphql.GraphQLFloat },
                 TournamentTypeName: { type: graphql.GraphQLString }
               }
             })
@@ -446,7 +446,7 @@ module.exports = {
               name:
                 'controlLookupsApiLookupsGamingServerRegionsResponseResponse',
               fields: {
-                GamingServerRegionId: { type: graphql.GraphQLInt },
+                GamingServerRegionId: { type: graphql.GraphQLFloat },
                 GamingServerRegionName: { type: graphql.GraphQLString }
               }
             })
@@ -473,7 +473,7 @@ module.exports = {
                 'controlLookupsApiLookupsGameValidationTypesResponseResponse',
               fields: {
                 GamePlatformFranchiseTitleValidationMethodTypeId: {
-                  type: graphql.GraphQLInt
+                  type: graphql.GraphQLFloat
                 },
                 GamePlatformFranchiseTitleValidationMethodType: {
                   type: graphql.GraphQLString

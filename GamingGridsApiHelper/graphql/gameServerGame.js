@@ -12,7 +12,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerByplayerIdentifierUpdateNicknamebody',
+              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerByplayerIdentifierUpdateNicknameBody',
             fields: { Nickname: { type: graphql.GraphQLString } }
           })
         )
@@ -21,7 +21,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerByplayerIdentifierUpdateNicknameurlParams',
+              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerByplayerIdentifierUpdateNicknameUrlParams',
             fields: {
               playerIdentifier: { type: graphql.GraphQLString },
               GameShortCode: { type: graphql.GraphQLString },
@@ -51,9 +51,9 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerConfirmPlayerbody',
+              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerConfirmPlayerBody',
             fields: {
-              EntityPlayerId: { type: graphql.GraphQLInt },
+              EntityPlayerId: { type: graphql.GraphQLFloat },
               EntityPlayerEmailAddress: { type: graphql.GraphQLString },
               EntityPlayerName: { type: graphql.GraphQLString },
               PlayerNickname: { type: graphql.GraphQLString },
@@ -67,7 +67,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerConfirmPlayerurlParams',
+              'gameServerGameApiGameByGameShortCodePlatformByPlatformShortCodePlayerConfirmPlayerUrlParams',
             fields: {
               GameShortCode: { type: graphql.GraphQLString },
               PlatformShortCode: { type: graphql.GraphQLString }

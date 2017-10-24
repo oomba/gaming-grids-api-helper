@@ -15,7 +15,7 @@ module.exports = {
             name:
               'gameServerPlatformApiPlatformEndpointConfigurationResponseResponse',
             fields: {
-              ClientApiId: { type: graphql.GraphQLInt },
+              ClientApiId: { type: graphql.GraphQLFloat },
               ClientApiKey: { type: graphql.GraphQLString },
               ClientApiIssuedDateTime: { type: graphql.GraphQLString },
               HasServerPermission: { type: graphql.GraphQLBoolean },

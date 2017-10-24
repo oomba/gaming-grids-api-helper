@@ -10,7 +10,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientSupportApiSupportContactbody',
+            name: 'clientSupportApiSupportContactBody',
             fields: {
               EmailAddress: { type: graphql.GraphQLString },
               Subject: { type: graphql.GraphQLString },
@@ -38,18 +38,18 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientSupportApiSupportPlayerFeedbackReporturiParams',
+            name: 'clientSupportApiSupportPlayerFeedbackReportUriParams',
             fields: {
               feedback: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'clientSupportApiSupportPlayerFeedbackReporturiParamsfeedbackResponse',
+                    'clientSupportApiSupportPlayerFeedbackReportUriParamsfeedbackResponse',
                   fields: {
-                    EntityId: { type: graphql.GraphQLInt },
-                    TournamentMatchId: { type: graphql.GraphQLInt },
+                    EntityId: { type: graphql.GraphQLFloat },
+                    TournamentMatchId: { type: graphql.GraphQLFloat },
                     GameShortCode: { type: graphql.GraphQLString },
-                    FeedbackReportedById: { type: graphql.GraphQLInt },
-                    FeedbackRating: { type: graphql.GraphQLInt },
+                    FeedbackReportedById: { type: graphql.GraphQLFloat },
+                    FeedbackRating: { type: graphql.GraphQLFloat },
                     FeedbackMessage: { type: graphql.GraphQLString },
                     InappropriateFlags: { type: graphql.GraphQLBoolean },
                     ReportToAdministrator: { type: graphql.GraphQLBoolean }

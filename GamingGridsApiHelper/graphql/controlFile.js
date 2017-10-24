@@ -15,7 +15,7 @@ module.exports = {
               name: 'controlFileApiFileUploadResponseResponse',
               fields: {
                 name: { type: graphql.GraphQLString },
-                size: { type: graphql.GraphQLInt },
+                size: { type: graphql.GraphQLFloat },
                 shortUrl: { type: graphql.GraphQLString },
                 url: { type: graphql.GraphQLString },
                 thumbnailUrl: { type: graphql.GraphQLString },

@@ -13,7 +13,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'pollingPlayerApiPlayerMuutResponseResponse',
             fields: {
-              Timestamp: { type: graphql.GraphQLInt },
+              Timestamp: { type: graphql.GraphQLFloat },
               Message: { type: graphql.GraphQLString },
               Signature: { type: graphql.GraphQLString }
             }
@@ -47,7 +47,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'pollingPlayerApiPlayerMyTournamentsMatchLastIdResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -67,7 +67,7 @@ module.exports = {
             name:
               'pollingPlayerApiPlayerMyTournamentsMatchActiveResponseResponse',
             fields: {
-              TournamentMatchId: { type: graphql.GraphQLInt },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
               GameName: { type: graphql.GraphQLString },
               GameImageLargeUrl: { type: graphql.GraphQLString },
               TournamentMatchIsTeam: { type: graphql.GraphQLBoolean },
@@ -99,7 +99,7 @@ module.exports = {
             name:
               'pollingPlayerApiPlayerMyTournamentsCheckinNeededResponseResponse',
             fields: {
-              TournamentId: { type: graphql.GraphQLInt },
+              TournamentId: { type: graphql.GraphQLFloat },
               TournamentName: { type: graphql.GraphQLString },
               GameImageLargeUrl: { type: graphql.GraphQLString },
               ScheduledStartDateTime: { type: graphql.GraphQLString }

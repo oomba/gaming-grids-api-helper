@@ -15,23 +15,25 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'clientWalletApiWalletTransactionProvidersResponseResponse',
               fields: {
-                WalletTransactionProviderGroupId: { type: graphql.GraphQLInt },
+                WalletTransactionProviderGroupId: {
+                  type: graphql.GraphQLFloat
+                },
                 WalletTransactionProviderGroup: { type: graphql.GraphQLString },
                 DisplayInListing: { type: graphql.GraphQLBoolean },
-                OrderBy: { type: graphql.GraphQLInt },
+                OrderBy: { type: graphql.GraphQLFloat },
                 Providers: {
                   type: new graphql.GraphQLList(
                     new graphql.GraphQLObjectType({
                       name:
                         'clientWalletApiWalletTransactionProvidersResponseProvidersResponse',
                       fields: {
-                        CountryTransactionRate: { type: graphql.GraphQLInt },
+                        CountryTransactionRate: { type: graphql.GraphQLFloat },
                         WalletTransactionProviderId: {
-                          type: graphql.GraphQLInt
+                          type: graphql.GraphQLFloat
                         },
                         IsActive: { type: graphql.GraphQLBoolean },
                         WalletTransactionProviderGroupId: {
-                          type: graphql.GraphQLInt
+                          type: graphql.GraphQLFloat
                         },
                         WalletTransactionProvider: {
                           type: graphql.GraphQLString
@@ -39,12 +41,12 @@ module.exports = {
                         WalletTransactionProviderPaymentCode: {
                           type: graphql.GraphQLString
                         },
-                        TransactionRate: { type: graphql.GraphQLInt },
-                        TransactionFee: { type: graphql.GraphQLInt },
+                        TransactionRate: { type: graphql.GraphQLFloat },
+                        TransactionFee: { type: graphql.GraphQLFloat },
                         BrandImageUrl: { type: graphql.GraphQLString },
                         IsInternal: { type: graphql.GraphQLBoolean },
                         DisplayInListing: { type: graphql.GraphQLBoolean },
-                        OrderBy: { type: graphql.GraphQLInt }
+                        OrderBy: { type: graphql.GraphQLFloat }
                       }
                     })
                   )
@@ -67,10 +69,10 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletTransactionSkrillBeginbody',
+            name: 'clientWalletApiWalletTransactionSkrillBeginBody',
             fields: {
-              Amount: { type: graphql.GraphQLInt },
-              Total: { type: graphql.GraphQLInt },
+              Amount: { type: graphql.GraphQLFloat },
+              Total: { type: graphql.GraphQLFloat },
               ProviderCode: { type: graphql.GraphQLString }
             }
           })
@@ -95,15 +97,15 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletPaypalPaymentbody',
+            name: 'clientWalletApiWalletPaypalPaymentBody',
             fields: {
               PayPalId: { type: graphql.GraphQLString },
               EmailAddress: { type: graphql.GraphQLString },
               FirstName: { type: graphql.GraphQLString },
               LastName: { type: graphql.GraphQLString },
               PayerId: { type: graphql.GraphQLString },
-              Amount: { type: graphql.GraphQLInt },
-              Fee: { type: graphql.GraphQLInt },
+              Amount: { type: graphql.GraphQLFloat },
+              Fee: { type: graphql.GraphQLFloat },
               Currency: { type: graphql.GraphQLString },
               CreateTime: { type: graphql.GraphQLString },
               State: { type: graphql.GraphQLString },
@@ -130,7 +132,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletTransactionEkashuHashcodebody',
+            name: 'clientWalletApiWalletTransactionEkashuHashcodeBody',
             fields: {
               HashKey: { type: graphql.GraphQLString },
               TerminalId: { type: graphql.GraphQLString },
@@ -159,12 +161,12 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletTransactionEaclBeginbody',
+            name: 'clientWalletApiWalletTransactionEaclBeginBody',
             fields: {
-              Amount: { type: graphql.GraphQLInt },
-              ServiceFeeAmount: { type: graphql.GraphQLInt },
+              Amount: { type: graphql.GraphQLFloat },
+              ServiceFeeAmount: { type: graphql.GraphQLFloat },
               ExternalId: { type: graphql.GraphQLString },
-              TransactionTypeId: { type: graphql.GraphQLInt },
+              TransactionTypeId: { type: graphql.GraphQLFloat },
               IsGiftCertificate: { type: graphql.GraphQLBoolean },
               CompletionCallbackUrl: { type: graphql.GraphQLString }
             }
@@ -191,7 +193,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientWalletApiWalletTransactionEaclGiftcertificateBycodeurlParams',
+              'clientWalletApiWalletTransactionEaclGiftcertificateBycodeUrlParams',
             fields: { code: { type: graphql.GraphQLString } }
           })
         )
@@ -214,12 +216,12 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletTransactionsuriParams',
+            name: 'clientWalletApiWalletTransactionsUriParams',
             fields: {
               search: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'clientWalletApiWalletTransactionsuriParamssearchResponse',
+                    'clientWalletApiWalletTransactionsUriParamssearchResponse',
                   fields: {
                     EntityName: { type: graphql.GraphQLString },
                     FromDate: { type: graphql.GraphQLString },
@@ -241,17 +243,17 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'clientWalletApiWalletTransactionsResponseResponse',
               fields: {
-                EntityPlayerWalletTransactionId: { type: graphql.GraphQLInt },
-                EntityPlayerId: { type: graphql.GraphQLInt },
-                TournamentId: { type: graphql.GraphQLInt },
+                EntityPlayerWalletTransactionId: { type: graphql.GraphQLFloat },
+                EntityPlayerId: { type: graphql.GraphQLFloat },
+                TournamentId: { type: graphql.GraphQLFloat },
                 DisplayName: { type: graphql.GraphQLString },
                 EntityName: { type: graphql.GraphQLString },
-                AccountBalance: { type: graphql.GraphQLInt },
-                CurrentAccountBalance: { type: graphql.GraphQLInt },
+                AccountBalance: { type: graphql.GraphQLFloat },
+                CurrentAccountBalance: { type: graphql.GraphQLFloat },
                 WalletTransactionType: { type: graphql.GraphQLString },
-                WalletTransactionTypeMultiplier: { type: graphql.GraphQLInt },
+                WalletTransactionTypeMultiplier: { type: graphql.GraphQLFloat },
                 WalletTransactionProvider: { type: graphql.GraphQLString },
-                EntityPlayerTransactionTotal: { type: graphql.GraphQLInt },
+                EntityPlayerTransactionTotal: { type: graphql.GraphQLFloat },
                 IsGiftCertificate: { type: graphql.GraphQLBoolean },
                 ExternalId: { type: graphql.GraphQLString },
                 CompletionCallback: { type: graphql.GraphQLString },
@@ -260,10 +262,10 @@ module.exports = {
                   type: graphql.GraphQLString
                 },
                 IsRealCurrency: { type: graphql.GraphQLBoolean },
-                WalletTransactionTypeId: { type: graphql.GraphQLInt },
-                WalletTransactionProviderId: { type: graphql.GraphQLInt },
-                EntityPlayerTransactionAmount: { type: graphql.GraphQLInt },
-                EntityPlayerTransactionFee: { type: graphql.GraphQLInt },
+                WalletTransactionTypeId: { type: graphql.GraphQLFloat },
+                WalletTransactionProviderId: { type: graphql.GraphQLFloat },
+                EntityPlayerTransactionAmount: { type: graphql.GraphQLFloat },
+                EntityPlayerTransactionFee: { type: graphql.GraphQLFloat },
                 TransactionDescription: { type: graphql.GraphQLString }
               }
             })
@@ -283,12 +285,12 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientWalletApiWalletWithdrawbody',
+            name: 'clientWalletApiWalletWithdrawBody',
             fields: {
-              Amount: { type: graphql.GraphQLInt },
-              ServiceFeeAmount: { type: graphql.GraphQLInt },
+              Amount: { type: graphql.GraphQLFloat },
+              ServiceFeeAmount: { type: graphql.GraphQLFloat },
               ExternalId: { type: graphql.GraphQLString },
-              TransactionTypeId: { type: graphql.GraphQLInt },
+              TransactionTypeId: { type: graphql.GraphQLFloat },
               IsGiftCertificate: { type: graphql.GraphQLBoolean },
               CompletionCallbackUrl: { type: graphql.GraphQLString }
             }

@@ -10,27 +10,27 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPaymentApiPaymentSkrillStatusbody',
+            name: 'controlPaymentApiPaymentSkrillStatusBody',
             fields: {
               pay_to_email: { type: graphql.GraphQLString },
               pay_from_email: { type: graphql.GraphQLString },
               merchant_id: { type: graphql.GraphQLString },
               customer_id: { type: graphql.GraphQLString },
               transaction_id: { type: graphql.GraphQLString },
-              mb_amount: { type: graphql.GraphQLInt },
+              mb_amount: { type: graphql.GraphQLFloat },
               mb_currency: { type: graphql.GraphQLString },
-              status: { type: graphql.GraphQLInt },
+              status: { type: graphql.GraphQLFloat },
               failed_reason_code: { type: graphql.GraphQLString },
               md5sig: { type: graphql.GraphQLString },
               sha2sig: { type: graphql.GraphQLString },
-              amount: { type: graphql.GraphQLInt },
+              amount: { type: graphql.GraphQLFloat },
               currency: { type: graphql.GraphQLString }
             }
           })
         )
       }
     },
-    response: graphql.GraphQLInt
+    response: graphql.GraphQLFloat
   },
   ApiPaymentEaclSuccess: {
     fullName:
@@ -41,7 +41,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPaymentApiPaymentEaclSuccessbody',
+            name: 'controlPaymentApiPaymentEaclSuccessBody',
             fields: {
               ekashu_auth_code: { type: graphql.GraphQLString },
               ekashu_auth_result: { type: graphql.GraphQLString },
@@ -76,6 +76,6 @@ module.exports = {
         )
       }
     },
-    response: graphql.GraphQLInt
+    response: graphql.GraphQLFloat
   }
 }

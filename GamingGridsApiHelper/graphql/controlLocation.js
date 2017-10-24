@@ -10,15 +10,15 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlLocationApiLocationbody',
+            name: 'controlLocationApiLocationBody',
             fields: {
               Location: { type: graphql.GraphQLString },
               StreetAddress: { type: graphql.GraphQLString },
               City: { type: graphql.GraphQLString },
-              AddressStateProvenceId: { type: graphql.GraphQLInt },
-              AddressCountryId: { type: graphql.GraphQLInt },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
+              AddressCountryId: { type: graphql.GraphQLFloat },
               PostalCode: { type: graphql.GraphQLString },
-              GamingServerRegionId: { type: graphql.GraphQLInt },
+              GamingServerRegionId: { type: graphql.GraphQLFloat },
               PhoneNumber: { type: graphql.GraphQLString },
               EmailAddress: { type: graphql.GraphQLString },
               Hours: { type: graphql.GraphQLString },
@@ -35,14 +35,14 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'controlLocationApiLocationResponseResponse',
             fields: {
-              LocationId: { type: graphql.GraphQLInt },
+              LocationId: { type: graphql.GraphQLFloat },
               StateProvence: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'controlLocationApiLocationResponseStateProvenceResponse',
                   fields: {
-                    AddressStateProvenceId: { type: graphql.GraphQLInt },
-                    AddressCountryId: { type: graphql.GraphQLInt },
+                    AddressStateProvenceId: { type: graphql.GraphQLFloat },
+                    AddressCountryId: { type: graphql.GraphQLFloat },
                     AddressStateProvenceCode: { type: graphql.GraphQLString },
                     AddressStateProvence: { type: graphql.GraphQLString },
                     AllowsRealMoney: { type: graphql.GraphQLBoolean }
@@ -53,7 +53,7 @@ module.exports = {
                 type: new graphql.GraphQLObjectType({
                   name: 'controlLocationApiLocationResponseCountryResponse',
                   fields: {
-                    AddressCountryId: { type: graphql.GraphQLInt },
+                    AddressCountryId: { type: graphql.GraphQLFloat },
                     AddressCountryCode: { type: graphql.GraphQLString },
                     AddressCountry3LetterCode: { type: graphql.GraphQLString },
                     AddressCountry: { type: graphql.GraphQLString },
@@ -61,7 +61,7 @@ module.exports = {
                     FlagSmallImageUrl: { type: graphql.GraphQLString },
                     FlagLargeImageUrl: { type: graphql.GraphQLString },
                     ShowInList: { type: graphql.GraphQLBoolean },
-                    OrderBy: { type: graphql.GraphQLInt }
+                    OrderBy: { type: graphql.GraphQLFloat }
                   }
                 })
               },
@@ -69,7 +69,7 @@ module.exports = {
                 type: new graphql.GraphQLObjectType({
                   name: 'controlLocationApiLocationResponseRegionResponse',
                   fields: {
-                    GamingServerRegionId: { type: graphql.GraphQLInt },
+                    GamingServerRegionId: { type: graphql.GraphQLFloat },
                     GamingServerRegionName: { type: graphql.GraphQLString }
                   }
                 })
@@ -78,10 +78,10 @@ module.exports = {
               Location: { type: graphql.GraphQLString },
               StreetAddress: { type: graphql.GraphQLString },
               City: { type: graphql.GraphQLString },
-              AddressStateProvenceId: { type: graphql.GraphQLInt },
-              AddressCountryId: { type: graphql.GraphQLInt },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
+              AddressCountryId: { type: graphql.GraphQLFloat },
               PostalCode: { type: graphql.GraphQLString },
-              GamingServerRegionId: { type: graphql.GraphQLInt },
+              GamingServerRegionId: { type: graphql.GraphQLFloat },
               PhoneNumber: { type: graphql.GraphQLString },
               EmailAddress: { type: graphql.GraphQLString },
               Hours: { type: graphql.GraphQLString },
@@ -96,6 +96,109 @@ module.exports = {
   },
   ApiLocationBylocationId: {
     fullName:
+      'GamingGrids.Api.Control.v2.Controllers.LocationController.UpdateLocation',
+    method: 'PUT',
+    url: '/api/Location/{locationId}',
+    args: {
+      body: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name: 'controlLocationApiLocationBylocationIdBody',
+            fields: {
+              Location: { type: graphql.GraphQLString },
+              StreetAddress: { type: graphql.GraphQLString },
+              City: { type: graphql.GraphQLString },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
+              AddressCountryId: { type: graphql.GraphQLFloat },
+              PostalCode: { type: graphql.GraphQLString },
+              GamingServerRegionId: { type: graphql.GraphQLFloat },
+              PhoneNumber: { type: graphql.GraphQLString },
+              EmailAddress: { type: graphql.GraphQLString },
+              Hours: { type: graphql.GraphQLString },
+              Description: { type: graphql.GraphQLString }
+            }
+          })
+        )
+      },
+      urlParams: {
+        type: new graphql.GraphQLNonNull(
+          new graphql.GraphQLInputObjectType({
+            name: 'controlLocationApiLocationBylocationIdUrlParams',
+            fields: { locationId: { type: graphql.GraphQLFloat } }
+          })
+        )
+      }
+    },
+    response: new graphql.GraphQLObjectType({
+      name: 'controlLocationApiLocationBylocationIdResponse',
+      fields: {
+        Response: {
+          type: new graphql.GraphQLObjectType({
+            name: 'controlLocationApiLocationBylocationIdResponseResponse',
+            fields: {
+              LocationId: { type: graphql.GraphQLFloat },
+              StateProvence: {
+                type: new graphql.GraphQLObjectType({
+                  name:
+                    'controlLocationApiLocationBylocationIdResponseStateProvenceResponse',
+                  fields: {
+                    AddressStateProvenceId: { type: graphql.GraphQLFloat },
+                    AddressCountryId: { type: graphql.GraphQLFloat },
+                    AddressStateProvenceCode: { type: graphql.GraphQLString },
+                    AddressStateProvence: { type: graphql.GraphQLString },
+                    AllowsRealMoney: { type: graphql.GraphQLBoolean }
+                  }
+                })
+              },
+              Country: {
+                type: new graphql.GraphQLObjectType({
+                  name:
+                    'controlLocationApiLocationBylocationIdResponseCountryResponse',
+                  fields: {
+                    AddressCountryId: { type: graphql.GraphQLFloat },
+                    AddressCountryCode: { type: graphql.GraphQLString },
+                    AddressCountry3LetterCode: { type: graphql.GraphQLString },
+                    AddressCountry: { type: graphql.GraphQLString },
+                    AllowsRealMoney: { type: graphql.GraphQLBoolean },
+                    FlagSmallImageUrl: { type: graphql.GraphQLString },
+                    FlagLargeImageUrl: { type: graphql.GraphQLString },
+                    ShowInList: { type: graphql.GraphQLBoolean },
+                    OrderBy: { type: graphql.GraphQLFloat }
+                  }
+                })
+              },
+              Region: {
+                type: new graphql.GraphQLObjectType({
+                  name:
+                    'controlLocationApiLocationBylocationIdResponseRegionResponse',
+                  fields: {
+                    GamingServerRegionId: { type: graphql.GraphQLFloat },
+                    GamingServerRegionName: { type: graphql.GraphQLString }
+                  }
+                })
+              },
+              IsActive: { type: graphql.GraphQLBoolean },
+              Location: { type: graphql.GraphQLString },
+              StreetAddress: { type: graphql.GraphQLString },
+              City: { type: graphql.GraphQLString },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
+              AddressCountryId: { type: graphql.GraphQLFloat },
+              PostalCode: { type: graphql.GraphQLString },
+              GamingServerRegionId: { type: graphql.GraphQLFloat },
+              PhoneNumber: { type: graphql.GraphQLString },
+              EmailAddress: { type: graphql.GraphQLString },
+              Hours: { type: graphql.GraphQLString },
+              Description: { type: graphql.GraphQLString }
+            }
+          })
+        },
+        Success: { type: graphql.GraphQLBoolean },
+        Message: { type: graphql.GraphQLString }
+      }
+    })
+  },
+  ApiLocationBylocationId2: {
+    fullName:
       'GamingGrids.Api.Control.v2.Controllers.LocationController.DeleteLocation',
     method: 'POST',
     url: '/api/Location/{locationId}',
@@ -103,14 +206,14 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlLocationApiLocationBylocationIdurlParams',
-            fields: { locationId: { type: graphql.GraphQLInt } }
+            name: 'controlLocationApiLocationBylocationId2UrlParams',
+            fields: { locationId: { type: graphql.GraphQLFloat } }
           })
         )
       }
     },
     response: new graphql.GraphQLObjectType({
-      name: 'controlLocationApiLocationBylocationIdResponse',
+      name: 'controlLocationApiLocationBylocationId2Response',
       fields: {
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }

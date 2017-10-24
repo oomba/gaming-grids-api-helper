@@ -11,7 +11,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientNotificationApiNotificationsBynotificationIdStatusbody',
+              'clientNotificationApiNotificationsBynotificationIdStatusBody',
             fields: { StateName: { type: graphql.GraphQLString } }
           })
         )
@@ -20,8 +20,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientNotificationApiNotificationsBynotificationIdStatusurlParams',
-            fields: { notificationId: { type: graphql.GraphQLInt } }
+              'clientNotificationApiNotificationsBynotificationIdStatusUrlParams',
+            fields: { notificationId: { type: graphql.GraphQLFloat } }
           })
         )
       }

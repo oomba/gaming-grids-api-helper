@@ -10,12 +10,12 @@ module.exports = {
       uriParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlInfusionsoftApiInfusionsoftAuthorizeuriParams',
+            name: 'controlInfusionsoftApiInfusionsoftAuthorizeUriParams',
             fields: {
               model: {
                 type: new graphql.GraphQLInputObjectType({
                   name:
-                    'controlInfusionsoftApiInfusionsoftAuthorizeuriParamsmodelResponse',
+                    'controlInfusionsoftApiInfusionsoftAuthorizeUriParamsmodelResponse',
                   fields: {
                     scope: { type: graphql.GraphQLString },
                     code: { type: graphql.GraphQLString }

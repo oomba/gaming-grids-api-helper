@@ -29,21 +29,21 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlRaffleApiRaffleWinnersResponseResponse',
               fields: {
-                RaffleWinnerId: { type: graphql.GraphQLInt },
+                RaffleWinnerId: { type: graphql.GraphQLFloat },
                 RaffleDate: { type: graphql.GraphQLString },
                 RaffleTicket: { type: graphql.GraphQLString },
-                RaffleWinnerEntityId: { type: graphql.GraphQLInt },
+                RaffleWinnerEntityId: { type: graphql.GraphQLFloat },
                 RaffleWinnerProfile: {
                   type: new graphql.GraphQLObjectType({
                     name:
                       'controlRaffleApiRaffleWinnersResponseRaffleWinnerProfileResponse',
                     fields: {
-                      EntityId: { type: graphql.GraphQLInt },
-                      AddressCountryId: { type: graphql.GraphQLInt },
-                      GamingServerRegionId: { type: graphql.GraphQLInt },
+                      EntityId: { type: graphql.GraphQLFloat },
+                      AddressCountryId: { type: graphql.GraphQLFloat },
+                      GamingServerRegionId: { type: graphql.GraphQLFloat },
                       IsActive: { type: graphql.GraphQLBoolean },
                       CreatedDateTime: { type: graphql.GraphQLString },
-                      MatchPlayStatisticsId: { type: graphql.GraphQLInt },
+                      MatchPlayStatisticsId: { type: graphql.GraphQLFloat },
                       EntityName: { type: graphql.GraphQLString },
                       EntityIsTeam: { type: graphql.GraphQLBoolean },
                       DisplayName: { type: graphql.GraphQLString },
@@ -58,13 +58,13 @@ module.exports = {
                     }
                   })
                 },
-                RafflePrizeId: { type: graphql.GraphQLInt },
+                RafflePrizeId: { type: graphql.GraphQLFloat },
                 RafflePrize: {
                   type: new graphql.GraphQLObjectType({
                     name:
                       'controlRaffleApiRaffleWinnersResponseRafflePrizeResponse',
                     fields: {
-                      RafflePrizeId: { type: graphql.GraphQLInt },
+                      RafflePrizeId: { type: graphql.GraphQLFloat },
                       RafflePrizeDate: { type: graphql.GraphQLString },
                       RafflePrizeTitle: { type: graphql.GraphQLString },
                       RafflePrizeDescription: { type: graphql.GraphQLString },
@@ -85,18 +85,18 @@ module.exports = {
                 PrizeIsClaimed: { type: graphql.GraphQLBoolean },
                 PrizeClaimedDateTime: { type: graphql.GraphQLString },
                 PrizeIsAwarded: { type: graphql.GraphQLBoolean },
-                PrizeAwardedById: { type: graphql.GraphQLInt },
+                PrizeAwardedById: { type: graphql.GraphQLFloat },
                 PrizeAwardedByProfile: {
                   type: new graphql.GraphQLObjectType({
                     name:
                       'controlRaffleApiRaffleWinnersResponsePrizeAwardedByProfileResponse',
                     fields: {
-                      EntityId: { type: graphql.GraphQLInt },
-                      AddressCountryId: { type: graphql.GraphQLInt },
-                      GamingServerRegionId: { type: graphql.GraphQLInt },
+                      EntityId: { type: graphql.GraphQLFloat },
+                      AddressCountryId: { type: graphql.GraphQLFloat },
+                      GamingServerRegionId: { type: graphql.GraphQLFloat },
                       IsActive: { type: graphql.GraphQLBoolean },
                       CreatedDateTime: { type: graphql.GraphQLString },
-                      MatchPlayStatisticsId: { type: graphql.GraphQLInt },
+                      MatchPlayStatisticsId: { type: graphql.GraphQLFloat },
                       EntityName: { type: graphql.GraphQLString },
                       EntityIsTeam: { type: graphql.GraphQLBoolean },
                       DisplayName: { type: graphql.GraphQLString },
@@ -136,7 +136,7 @@ module.exports = {
             new graphql.GraphQLObjectType({
               name: 'controlRaffleApiRafflePrizesResponseResponse',
               fields: {
-                RafflePrizeId: { type: graphql.GraphQLInt },
+                RafflePrizeId: { type: graphql.GraphQLFloat },
                 RafflePrizeDate: { type: graphql.GraphQLString },
                 RafflePrizeTitle: { type: graphql.GraphQLString },
                 RafflePrizeDescription: { type: graphql.GraphQLString },
@@ -169,8 +169,8 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlRaffleApiRaffleWinnerBywinnerIdAwardedurlParams',
-            fields: { winnerId: { type: graphql.GraphQLInt } }
+            name: 'controlRaffleApiRaffleWinnerBywinnerIdAwardedUrlParams',
+            fields: { winnerId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -192,7 +192,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlRaffleApiRafflePrizebody',
+            name: 'controlRaffleApiRafflePrizeBody',
             fields: {
               RafflePrizeDate: { type: graphql.GraphQLString },
               RafflePrizeTitle: { type: graphql.GraphQLString },
@@ -207,7 +207,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'controlRaffleApiRafflePrizeResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -222,8 +222,8 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlRaffleApiRafflePrizeByprizeIdurlParams',
-            fields: { prizeId: { type: graphql.GraphQLInt } }
+            name: 'controlRaffleApiRafflePrizeByprizeIdUrlParams',
+            fields: { prizeId: { type: graphql.GraphQLFloat } }
           })
         )
       }

@@ -10,11 +10,11 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlTournamentSeriesApiTournamentSeriesbody',
+            name: 'controlTournamentSeriesApiTournamentSeriesBody',
             fields: {
               TournamentSeriesName: { type: graphql.GraphQLString },
-              GamePlatformFranchiseTitleId: { type: graphql.GraphQLInt },
-              TournamentSubscriptionTypeId: { type: graphql.GraphQLInt },
+              GamePlatformFranchiseTitleId: { type: graphql.GraphQLFloat },
+              TournamentSubscriptionTypeId: { type: graphql.GraphQLFloat },
               RegistrationOpenDateTIme: { type: graphql.GraphQLString },
               TournamentStartDateTime: { type: graphql.GraphQLString },
               TournamentSerieseDoesCycle: { type: graphql.GraphQLBoolean }
@@ -26,7 +26,7 @@ module.exports = {
     response: new graphql.GraphQLObjectType({
       name: 'controlTournamentSeriesApiTournamentSeriesResponse',
       fields: {
-        Response: { type: graphql.GraphQLInt },
+        Response: { type: graphql.GraphQLFloat },
         Success: { type: graphql.GraphQLBoolean },
         Message: { type: graphql.GraphQLString }
       }
@@ -41,11 +41,11 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlTournamentSeriesApiTournamentSeriesByseriesIdbody',
+            name: 'controlTournamentSeriesApiTournamentSeriesByseriesIdBody',
             fields: {
               TournamentSeriesName: { type: graphql.GraphQLString },
-              GamePlatformFranchiseTitleId: { type: graphql.GraphQLInt },
-              TournamentSubscriptionTypeId: { type: graphql.GraphQLInt },
+              GamePlatformFranchiseTitleId: { type: graphql.GraphQLFloat },
+              TournamentSubscriptionTypeId: { type: graphql.GraphQLFloat },
               RegistrationOpenDateTIme: { type: graphql.GraphQLString },
               TournamentStartDateTime: { type: graphql.GraphQLString },
               TournamentSerieseDoesCycle: { type: graphql.GraphQLBoolean }
@@ -57,8 +57,8 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentSeriesApiTournamentSeriesByseriesIdurlParams',
-            fields: { seriesId: { type: graphql.GraphQLInt } }
+              'controlTournamentSeriesApiTournamentSeriesByseriesIdUrlParams',
+            fields: { seriesId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -81,10 +81,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlTournamentSeriesApiTournamentSeriesByseriesIdStateBystateIdurlParams',
+              'controlTournamentSeriesApiTournamentSeriesByseriesIdStateBystateIdUrlParams',
             fields: {
-              seriesId: { type: graphql.GraphQLInt },
-              stateId: { type: graphql.GraphQLInt }
+              seriesId: { type: graphql.GraphQLFloat },
+              stateId: { type: graphql.GraphQLFloat }
             }
           })
         )

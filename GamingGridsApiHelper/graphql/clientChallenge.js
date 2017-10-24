@@ -10,8 +10,8 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientChallengeApiChallengeBytournamentIdurlParams',
-            fields: { tournamentId: { type: graphql.GraphQLInt } }
+            name: 'clientChallengeApiChallengeBytournamentIdUrlParams',
+            fields: { tournamentId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -33,16 +33,16 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientChallengeApiChallengeBytournamentIdOfferbody',
-            fields: { EntryFee: { type: graphql.GraphQLInt } }
+            name: 'clientChallengeApiChallengeBytournamentIdOfferBody',
+            fields: { EntryFee: { type: graphql.GraphQLFloat } }
           })
         )
       },
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'clientChallengeApiChallengeBytournamentIdOfferurlParams',
-            fields: { tournamentId: { type: graphql.GraphQLInt } }
+            name: 'clientChallengeApiChallengeBytournamentIdOfferUrlParams',
+            fields: { tournamentId: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -55,22 +55,22 @@ module.exports = {
             name:
               'clientChallengeApiChallengeBytournamentIdOfferResponseResponse',
             fields: {
-              ChallengeOfferId: { type: graphql.GraphQLInt },
-              EntryFee: { type: graphql.GraphQLInt },
-              ServiceFee: { type: graphql.GraphQLInt },
-              TotalFee: { type: graphql.GraphQLInt },
-              TournamentId: { type: graphql.GraphQLInt },
+              ChallengeOfferId: { type: graphql.GraphQLFloat },
+              EntryFee: { type: graphql.GraphQLFloat },
+              ServiceFee: { type: graphql.GraphQLFloat },
+              TotalFee: { type: graphql.GraphQLFloat },
+              TournamentId: { type: graphql.GraphQLFloat },
               TournamentDescription: { type: graphql.GraphQLString },
               TournamentTitle: { type: graphql.GraphQLString },
-              CreatorEntityId: { type: graphql.GraphQLInt },
-              ChallengerEntityId: { type: graphql.GraphQLInt },
+              CreatorEntityId: { type: graphql.GraphQLFloat },
+              ChallengerEntityId: { type: graphql.GraphQLFloat },
               OfferDateTime: { type: graphql.GraphQLString },
-              CreatorStateId: { type: graphql.GraphQLInt },
+              CreatorStateId: { type: graphql.GraphQLFloat },
               CreatorStateDateTime: { type: graphql.GraphQLString },
-              ChallengerStateId: { type: graphql.GraphQLInt },
+              ChallengerStateId: { type: graphql.GraphQLFloat },
               ChallengerStateDateTime: { type: graphql.GraphQLString },
               HasPendingRegistration: { type: graphql.GraphQLBoolean },
-              TournamentMatchId: { type: graphql.GraphQLInt },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
               ChallengeComplete: { type: graphql.GraphQLBoolean },
               ChallengeCompleteDateTime: { type: graphql.GraphQLString },
               ChallengerNeedsRegistration: { type: graphql.GraphQLBoolean },
@@ -94,10 +94,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientChallengeApiChallengeBytournamentIdMyOfferByOfferIdAccepturlParams',
+              'clientChallengeApiChallengeBytournamentIdMyOfferByOfferIdAcceptUrlParams',
             fields: {
-              tournamentId: { type: graphql.GraphQLInt },
-              offerId: { type: graphql.GraphQLInt }
+              tournamentId: { type: graphql.GraphQLFloat },
+              offerId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -122,10 +122,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientChallengeApiChallengeBytournamentIdMyOfferByOfferIdRejecturlParams',
+              'clientChallengeApiChallengeBytournamentIdMyOfferByOfferIdRejectUrlParams',
             fields: {
-              tournamentId: { type: graphql.GraphQLInt },
-              offerId: { type: graphql.GraphQLInt }
+              tournamentId: { type: graphql.GraphQLFloat },
+              offerId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -150,10 +150,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientChallengeApiChallengeBytournamentIdMyOfferAcceptedByOfferIdAccepturlParams',
+              'clientChallengeApiChallengeBytournamentIdMyOfferAcceptedByOfferIdAcceptUrlParams',
             fields: {
-              tournamentId: { type: graphql.GraphQLInt },
-              offerId: { type: graphql.GraphQLInt }
+              tournamentId: { type: graphql.GraphQLFloat },
+              offerId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -178,10 +178,10 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'clientChallengeApiChallengeBytournamentIdMyOfferAcceptedByOfferIdRejecturlParams',
+              'clientChallengeApiChallengeBytournamentIdMyOfferAcceptedByOfferIdRejectUrlParams',
             fields: {
-              tournamentId: { type: graphql.GraphQLInt },
-              offerId: { type: graphql.GraphQLInt }
+              tournamentId: { type: graphql.GraphQLFloat },
+              offerId: { type: graphql.GraphQLFloat }
             }
           })
         )

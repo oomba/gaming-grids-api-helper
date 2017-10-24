@@ -10,8 +10,8 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'pollingChallengeApiChallengeCancelledByidurlParams',
-            fields: { id: { type: graphql.GraphQLInt } }
+            name: 'pollingChallengeApiChallengeCancelledByidUrlParams',
+            fields: { id: { type: graphql.GraphQLFloat } }
           })
         )
       }
@@ -38,22 +38,22 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'pollingChallengeApiChallengeMyOfferResponseResponse',
             fields: {
-              ChallengeOfferId: { type: graphql.GraphQLInt },
-              EntryFee: { type: graphql.GraphQLInt },
-              ServiceFee: { type: graphql.GraphQLInt },
-              TotalFee: { type: graphql.GraphQLInt },
-              TournamentId: { type: graphql.GraphQLInt },
+              ChallengeOfferId: { type: graphql.GraphQLFloat },
+              EntryFee: { type: graphql.GraphQLFloat },
+              ServiceFee: { type: graphql.GraphQLFloat },
+              TotalFee: { type: graphql.GraphQLFloat },
+              TournamentId: { type: graphql.GraphQLFloat },
               TournamentDescription: { type: graphql.GraphQLString },
               TournamentTitle: { type: graphql.GraphQLString },
-              CreatorEntityId: { type: graphql.GraphQLInt },
-              ChallengerEntityId: { type: graphql.GraphQLInt },
+              CreatorEntityId: { type: graphql.GraphQLFloat },
+              ChallengerEntityId: { type: graphql.GraphQLFloat },
               OfferDateTime: { type: graphql.GraphQLString },
-              CreatorStateId: { type: graphql.GraphQLInt },
+              CreatorStateId: { type: graphql.GraphQLFloat },
               CreatorStateDateTime: { type: graphql.GraphQLString },
-              ChallengerStateId: { type: graphql.GraphQLInt },
+              ChallengerStateId: { type: graphql.GraphQLFloat },
               ChallengerStateDateTime: { type: graphql.GraphQLString },
               HasPendingRegistration: { type: graphql.GraphQLBoolean },
-              TournamentMatchId: { type: graphql.GraphQLInt },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
               ChallengeComplete: { type: graphql.GraphQLBoolean },
               ChallengeCompleteDateTime: { type: graphql.GraphQLString },
               ChallengerNeedsRegistration: { type: graphql.GraphQLBoolean },
@@ -80,22 +80,22 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'pollingChallengeApiChallengeMyOfferAcceptedResponseResponse',
             fields: {
-              ChallengeOfferId: { type: graphql.GraphQLInt },
-              EntryFee: { type: graphql.GraphQLInt },
-              ServiceFee: { type: graphql.GraphQLInt },
-              TotalFee: { type: graphql.GraphQLInt },
-              TournamentId: { type: graphql.GraphQLInt },
+              ChallengeOfferId: { type: graphql.GraphQLFloat },
+              EntryFee: { type: graphql.GraphQLFloat },
+              ServiceFee: { type: graphql.GraphQLFloat },
+              TotalFee: { type: graphql.GraphQLFloat },
+              TournamentId: { type: graphql.GraphQLFloat },
               TournamentDescription: { type: graphql.GraphQLString },
               TournamentTitle: { type: graphql.GraphQLString },
-              CreatorEntityId: { type: graphql.GraphQLInt },
-              ChallengerEntityId: { type: graphql.GraphQLInt },
+              CreatorEntityId: { type: graphql.GraphQLFloat },
+              ChallengerEntityId: { type: graphql.GraphQLFloat },
               OfferDateTime: { type: graphql.GraphQLString },
-              CreatorStateId: { type: graphql.GraphQLInt },
+              CreatorStateId: { type: graphql.GraphQLFloat },
               CreatorStateDateTime: { type: graphql.GraphQLString },
-              ChallengerStateId: { type: graphql.GraphQLInt },
+              ChallengerStateId: { type: graphql.GraphQLFloat },
               ChallengerStateDateTime: { type: graphql.GraphQLString },
               HasPendingRegistration: { type: graphql.GraphQLBoolean },
-              TournamentMatchId: { type: graphql.GraphQLInt },
+              TournamentMatchId: { type: graphql.GraphQLFloat },
               ChallengeComplete: { type: graphql.GraphQLBoolean },
               ChallengeCompleteDateTime: { type: graphql.GraphQLString },
               ChallengerNeedsRegistration: { type: graphql.GraphQLBoolean },

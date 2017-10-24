@@ -10,7 +10,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameProfilebody',
+            name: 'controlPlayerApiPlayerByentityNameProfileBody',
             fields: {
               EmailAddress: { type: graphql.GraphQLString },
               DisplayName: { type: graphql.GraphQLString },
@@ -19,7 +19,7 @@ module.exports = {
               Address: { type: graphql.GraphQLString },
               City: { type: graphql.GraphQLString },
               PostalCode: { type: graphql.GraphQLString },
-              AddressStateProvenceId: { type: graphql.GraphQLInt },
+              AddressStateProvenceId: { type: graphql.GraphQLFloat },
               Birthdate: { type: graphql.GraphQLString }
             }
           })
@@ -28,7 +28,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameProfileurlParams',
+            name: 'controlPlayerApiPlayerByentityNameProfileUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
@@ -41,7 +41,7 @@ module.exports = {
           type: new graphql.GraphQLObjectType({
             name: 'controlPlayerApiPlayerByentityNameProfileResponseResponse',
             fields: {
-              EntityId: { type: graphql.GraphQLInt },
+              EntityId: { type: graphql.GraphQLFloat },
               UserLoginToken: { type: graphql.GraphQLString },
               EntityMembershipId: { type: graphql.GraphQLString },
               EntityMembershipToken: { type: graphql.GraphQLString },
@@ -54,13 +54,13 @@ module.exports = {
               RegistrationDateTime: { type: graphql.GraphQLString },
               LastLoginDateTime: { type: graphql.GraphQLString },
               EntityImageUrl: { type: graphql.GraphQLString },
-              PlayerSubscriptionTypeId: { type: graphql.GraphQLInt },
+              PlayerSubscriptionTypeId: { type: graphql.GraphQLFloat },
               Muut: {
                 type: new graphql.GraphQLObjectType({
                   name:
                     'controlPlayerApiPlayerByentityNameProfileResponseMuutResponse',
                   fields: {
-                    Timestamp: { type: graphql.GraphQLInt },
+                    Timestamp: { type: graphql.GraphQLFloat },
                     Message: { type: graphql.GraphQLString },
                     Signature: { type: graphql.GraphQLString }
                   }
@@ -84,7 +84,7 @@ module.exports = {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
             name:
-              'controlPlayerApiPlayerByentityNameTournamentAllowedurlParams',
+              'controlPlayerApiPlayerByentityNameTournamentAllowedUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
@@ -107,7 +107,7 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameChangePasswordbody',
+            name: 'controlPlayerApiPlayerByentityNameChangePasswordBody',
             fields: { NewPwd: { type: graphql.GraphQLString } }
           })
         )
@@ -115,7 +115,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameChangePasswordurlParams',
+            name: 'controlPlayerApiPlayerByentityNameChangePasswordUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
@@ -138,10 +138,10 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameSteambody',
+            name: 'controlPlayerApiPlayerByentityNameSteamBody',
             fields: {
-              SteamId32: { type: graphql.GraphQLInt },
-              SteamId64: { type: graphql.GraphQLInt }
+              SteamId32: { type: graphql.GraphQLFloat },
+              SteamId64: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -149,7 +149,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameSteamurlParams',
+            name: 'controlPlayerApiPlayerByentityNameSteamUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
@@ -172,9 +172,9 @@ module.exports = {
       body: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameTournamentPolicybody',
+            name: 'controlPlayerApiPlayerByentityNameTournamentPolicyBody',
             fields: {
-              TournamentManagementPolicyId: { type: graphql.GraphQLInt }
+              TournamentManagementPolicyId: { type: graphql.GraphQLFloat }
             }
           })
         )
@@ -182,7 +182,7 @@ module.exports = {
       urlParams: {
         type: new graphql.GraphQLNonNull(
           new graphql.GraphQLInputObjectType({
-            name: 'controlPlayerApiPlayerByentityNameTournamentPolicyurlParams',
+            name: 'controlPlayerApiPlayerByentityNameTournamentPolicyUrlParams',
             fields: { entityName: { type: graphql.GraphQLString } }
           })
         )
